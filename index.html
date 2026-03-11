@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1EQ Tech Utils</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <style>
 /* ============================================================
    THEME SYSTEM — 4 professional themes
    ============================================================ */
 :root {
-  --transition: 0.18s ease;
-  --radius: 8px;
-  --radius-sm: 5px;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-ui: 'Inter', sans-serif;
+  --transition: 0.15s ease;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 14px;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-ui: 'Geist', 'Inter', system-ui, sans-serif;
+  --topbar-h: 52px;
+  --sidebar-w: 224px;
 }
 
 /* THEME: Obsidian (default dark) */
@@ -37,7 +40,6 @@
   --accent3:   #4ade80;
   --error:     #f87171;
   --warn:      #fbbf24;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Slate Pro (blue-grey dark) */
@@ -58,7 +60,6 @@
   --accent3:   #a78bfa;
   --error:     #fc8181;
   --warn:      #f6ad55;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Arctic (clean light) */
@@ -79,7 +80,6 @@
   --accent3:   #7c3aed;
   --error:     #dc2626;
   --warn:      #d97706;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Mocha (warm dark) */
@@ -100,7 +100,6 @@
   --accent3:   #a3e635;
   --error:     #ef4444;
   --warn:      #eab308;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Emerald (dark green) */
@@ -121,7 +120,6 @@
   --accent3:   #a78bfa;
   --error:     #f87171;
   --warn:      #fbbf24;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Rose (light warm) */
@@ -142,7 +140,6 @@
   --accent3:   #0d9488;
   --error:     #dc2626;
   --warn:      #d97706;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Midnight (deep blue-black) */
@@ -163,7 +160,6 @@
   --accent3:   #34d399;
   --error:     #f87171;
   --warn:      #fbbf24;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Cyber (neon dark) */
@@ -184,7 +180,6 @@
   --accent3:   #ffe600;
   --error:     #ff2d78;
   --warn:      #ffe600;
-  --sidebar-w: 240px;
 }
 
 /* THEME: Sand (warm light) */
@@ -205,7 +200,146 @@
   --accent3:   #7c3aed;
   --error:     #b91c1c;
   --warn:      #b45309;
-  --sidebar-w: 240px;
+}
+
+/* THEME: Carbon (IBM-inspired dark neutral) */
+[data-theme="carbon"] {
+  --bg:        #161616;
+  --bg2:       #1c1c1c;
+  --surface:   #262626;
+  --surface2:  #303030;
+  --surface3:  #393939;
+  --border:    #393939;
+  --border2:   #525252;
+  --text:      #f4f4f4;
+  --text2:     #c6c6c6;
+  --text3:     #6f6f6f;
+  --accent:    #0f62fe;
+  --accent-bg: rgba(15,98,254,0.12);
+  --accent2:   #42be65;
+  --accent3:   #ff7eb6;
+  --error:     #fa4d56;
+  --warn:      #f1c21b;
+}
+
+/* THEME: Dracula (classic coding dark) */
+[data-theme="dracula"] {
+  --bg:        #1e1f29;
+  --bg2:       #21222c;
+  --surface:   #282a36;
+  --surface2:  #2d2f3f;
+  --surface3:  #343647;
+  --border:    #3d3f54;
+  --border2:   #4d5068;
+  --text:      #f8f8f2;
+  --text2:     #a0a0c0;
+  --text3:     #6272a4;
+  --accent:    #bd93f9;
+  --accent-bg: rgba(189,147,249,0.1);
+  --accent2:   #50fa7b;
+  --accent3:   #ff79c6;
+  --error:     #ff5555;
+  --warn:      #f1fa8c;
+}
+
+/* THEME: Nord (polar minimalist) */
+[data-theme="nord"] {
+  --bg:        #242933;
+  --bg2:       #2e3440;
+  --surface:   #3b4252;
+  --surface2:  #434c5e;
+  --surface3:  #4c566a;
+  --border:    #4c566a;
+  --border2:   #5e6b82;
+  --text:      #eceff4;
+  --text2:     #d8dee9;
+  --text3:     #7a8599;
+  --accent:    #88c0d0;
+  --accent-bg: rgba(136,192,208,0.1);
+  --accent2:   #a3be8c;
+  --accent3:   #b48ead;
+  --error:     #bf616a;
+  --warn:      #ebcb8b;
+}
+
+/* THEME: Tokyo Night */
+[data-theme="tokyo"] {
+  --bg:        #1a1b26;
+  --bg2:       #16161e;
+  --surface:   #1f2335;
+  --surface2:  #24283b;
+  --surface3:  #292e42;
+  --border:    #2f354a;
+  --border2:   #3b4261;
+  --text:      #c0caf5;
+  --text2:     #9aa5ce;
+  --text3:     #565f89;
+  --accent:    #7aa2f7;
+  --accent-bg: rgba(122,162,247,0.1);
+  --accent2:   #9ece6a;
+  --accent3:   #bb9af7;
+  --error:     #f7768e;
+  --warn:      #e0af68;
+}
+
+/* THEME: Solarized Dark */
+[data-theme="solarized"] {
+  --bg:        #001c23;
+  --bg2:       #002b36;
+  --surface:   #073642;
+  --surface2:  #094050;
+  --surface3:  #0d4f60;
+  --border:    #10606c;
+  --border2:   #2c7a80;
+  --text:      #fdf6e3;
+  --text2:     #93a1a1;
+  --text3:     #586e75;
+  --accent:    #268bd2;
+  --accent-bg: rgba(38,139,210,0.12);
+  --accent2:   #2aa198;
+  --accent3:   #b58900;
+  --error:     #dc322f;
+  --warn:      #b58900;
+}
+
+/* THEME: Gruvbox Dark */
+[data-theme="gruvbox"] {
+  --bg:        #1d2021;
+  --bg2:       #282828;
+  --surface:   #32302f;
+  --surface2:  #3c3836;
+  --surface3:  #504945;
+  --border:    #504945;
+  --border2:   #665c54;
+  --text:      #ebdbb2;
+  --text2:     #bdae93;
+  --text3:     #7c6f64;
+  --accent:    #fabd2f;
+  --accent-bg: rgba(250,189,47,0.1);
+  --accent2:   #b8bb26;
+  --accent3:   #83a598;
+  --error:     #fb4934;
+  --warn:      #fabd2f;
+}
+
+/* THEME: Catppuccin Mocha */
+[data-theme="catppuccin"] {
+  --bg:        #181825;
+  --bg2:       #1e1e2e;
+  --surface:   #313244;
+  --surface2:  #3b3d54;
+  --surface3:  #45475a;
+  --border:    #45475a;
+  --border2:   #585b70;
+  --text:      #cdd6f4;
+  --text2:     #bac2de;
+  --text3:     #6c7086;
+  --accent:    #cba6f7;
+  --accent-bg: rgba(203,166,247,0.1);
+  --accent2:   #a6e3a1;
+  --accent3:   #89dceb;
+  --error:     #f38ba8;
+  --warn:      #f9e2af;
 }
 
 /* ============================================================
@@ -230,102 +364,87 @@ body {
    TOP BAR
    ============================================================ */
 .topbar {
-  height: 52px;
+  height: 48px;
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  padding: 0 16px;
-  gap: 16px;
+  padding: 0 18px;
+  gap: 10px;
   flex-shrink: 0;
   z-index: 100;
 }
 
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  text-decoration: none;
-  flex-shrink: 0;
-}
+.logo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; user-select: none; }
 .logo-mark {
-  width: 32px; height: 32px;
-  background: var(--accent);
-  border-radius: 7px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  color: var(--bg);
-  font-weight: 700;
-  font-family: var(--font-mono);
-  flex-shrink: 0;
+  width: 28px; height: 28px; background: var(--accent);
+  border-radius: 7px; display: flex; align-items: center;
+  justify-content: center; color: #fff; flex-shrink: 0;
 }
-.logo-text {
-  display: flex; flex-direction: column; line-height: 1;
-}
-.logo-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-.logo-tag {
-  font-size: 9px;
-  color: var(--text3);
-  font-family: var(--font-mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
+.logo-mark svg { width: 15px; height: 15px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-name { font-size: 13px; font-weight: 650; color: var(--text); letter-spacing: -0.02em; }
+.logo-tag  { font-size: 8.5px; color: var(--text3); font-family: var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.topbar-spacer { flex: 1; min-width: 12px; }
 
-.topbar-spacer { flex: 1; }
-
-/* Theme selector */
-.theme-picker {
-  display: flex; gap: 4px; align-items: center;
+/* Hamburger (mobile only) */
+.menu-btn {
+  display: none; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text2); cursor: pointer; flex-shrink: 0;
+  transition: all var(--transition);
 }
-.theme-label {
-  font-size: 10px;
-  color: var(--text3);
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-right: 4px;
+.menu-btn:hover { border-color: var(--accent); color: var(--accent); }
+.menu-btn svg { width: 16px; height: 16px; }
+
+/* Theme section in topbar */
+.topbar-theme {
+  display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+}
+.topbar-theme-label {
+  font-size: 9px; font-weight: 600; font-family: var(--font-mono);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3);
+  margin-right: 2px;
 }
 .theme-dot {
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.15s;
-  position: relative;
+  width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; transition: transform 0.12s, border-color 0.12s;
+  flex-shrink: 0;
 }
-.theme-dot:hover { transform: scale(1.2); }
-.theme-dot.active { border-color: var(--text); }
-.theme-dot[data-t="obsidian"] { background: linear-gradient(135deg,#c084fc,#1a1a1a); }
-.theme-dot[data-t="slate"]    { background: linear-gradient(135deg,#60a5fa,#1c2333); }
-.theme-dot[data-t="arctic"]   { background: linear-gradient(135deg,#2563eb,#f0f4f8); }
-.theme-dot[data-t="mocha"]    { background: linear-gradient(135deg,#f59e0b,#211a14); }
-.theme-dot[data-t="emerald"]  { background: linear-gradient(135deg,#34d399,#111e15); }
-.theme-dot[data-t="rose"]     { background: linear-gradient(135deg,#e11d48,#fdf6f7); }
-.theme-dot[data-t="midnight"] { background: linear-gradient(135deg,#818cf8,#060812); }
-.theme-dot[data-t="cyber"]    { background: linear-gradient(135deg,#00ffcc,#070708); }
-.theme-dot[data-t="sand"]     { background: linear-gradient(135deg,#b45309,#f5f0e8); }
-.theme-dot[data-t="obsidian"]::title { content: "Obsidian"; }
+.theme-dot:hover { transform: scale(1.25); }
+.theme-dot.active { border-color: var(--text2); }
+.theme-dot[data-t="obsidian"]  { background: linear-gradient(135deg,#c084fc,#1a1a1a); }
+.theme-dot[data-t="slate"]     { background: linear-gradient(135deg,#60a5fa,#1c2333); }
+.theme-dot[data-t="midnight"]  { background: linear-gradient(135deg,#818cf8,#060812); }
+.theme-dot[data-t="carbon"]    { background: linear-gradient(135deg,#0f62fe,#161616); }
+.theme-dot[data-t="dracula"]   { background: linear-gradient(135deg,#bd93f9,#282a36); }
+.theme-dot[data-t="nord"]      { background: linear-gradient(135deg,#88c0d0,#2e3440); }
+.theme-dot[data-t="tokyo"]     { background: linear-gradient(135deg,#7aa2f7,#1a1b26); }
+.theme-dot[data-t="solarized"] { background: linear-gradient(135deg,#268bd2,#002b36); }
+.theme-dot[data-t="gruvbox"]   { background: linear-gradient(135deg,#fabd2f,#282828); }
+.theme-dot[data-t="catppuccin"]{ background: linear-gradient(135deg,#cba6f7,#1e1e2e); }
+.theme-dot[data-t="cyber"]     { background: linear-gradient(135deg,#00ffcc,#070708); }
+.theme-dot[data-t="emerald"]   { background: linear-gradient(135deg,#34d399,#111e15); }
+.theme-dot[data-t="mocha"]     { background: linear-gradient(135deg,#f59e0b,#211a14); }
+.theme-dot[data-t="arctic"]    { background: linear-gradient(135deg,#2563eb,#f0f4f8); }
+.theme-dot[data-t="rose"]      { background: linear-gradient(135deg,#e11d48,#fdf6f7); }
+.theme-dot[data-t="sand"]      { background: linear-gradient(135deg,#b45309,#f5f0e8); }
 
 /* Topbar action buttons */
 .tb-btn {
-  height: 30px;
-  padding: 0 12px;
-  background: var(--surface3);
+  height: 28px; padding: 0 11px;
+  background: var(--surface2);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
   color: var(--text2);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: all var(--transition);
-  display: flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.04em;
+  cursor: pointer; transition: all var(--transition);
+  display: flex; align-items: center; gap: 5px; flex-shrink: 0; white-space: nowrap;
 }
 .tb-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.btn-icon { width: 12px; height: 12px; display: flex; align-items: center; flex-shrink: 0; }
+.btn-icon svg { width: 12px; height: 12px; }
 
 /* ============================================================
    MAIN LAYOUT: SIDEBAR + CONTENT
@@ -351,57 +470,102 @@ body {
 }
 .sidebar::-webkit-scrollbar { width: 3px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
-.sidebar::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* Sidebar search box */
+.sidebar-search-wrap {
+  position: relative; padding: 10px 10px 4px;
+}
+.sidebar-search-icon {
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  color: var(--text3); pointer-events: none; display: flex; align-items: center;
+}
+.sidebar-search-icon svg { width: 11px; height: 11px; }
+.sidebar-search-input {
+  width: 100%; height: 28px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); font-family: var(--font-mono); font-size: 11px;
+  padding: 0 8px 0 26px; outline: none; transition: border-color var(--transition);
+}
+.sidebar-search-input:focus { border-color: var(--accent); }
+.sidebar-search-input::placeholder { color: var(--text3); }
 
 .sidebar-section {
-  padding: 16px 10px 6px;
+  padding: 12px 8px 2px;
 }
 .sidebar-section-label {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--text3);
   padding: 0 6px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 8px;
-  border-radius: var(--radius-sm);
+  gap: 7px;
+  padding: 5.5px 7px;
+  border-radius: 5px;
   cursor: pointer;
   color: var(--text2);
+  font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 400;
-  transition: all var(--transition);
+  transition: all 0.12s ease;
   border: 1px solid transparent;
   white-space: nowrap;
   overflow: hidden;
+  user-select: none;
 }
-.nav-item:hover { background: var(--surface2); color: var(--text); }
+.nav-item:hover { background: var(--surface); color: var(--text); }
 .nav-item.active {
   background: var(--accent-bg);
   color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 18%, transparent);
   font-weight: 500;
 }
+.nav-item.hidden { display: none; }
 .nav-icon {
-  font-size: 13px;
   flex-shrink: 0;
-  width: 18px;
-  text-align: center;
+  width: 14px; height: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text3); transition: color 0.12s;
 }
-.nav-text { overflow: hidden; text-overflow: ellipsis; }
+.nav-icon svg { width: 14px; height: 14px; }
+.nav-item:hover .nav-icon, .nav-item.active .nav-icon { color: inherit; }
+.nav-text { overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
 
 .sidebar-divider {
   height: 1px;
   background: var(--border);
-  margin: 8px 16px;
+  margin: 5px 10px;
 }
+
+/* Mobile sidebar close bar */
+.sidebar-close {
+  display: none; align-items: center; justify-content: space-between;
+  padding: 10px 12px 4px;
+}
+.sidebar-close-title { font-size: 11px; font-weight: 600; color: var(--text); }
+.sidebar-close-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 5px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text2); cursor: pointer;
+}
+.sidebar-close-btn svg { width: 13px; height: 13px; }
+
+/* Overlay */
+.sidebar-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.48); z-index: 199;
+  backdrop-filter: blur(1px); opacity: 0; transition: opacity 0.2s ease;
+}
+.sidebar-overlay.open { opacity: 1; }
 
 /* ============================================================
    CONTENT AREA
@@ -411,20 +575,21 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: var(--bg);
 }
 
 .panel {
   display: none;
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 20px 22px;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 .panel.active { display: flex; }
-.panel::-webkit-scrollbar { width: 5px; }
+.panel::-webkit-scrollbar { width: 4px; }
 .panel::-webkit-scrollbar-track { background: transparent; }
-.panel::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 /* Panel header */
 .panel-hdr {
@@ -432,21 +597,21 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   flex-shrink: 0;
 }
 .panel-title-group {}
 .panel-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 .panel-sub {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--text3);
-  margin-top: 3px;
+  margin-top: 2px;
   font-family: var(--font-mono);
 }
 
@@ -506,22 +671,22 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10px;
-  height: 36px;
-  background: var(--surface2);
+  height: 34px;
+  background: var(--bg2);
   border-bottom: 1px solid var(--border);
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
 }
 .editor-bar-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text3);
 }
 .lang-badge {
-  padding: 1px 7px;
+  padding: 1px 6px;
   border-radius: 3px;
   font-size: 9px;
   font-family: var(--font-mono);
@@ -530,24 +695,24 @@ body {
   text-transform: uppercase;
   background: var(--accent-bg);
   color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .editor-bar-spacer { flex: 1; }
 
 .icon-btn {
-  width: 26px; height: 26px;
+  width: 24px; height: 24px;
   border-radius: 4px;
-  border: 1px solid var(--border2);
+  border: 1px solid transparent;
   background: transparent;
   color: var(--text3);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   font-size: 11px;
-  transition: all var(--transition);
+  transition: all 0.12s;
   flex-shrink: 0;
 }
-.icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
-.icon-btn.ok { border-color: var(--accent3); color: var(--accent3); }
+.icon-btn:hover { border-color: var(--border2); color: var(--text); background: var(--surface2); }
+.icon-btn.ok { color: var(--accent3); }
 
 textarea.editor-ta {
   flex: 1;
@@ -558,21 +723,21 @@ textarea.editor-ta {
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.7;
   padding: 12px;
   tab-size: 2;
   min-height: 0;
   transition: background var(--transition);
 }
-textarea.editor-ta::placeholder { color: var(--text3); opacity: 0.6; }
-textarea.editor-ta.readonly { background: var(--surface2); cursor: default; color: var(--text2); }
+textarea.editor-ta::placeholder { color: var(--text3); opacity: 0.45; }
+textarea.editor-ta.readonly { background: color-mix(in srgb,var(--bg) 60%,var(--surface)); cursor: default; color: var(--text2); }
 
 .editor-foot {
   display: flex;
   align-items: center;
   padding: 0 10px;
-  height: 28px;
-  background: var(--surface2);
+  height: 25px;
+  background: var(--bg2);
   border-top: 1px solid var(--border);
   gap: 8px;
   flex-shrink: 0;
@@ -580,7 +745,7 @@ textarea.editor-ta.readonly { background: var(--surface2); cursor: default; colo
 .foot-stat {
   font-family: var(--font-mono);
   font-size: 9px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 .foot-stat.ok  { color: var(--accent3); }
 .foot-stat.err { color: var(--error); }
@@ -592,89 +757,68 @@ textarea.editor-ta.readonly { background: var(--surface2); cursor: default; colo
   color: var(--text3);
 }
 
-/* ============================================================
-   CENTER CONTROLS
-   ============================================================ */
 .center-ctrl {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 0 14px;
+  gap: 6px;
+  padding: 0 10px;
 }
 
 .btn-convert {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: var(--radius);
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: all 0.15s;
+  transition: all 0.12s;
   white-space: nowrap;
-  min-width: 100px;
-  justify-content: center;
 }
-.btn-convert.primary {
-  background: var(--accent);
-  color: var(--bg);
-  box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 30%, transparent);
-}
-.btn-convert.primary:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--accent) 40%, transparent);
-}
+.btn-convert.primary { background: var(--accent); color: #fff; }
 .btn-convert.secondary {
-  background: var(--surface3);
+  background: var(--surface2);
   color: var(--text2);
   border: 1px solid var(--border2);
 }
-.btn-convert.secondary:hover { border-color: var(--accent2); color: var(--accent2); background: var(--accent-bg); }
+.btn-convert:hover { opacity: 0.82; transform: scale(1.03); }
 .btn-convert:active { transform: scale(0.97) !important; }
 
 .btn-swap {
-  width: 32px; height: 32px;
+  width: 22px; height: 22px;
   border-radius: 50%;
-  background: var(--surface3);
   border: 1px solid var(--border2);
+  background: var(--surface2);
   color: var(--text3);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px;
-  transition: all 0.25s;
+  font-size: 11px;
+  transition: all 0.12s;
 }
-.btn-swap:hover { border-color: var(--accent2); color: var(--accent2); transform: rotate(180deg); }
+.btn-swap:hover { border-color: var(--accent); color: var(--accent); transform: rotate(180deg); }
 
 /* ============================================================
    MESSAGE BAR
    ============================================================ */
 .msg-bar {
   display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: var(--radius);
+  padding: 7px 11px;
+  border-radius: 6px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  animation: slideDown 0.2s ease;
+  font-size: 10.5px;
+  border: 1px solid transparent;
   flex-shrink: 0;
 }
-.msg-bar.show { display: flex; }
-.msg-bar.err { background: color-mix(in srgb,var(--error) 12%,transparent); border: 1px solid color-mix(in srgb,var(--error) 35%,transparent); color: var(--error); }
-.msg-bar.ok  { background: color-mix(in srgb,var(--accent3) 10%,transparent); border: 1px solid color-mix(in srgb,var(--accent3) 30%,transparent); color: var(--accent3); }
-
-@keyframes slideDown {
-  from { opacity:0; transform:translateY(-6px); }
-  to   { opacity:1; transform:translateY(0); }
-}
+.msg-bar.show { display: block; }
+.msg-bar.ok  { background: color-mix(in srgb,var(--accent3) 10%,transparent); border-color: color-mix(in srgb,var(--accent3) 25%,transparent); color: var(--accent3); }
+.msg-bar.err { background: color-mix(in srgb,var(--error) 10%,transparent); border-color: color-mix(in srgb,var(--error) 25%,transparent); color: var(--error); }
 
 /* ============================================================
    UPLOAD ZONE
@@ -924,15 +1068,93 @@ select.field-input { cursor: pointer; }
 .uuid-item:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Scrollbar for content */
-.content::-webkit-scrollbar { width: 5px; }
+.content::-webkit-scrollbar { width: 4px; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .sidebar { display: none; }
-  .util-grid { grid-template-columns: 1fr; }
-  .editor-grid { grid-template-columns: 1fr; }
-  .center-ctrl { flex-direction: row; padding: 8px 0; }
+/* ============================================================
+   RESPONSIVE — all breakpoints
+   ============================================================ */
+
+/* Large desktop 1280px+ */
+@media (min-width: 1280px) {
+  :root { --sidebar-w: 238px; }
+  .topbar { padding: 0 22px; }
+  .panel { padding: 22px 28px; }
 }
+/* Standard laptop 1024–1279 */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  :root { --sidebar-w: 216px; }
+}
+/* Small laptop / large tablet 769–1024 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  :root { --sidebar-w: 192px; }
+  .topbar { padding: 0 14px; gap: 8px; }
+  .logo-tag { display: none; }
+  .topbar-theme-label { display: none; }
+  .theme-dot { width: 14px; height: 14px; }
+  .panel { padding: 16px 18px; }
+  .util-grid { grid-template-columns: 1fr; }
+  .base-grid { grid-template-columns: 1fr; }
+}
+/* Mobile ≤768 */
+@media (max-width: 768px) {
+  .menu-btn { display: flex; }
+  .topbar { padding: 0 12px; gap: 8px; }
+  .logo-tag { display: none; }
+  .topbar-theme-label { display: none; }
+  .theme-dot { width: 13px; height: 13px; }
+  .theme-dot:nth-child(n+8) { display: none; }
+
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0; z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.24s cubic-bezier(0.22,1,0.36,1);
+    box-shadow: 6px 0 28px rgba(0,0,0,0.3);
+    width: 268px !important; max-width: 80vw;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay { display: block; }
+  .sidebar-close { display: flex; }
+
+  .app-body { flex-direction: column; }
+  .content { width: 100%; }
+  .panel { padding: 12px 12px 76px; gap: 10px; }
+  .panel-title { font-size: 14px; }
+  .editor-grid { grid-template-columns: 1fr; gap: 8px; }
+  .center-ctrl { flex-direction: row; justify-content: center; padding: 2px 0; }
+  .util-grid { grid-template-columns: 1fr; gap: 8px; }
+  .base-grid { grid-template-columns: 1fr; }
+  .editor-ta { min-height: 130px; }
+  .tb-btn-text { display: none; }
+  .tb-btn { padding: 0 8px; }
+  .bottom-tabs { display: block; }
+}
+@media (max-width: 390px) {
+  .topbar { padding: 0 10px; gap: 6px; }
+  .logo-name { font-size: 12px; }
+  .theme-dot { width: 12px; height: 12px; }
+  .theme-dot:nth-child(n+7) { display: none; }
+}
+
+/* Bottom tab bar */
+.bottom-tabs {
+  display: none; position: fixed;
+  bottom: 0; left: 0; right: 0; height: 54px;
+  background: var(--bg2); border-top: 1px solid var(--border);
+  z-index: 150; overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.bottom-tabs::-webkit-scrollbar { display: none; }
+.bottom-tabs-inner { display: flex; height: 100%; padding: 0 2px; min-width: max-content; }
+.tab-btn {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 2px; padding: 0 14px;
+  border: none; background: none; color: var(--text3);
+  cursor: pointer; font-family: var(--font-mono); font-size: 8.5px;
+  white-space: nowrap; transition: color 0.12s; flex-shrink: 0; min-width: 58px;
+}
+.tab-btn svg { width: 17px; height: 17px; }
+.tab-btn.active { color: var(--accent); }
+.tab-btn-label { font-size: 8.5px; }
 
 /* Animations */
 @keyframes fadeUp {
@@ -950,29 +1172,40 @@ select.field-input { cursor: pointer; }
 
 <!-- TOP BAR -->
 <div class="topbar">
+  <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()" aria-label="Menu"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h12"/></svg></button>
   <div class="logo">
-    <div class="logo-mark">⚡</div>
+    <div class="logo-mark"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M9 2L4 9h5l-1 5 6-7H9l1-5z"/></svg></div>
     <div class="logo-text">
-      <span class="logo-name" style="letter-spacing: 0.05em; font-weight: 600;">.Dev Utils</span>
+      <span class="logo-name">1EQ Tech Utils</span>
       <span class="logo-tag">Developer Toolkit</span>
     </div>
   </div>
   <div class="topbar-spacer"></div>
-  <div class="theme-picker">
-    <span class="theme-label">Theme</span>
-    <div class="theme-dot active" data-t="obsidian" title="Obsidian" onclick="setTheme('obsidian')"></div>
-    <div class="theme-dot" data-t="slate" title="Slate Pro" onclick="setTheme('slate')"></div>
-    <div class="theme-dot" data-t="midnight" title="Midnight" onclick="setTheme('midnight')"></div>
-    <div class="theme-dot" data-t="cyber" title="Cyber" onclick="setTheme('cyber')"></div>
-    <div class="theme-dot" data-t="emerald" title="Emerald" onclick="setTheme('emerald')"></div>
-    <div class="theme-dot" data-t="mocha" title="Mocha" onclick="setTheme('mocha')"></div>
-    <div class="theme-dot" data-t="arctic" title="Arctic Light" onclick="setTheme('arctic')"></div>
-    <div class="theme-dot" data-t="rose" title="Rose" onclick="setTheme('rose')"></div>
-    <div class="theme-dot" data-t="sand" title="Sand" onclick="setTheme('sand')"></div>
+  <div class="topbar-theme">
+    <span class="topbar-theme-label">Theme</span>
+    <div class="theme-dot" data-t="obsidian" onclick="setTheme('obsidian')" title="Obsidian"></div>
+    <div class="theme-dot" data-t="slate" onclick="setTheme('slate')" title="Slate Pro"></div>
+    <div class="theme-dot" data-t="midnight" onclick="setTheme('midnight')" title="Midnight"></div>
+    <div class="theme-dot" data-t="carbon" onclick="setTheme('carbon')" title="Carbon"></div>
+    <div class="theme-dot" data-t="dracula" onclick="setTheme('dracula')" title="Dracula"></div>
+    <div class="theme-dot" data-t="nord" onclick="setTheme('nord')" title="Nord"></div>
+    <div class="theme-dot" data-t="tokyo" onclick="setTheme('tokyo')" title="Tokyo Night"></div>
+    <div class="theme-dot" data-t="solarized" onclick="setTheme('solarized')" title="Solarized Dark"></div>
+    <div class="theme-dot" data-t="gruvbox" onclick="setTheme('gruvbox')" title="Gruvbox"></div>
+    <div class="theme-dot" data-t="catppuccin" onclick="setTheme('catppuccin')" title="Catppuccin"></div>
+    <div class="theme-dot" data-t="cyber" onclick="setTheme('cyber')" title="Cyber"></div>
+    <div class="theme-dot" data-t="emerald" onclick="setTheme('emerald')" title="Emerald"></div>
+    <div class="theme-dot" data-t="mocha" onclick="setTheme('mocha')" title="Mocha"></div>
+    <div class="theme-dot" data-t="arctic" onclick="setTheme('arctic')" title="Arctic Light"></div>
+    <div class="theme-dot" data-t="rose" onclick="setTheme('rose')" title="Rose"></div>
+    <div class="theme-dot" data-t="sand" onclick="setTheme('sand')" title="Sand"></div>
   </div>
-  <button class="tb-btn" onclick="clearAll()">✕ Clear All</button>
-  <button class="tb-btn" id="kbdHint" title="Ctrl+Enter to convert">⌘ Ctrl+↵</button>
+  <button class="tb-btn" onclick="clearAll()"><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><span class="tb-btn-text">Clear All</span></button>
+  <button class="tb-btn" id="kbdHint" title="Ctrl+Enter to convert"><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 10l-2-3 2-3M11 10l2-3-2-3M7 10l2-4"/></svg></span><span class="tb-btn-text">Ctrl+↵</span></button>
 </div>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <!-- APP BODY -->
 <div class="app-body">
@@ -980,58 +1213,70 @@ select.field-input { cursor: pointer; }
 <!-- SIDEBAR -->
 <nav class="sidebar" id="sidebar">
 
+  <div class="sidebar-close">
+    <span class="sidebar-close-title">Tools</span>
+    <button class="sidebar-close-btn" onclick="closeSidebar()" aria-label="Close menu"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+  </div>
+
+  <div class="sidebar-search">
+    <div class="sidebar-search-wrap">
+      <span class="sidebar-search-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><path d="M10 10l3.5 3.5"/></svg></span>
+      <input class="sidebar-search-input" type="text" placeholder="Search tools..." id="sidebarSearch" oninput="filterNav(this.value)" autocomplete="off">
+    </div>
+  </div>
+
   <div class="sidebar-section">
     <div class="sidebar-section-label">Data Formats</div>
-    <div class="nav-item active" data-panel="json-xml" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">JSON ↔ XML</span></div>
-    <div class="nav-item" data-panel="json-yaml" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">JSON ↔ YAML</span></div>
-    <div class="nav-item" data-panel="json-props" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">JSON ↔ Properties</span></div>
-    <div class="nav-item" data-panel="yaml-props" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">YAML ↔ Properties</span></div>
-    <div class="nav-item" data-panel="xml-props" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">XML ↔ Properties</span></div>
-    <div class="nav-item" data-panel="json-csv" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">JSON ↔ CSV</span></div>
-    <div class="nav-item" data-panel="toml-json" onclick="nav(this)"><span class="nav-icon">🔄</span><span class="nav-text">TOML ↔ JSON</span></div>
-    <div class="nav-item" data-panel="java-json" onclick="nav(this)"><span class="nav-icon">☕</span><span class="nav-text">Java POJO ↔ JSON</span></div>
+    <div class="nav-item active" data-panel="json-xml" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">JSON ↔ XML</span></div>
+    <div class="nav-item" data-panel="json-yaml" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">JSON ↔ YAML</span></div>
+    <div class="nav-item" data-panel="json-props" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">JSON ↔ Properties</span></div>
+    <div class="nav-item" data-panel="yaml-props" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">YAML ↔ Properties</span></div>
+    <div class="nav-item" data-panel="xml-props" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">XML ↔ Properties</span></div>
+    <div class="nav-item" data-panel="json-csv" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">JSON ↔ CSV</span></div>
+    <div class="nav-item" data-panel="toml-json" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg></span><span class="nav-text">TOML ↔ JSON</span></div>
+    <div class="nav-item" data-panel="java-json" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="5" rx="3" ry="2"/><path d="M5 5c0 1.5 1.3 2 3 2s3-.5 3-2M5 9c0 1.5 1.3 2.5 3 2.5S11 10.5 11 9M5 5v4M11 5v4"/></svg></span><span class="nav-text">Java POJO ↔ JSON</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
     <div class="sidebar-section-label">Encoding</div>
-    <div class="nav-item" data-panel="base64" onclick="nav(this)"><span class="nav-icon">🔐</span><span class="nav-text">Base64</span></div>
-    <div class="nav-item" data-panel="url-enc" onclick="nav(this)"><span class="nav-icon">🔗</span><span class="nav-text">URL Encode/Decode</span></div>
-    <div class="nav-item" data-panel="html-ent" onclick="nav(this)"><span class="nav-icon">🌐</span><span class="nav-text">HTML Entities</span></div>
-    <div class="nav-item" data-panel="hex-text" onclick="nav(this)"><span class="nav-icon">🔢</span><span class="nav-text">Hex ↔ Text</span></div>
-    <div class="nav-item" data-panel="jwt" onclick="nav(this)"><span class="nav-icon">🪪</span><span class="nav-text">JWT Decoder</span></div>
+    <div class="nav-item" data-panel="base64" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg></span><span class="nav-text">Base64</span></div>
+    <div class="nav-item" data-panel="url-enc" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9.5a4.24 4.24 0 006 0l2-2a4.24 4.24 0 00-6-6L7.5 2.5"/><path d="M9.5 6.5a4.24 4.24 0 00-6 0l-2 2a4.24 4.24 0 006 6l1-1"/></svg></span><span class="nav-text">URL Encode/Decode</span></div>
+    <div class="nav-item" data-panel="html-ent" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12M2.5 5.5h11M2.5 10.5h11"/></svg></span><span class="nav-text">HTML Entities</span></div>
+    <div class="nav-item" data-panel="hex-text" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2l5 3v6l-5 3-5-3V5z"/><path d="M3 5l5 3M8 8l5-3M8 8v6"/></svg></span><span class="nav-text">Hex ↔ Text</span></div>
+    <div class="nav-item" data-panel="jwt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/><path d="M8 8v2" stroke-width="2"/></svg></span><span class="nav-text">JWT Decoder</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
     <div class="sidebar-section-label">Hash / Crypto</div>
-    <div class="nav-item" data-panel="hash" onclick="nav(this)"><span class="nav-icon">🔒</span><span class="nav-text">Hash Generator</span></div>
-    <div class="nav-item" data-panel="hmac" onclick="nav(this)"><span class="nav-icon">🔑</span><span class="nav-text">HMAC</span></div>
-    <div class="nav-item" data-panel="checksum" onclick="nav(this)"><span class="nav-icon">✅</span><span class="nav-text">Checksum Verify</span></div>
+    <div class="nav-item" data-panel="hash" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 3l-1.5 10M13.5 3L12 13M2 6h12M1.5 10h12"/></svg></span><span class="nav-text">Hash Generator</span></div>
+    <div class="nav-item" data-panel="hmac" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4c0 3 2 5 5 5.5 3-.5 5-2.5 5-5.5v-4L8 2z"/></svg></span><span class="nav-text">HMAC</span></div>
+    <div class="nav-item" data-panel="checksum" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3 3 7-7"/><circle cx="8" cy="8" r="6.5"/></svg></span><span class="nav-text">Checksum Verify</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
     <div class="sidebar-section-label">Text Utilities</div>
-    <div class="nav-item" data-panel="json-fmt" onclick="nav(this)"><span class="nav-icon">✨</span><span class="nav-text">JSON Format/Minify</span></div>
-    <div class="nav-item" data-panel="xml-fmt" onclick="nav(this)"><span class="nav-icon">✨</span><span class="nav-text">XML Format</span></div>
-    <div class="nav-item" data-panel="regex" onclick="nav(this)"><span class="nav-icon">🔍</span><span class="nav-text">Regex Tester</span></div>
-    <div class="nav-item" data-panel="diff" onclick="nav(this)"><span class="nav-icon">📊</span><span class="nav-text">Text Diff</span></div>
-    <div class="nav-item" data-panel="case" onclick="nav(this)"><span class="nav-icon">Aa</span><span class="nav-text">Case Converter</span></div>
-    <div class="nav-item" data-panel="lorem" onclick="nav(this)"><span class="nav-icon">📝</span><span class="nav-text">Lorem Ipsum</span></div>
+    <div class="nav-item" data-panel="json-fmt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2c-1 0-1.5.5-1.5 1.5V6L2 8l1.5 2v2.5C3.5 13.5 4 14 5 14M11 2c1 0 1.5.5 1.5 1.5V6L14 8l-1.5 2v2.5c0 1-.5 1.5-1.5 1.5"/></svg></span><span class="nav-text">JSON Format/Minify</span></div>
+    <div class="nav-item" data-panel="xml-fmt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l3 5-3 5M6 3L3 8l3 5"/></svg></span><span class="nav-text">XML Format</span></div>
+    <div class="nav-item" data-panel="regex" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><path d="M10 10l3.5 3.5"/></svg></span><span class="nav-text">Regex Tester</span></div>
+    <div class="nav-item" data-panel="diff" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6M2 8h9M2 12h5"/><path d="M12 2v12M10 4l2-2 2 2M10 12l2 2 2-2" stroke-width="1.2"/></svg></span><span class="nav-text">Text Diff</span></div>
+    <div class="nav-item" data-panel="case" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="currentColor"><text x="1" y="13" font-size="10" font-weight="700" font-family="monospace">Aa</text></svg></span><span class="nav-text">Case Converter</span></div>
+    <div class="nav-item" data-panel="lorem" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 4h10M3 7h10M3 10h7M3 13h5"/></svg></span><span class="nav-text">Lorem Ipsum</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
     <div class="sidebar-section-label">Numbers & Time</div>
-    <div class="nav-item" data-panel="base-conv" onclick="nav(this)"><span class="nav-icon">#</span><span class="nav-text">Base Converter</span></div>
-    <div class="nav-item" data-panel="timestamp" onclick="nav(this)"><span class="nav-icon">🕐</span><span class="nav-text">Unix Timestamp</span></div>
-    <div class="nav-item" data-panel="uuid-gen" onclick="nav(this)"><span class="nav-icon">🆔</span><span class="nav-text">UUID Generator</span></div>
-    <div class="nav-item" data-panel="color" onclick="nav(this)"><span class="nav-icon">🎨</span><span class="nav-text">Color Converter</span></div>
+    <div class="nav-item" data-panel="base-conv" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v12M4 4l4-2 4 2M4 12l4 2 4-2M4 4v8M12 4v8"/></svg></span><span class="nav-text">Base Converter</span></div>
+    <div class="nav-item" data-panel="timestamp" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg></span><span class="nav-text">Unix Timestamp</span></div>
+    <div class="nav-item" data-panel="uuid-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M9 8h4M9 11h3"/><circle cx="5" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">UUID Generator</span></div>
+    <div class="nav-item" data-panel="color" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="5.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="11" r="1" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Color Converter</span></div>
   </div>
 
   <div style="height:16px"></div>
@@ -1041,6 +1286,32 @@ select.field-input { cursor: pointer; }
 <div class="content" id="contentArea">
 </div><!-- /content -->
 </div><!-- /app-body -->
+
+<!-- BOTTOM TABS (mobile) -->
+<div class="bottom-tabs" id="bottomTabs">
+  <div class="bottom-tabs-inner">
+    <button class="tab-btn active" data-panel="json-xml" onclick="navTab(this,'json-xml')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h10M9 2l3 3-3 3M14 11H4M7 14l-3-3 3-3"/></svg>
+      <span class="tab-btn-label">Formats</span>
+    </button>
+    <button class="tab-btn" data-panel="base64" onclick="navTab(this,'base64')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
+      <span class="tab-btn-label">Encode</span>
+    </button>
+    <button class="tab-btn" data-panel="hash" onclick="navTab(this,'hash')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 3l-1.5 10M13.5 3L12 13M2 6h12M1.5 10h12"/></svg>
+      <span class="tab-btn-label">Hash</span>
+    </button>
+    <button class="tab-btn" data-panel="json-fmt" onclick="navTab(this,'json-fmt')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2c-1 0-1.5.5-1.5 1.5V6L2 8l1.5 2v2.5C3.5 13.5 4 14 5 14M11 2c1 0 1.5.5 1.5 1.5V6L14 8l-1.5 2v2.5c0 1-.5 1.5-1.5 1.5"/></svg>
+      <span class="tab-btn-label">Text</span>
+    </button>
+    <button class="tab-btn" data-panel="base-conv" onclick="navTab(this,'base-conv')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg>
+      <span class="tab-btn-label">Numbers</span>
+    </button>
+  </div>
+</div>
 
 <script>
 // ============================================================
@@ -1898,6 +2169,19 @@ function setTheme(t) {
   document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.t === t));
 }
 
+// Sidebar search filter
+function filterNav(q) {
+  const query = q.toLowerCase().trim();
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const text = item.querySelector('.nav-text')?.textContent?.toLowerCase() || '';
+    item.classList.toggle('hidden', query !== '' && !text.includes(query));
+  });
+  document.querySelectorAll('.sidebar-section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.nav-item')].some(n => !n.classList.contains('hidden'));
+    sec.style.display = query === '' || visible ? '' : 'none';
+  });
+}
+
 function nav(el) {
   const panel = el.dataset.panel;
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1909,6 +2193,49 @@ function nav(el) {
   // trigger panel-specific inits
   if (panel === 'timestamp') startClock();
   if (panel === 'color') colorFromHex('#6366f1');
+  // Sync bottom tabs
+  const _tabMap = {
+    'json-xml':'json-xml','json-yaml':'json-xml','json-props':'json-xml','yaml-props':'json-xml',
+    'xml-props':'json-xml','json-csv':'json-xml','toml-json':'json-xml','java-json':'json-xml',
+    'base64':'base64','url-enc':'base64','html-ent':'base64','hex-text':'base64','jwt':'base64',
+    'hash':'hash','hmac':'hash','checksum':'hash',
+    'json-fmt':'json-fmt','xml-fmt':'json-fmt','regex':'json-fmt','diff':'json-fmt','case':'json-fmt','lorem':'json-fmt',
+    'base-conv':'base-conv','timestamp':'base-conv','uuid-gen':'base-conv','color':'base-conv',
+  };
+  const tabKey = _tabMap[panel] || panel;
+  document.querySelectorAll('.tab-btn').forEach(t => {
+    t.classList.toggle('active', t.dataset.panel === tabKey);
+  });
+  closeSidebar();
+}
+
+// ============================================================
+// MOBILE SIDEBAR TOGGLE
+// ============================================================
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  if (sidebar.classList.contains('open')) {
+    closeSidebar();
+  } else {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  if (!sidebar || !overlay) return;
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Bottom tab navigation
+function navTab(tabEl, panelId) {
+  const navEl = document.querySelector(`.nav-item[data-panel="${panelId}"]`);
+  if (navEl) nav(navEl);
 }
 
 function restoreState() {
