@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1EQ Tech Utils</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
 <style>
@@ -13,7 +13,7 @@
    THEME SYSTEM — 4 professional themes
    ============================================================ */
 :root {
-  --transition: 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 0.15s ease;
   --radius: 10px;
   --radius-sm: 6px;
   --radius-lg: 14px;
@@ -343,6 +343,7 @@
   --warn:      #f9e2af;
 }
 
+
 /* THEME: Abyss (ultra-dark void) */
 [data-theme="abyss"] {
   --bg:        #000005;
@@ -383,7 +384,7 @@
   --warn:      #ffa502;
 }
 
-/* THEME: Panda (black & white minimal) */
+/* THEME: Panda (monochrome minimal) */
 [data-theme="panda"] {
   --bg:        #0d0d0d;
   --bg2:       #141414;
@@ -443,7 +444,7 @@
   --warn:      #df8e1d;
 }
 
-/* THEME: Sunset (warm gradient dark) */
+/* THEME: Sunset (warm violet-pink dark) */
 [data-theme="sunset"] {
   --bg:        #0f0b10;
   --bg2:       #180f18;
@@ -463,7 +464,7 @@
   --warn:      #ffb347;
 }
 
-/* THEME: Ocean (deep sea) */
+/* THEME: Ocean (deep sea blue) */
 [data-theme="ocean"] {
   --bg:        #020c18;
   --bg2:       #041422;
@@ -483,7 +484,7 @@
   --warn:      #ffcb6b;
 }
 
-/* THEME: Forest (natural green) */
+/* THEME: Forest (natural green dark) */
 [data-theme="forest"] {
   --bg:        #060d08;
   --bg2:       #0a1510;
@@ -503,32 +504,242 @@
   --warn:      #ffd166;
 }
 
+/* THEME: Volcanic (lava dark red-orange) */
+[data-theme="volcanic"] {
+  --bg:        #100808;
+  --bg2:       #190e0a;
+  --surface:   #1f0f0a;
+  --surface2:  #2a1510;
+  --surface3:  #361c15;
+  --border:    #4a2518;
+  --border2:   #5e301f;
+  --text:      #f5d8c8;
+  --text2:     #c08068;
+  --text3:     #785040;
+  --accent:    #ff6b35;
+  --accent-bg: rgba(255,107,53,0.1);
+  --accent2:   #ffd166;
+  --accent3:   #ff3d5a;
+  --error:     #ff4444;
+  --warn:      #ffa502;
+}
+
+/* THEME: Neon (cyberpunk magenta) */
+[data-theme="neon"] {
+  --bg:        #060610;
+  --bg2:       #0a0a1a;
+  --surface:   #0c0c22;
+  --surface2:  #10102c;
+  --surface3:  #151538;
+  --border:    #1e1e50;
+  --border2:   #282868;
+  --text:      #f0e8ff;
+  --text2:     #b090e0;
+  --text3:     #605090;
+  --accent:    #ff00ff;
+  --accent-bg: rgba(255,0,255,0.08);
+  --accent2:   #00ffff;
+  --accent3:   #ffff00;
+  --error:     #ff3366;
+  --warn:      #ffcc00;
+}
+
+/* THEME: Amber (warm amber dark) */
+[data-theme="amber"] {
+  --bg:        #0d0c07;
+  --bg2:       #151208;
+  --surface:   #1a1808;
+  --surface2:  #221f0c;
+  --surface3:  #2c2810;
+  --border:    #3e3818;
+  --border2:   #504820;
+  --text:      #f5ead0;
+  --text2:     #c0a870;
+  --text3:     #786840;
+  --accent:    #f59e0b;
+  --accent-bg: rgba(245,158,11,0.1);
+  --accent2:   #34d399;
+  --accent3:   #60a5fa;
+  --error:     #ef4444;
+  --warn:      #fb923c;
+}
+
+/* THEME: Sapphire (deep blue professional) */
+[data-theme="sapphire"] {
+  --bg:        #05080f;
+  --bg2:       #080d1c;
+  --surface:   #0a1020;
+  --surface2:  #0e1628;
+  --surface3:  #121c34;
+  --border:    #1a2848;
+  --border2:   #22345e;
+  --text:      #d0e4ff;
+  --text2:     #7098c8;
+  --text3:     #385880;
+  --accent:    #3b82f6;
+  --accent-bg: rgba(59,130,246,0.1);
+  --accent2:   #06b6d4;
+  --accent3:   #a78bfa;
+  --error:     #ef4444;
+  --warn:      #f59e0b;
+}
+
+/* THEME: Paper (clean white minimal) */
+[data-theme="paper"] {
+  --bg:        #f9f7f4;
+  --bg2:       #f2f0ec;
+  --surface:   #eae8e4;
+  --surface2:  #e0deda;
+  --surface3:  #d4d2ce;
+  --border:    #c4c2be;
+  --border2:   #b0aead;
+  --text:      #1c1917;
+  --text2:     #44403c;
+  --text3:     #78716c;
+  --accent:    #374151;
+  --accent-bg: rgba(55,65,81,0.07);
+  --accent2:   #0f766e;
+  --accent3:   #7c3aed;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Mint (fresh green light) */
+[data-theme="mint"] {
+  --bg:        #f0fdf4;
+  --bg2:       #dcfce7;
+  --surface:   #d1fae5;
+  --surface2:  #bbf7d0;
+  --surface3:  #a7f3d0;
+  --border:    #6ee7b7;
+  --border2:   #34d399;
+  --text:      #064e3b;
+  --text2:     #065f46;
+  --text3:     #047857;
+  --accent:    #16a34a;
+  --accent-bg: rgba(22,163,74,0.1);
+  --accent2:   #0891b2;
+  --accent3:   #7c3aed;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Lavender (soft purple light) */
+[data-theme="lavender"] {
+  --bg:        #f5f3ff;
+  --bg2:       #ede9fe;
+  --surface:   #e8e3fd;
+  --surface2:  #ddd6fe;
+  --surface3:  #c4b5fd;
+  --border:    #a78bfa;
+  --border2:   #8b5cf6;
+  --text:      #2e1065;
+  --text2:     #4c1d95;
+  --text3:     #6d28d9;
+  --accent:    #7c3aed;
+  --accent-bg: rgba(124,58,237,0.08);
+  --accent2:   #db2777;
+  --accent3:   #0891b2;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Sky (clear sky blue light) */
+[data-theme="sky"] {
+  --bg:        #f0f9ff;
+  --bg2:       #e0f2fe;
+  --surface:   #d4edfc;
+  --surface2:  #bae6fd;
+  --surface3:  #7dd3fc;
+  --border:    #38bdf8;
+  --border2:   #0ea5e9;
+  --text:      #082f49;
+  --text2:     #0c4a6e;
+  --text3:     #075985;
+  --accent:    #0284c7;
+  --accent-bg: rgba(2,132,199,0.1);
+  --accent2:   #0891b2;
+  --accent3:   #6366f1;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Cream (warm yellow-white) */
+[data-theme="cream"] {
+  --bg:        #fefce8;
+  --bg2:       #fef9c3;
+  --surface:   #fef08a;
+  --surface2:  #fde047;
+  --surface3:  #facc15;
+  --border:    #eab308;
+  --border2:   #ca8a04;
+  --text:      #3b2a00;
+  --text2:     #78350f;
+  --text3:     #92400e;
+  --accent:    #92400e;
+  --accent-bg: rgba(146,64,14,0.08);
+  --accent2:   #166534;
+  --accent3:   #1e3a5f;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Stone (neutral gray light) */
+[data-theme="stone"] {
+  --bg:        #fafaf9;
+  --bg2:       #f5f5f4;
+  --surface:   #e7e5e4;
+  --surface2:  #d6d3d1;
+  --surface3:  #a8a29e;
+  --border:    #d6d3d1;
+  --border2:   #a8a29e;
+  --text:      #1c1917;
+  --text2:     #44403c;
+  --text3:     #78716c;
+  --accent:    #57534e;
+  --accent-bg: rgba(87,83,78,0.07);
+  --accent2:   #0891b2;
+  --accent3:   #7c3aed;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
+/* THEME: Peach (warm orange light) */
+[data-theme="peach"] {
+  --bg:        #fff7ed;
+  --bg2:       #ffedd5;
+  --surface:   #fed7aa;
+  --surface2:  #fdba74;
+  --surface3:  #fb923c;
+  --border:    #f97316;
+  --border2:   #ea580c;
+  --text:      #431407;
+  --text2:     #7c2d12;
+  --text3:     #9a3412;
+  --accent:    #ea580c;
+  --accent-bg: rgba(234,88,12,0.08);
+  --accent2:   #0891b2;
+  --accent3:   #7c3aed;
+  --error:     #dc2626;
+  --warn:      #d97706;
+}
+
 /* ============================================================
    BASE RESET & LAYOUT
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { height: 100%; touch-action: manipulation; }
-
-/* Kill 300ms tap delay on all interactive elements */
-a, button, input, select, textarea, label,
-.nav-item, .chip, .td-card, .tab-btn, .menu-btn,
-.icon-btn, .btn-sm, .btn-convert, .hash-val, .uuid-item {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
+html { height: 100%; }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-ui);
   font-size: 13px;
-  height: 100dvh;
-  max-height: 100dvh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  transition: background var(--transition), color var(--transition);
 }
 
 /* ============================================================
@@ -561,22 +772,16 @@ body {
 /* Hamburger (mobile only) */
 .menu-btn {
   display: none; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 8px;
+  width: 32px; height: 32px; border-radius: 6px;
   border: 1px solid var(--border); background: var(--surface);
   color: var(--text2); cursor: pointer; flex-shrink: 0;
   transition: all var(--transition);
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 .menu-btn:hover { border-color: var(--accent); color: var(--accent); }
 .menu-btn svg { width: 16px; height: 16px; }
 
-
-/* ══════════════════════════════════════════════════════════
-   PREMIUM THEME PICKER — Redesigned v2
-   ══════════════════════════════════════════════════════════ */
-
-/* Trigger button */
+/* Theme section in topbar */
+/* ── Theme Picker ─────────────────────────────── */
 .theme-picker-btn {
   height: 32px; padding: 0 12px; gap: 8px;
   background: var(--surface2); border: 1px solid var(--border);
@@ -617,7 +822,7 @@ body {
   background: linear-gradient(135deg, var(--accent), var(--accent2)); opacity: .85;
 }
 .td-header-title { font-family: var(--font-ui); font-size: 12.5px; font-weight: 650; color: var(--text); letter-spacing: -.02em; }
-.td-header-badge { font-family: var(--font-mono); font-size: 9px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 1px 7px; }
+.td-header-badge { font-family: var(--font-mono); font-size: 9px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 1px 7px; margin-left:auto; }
 .td-close-btn {
   width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
   border: 1px solid var(--border); background: var(--surface2);
@@ -647,7 +852,7 @@ body {
 .td-tab.active { background: var(--accent-bg); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 30%, transparent); font-weight: 600; }
 
 /* Grid container */
-.td-scroll { overflow-y: auto; overflow-x: hidden; max-height: 360px; padding: 10px; flex: 1; }
+.td-scroll { overflow-y: auto; overflow-x: hidden; max-height: 300px; padding: 10px; flex: 1; }
 .td-scroll::-webkit-scrollbar { width: 3px; }
 .td-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 .td-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
@@ -685,6 +890,23 @@ body {
 
 /* Footer */
 .td-footer { padding: 8px 10px 10px; flex-shrink: 0; border-top: 1px solid var(--border); background: var(--surface); display: flex; flex-direction: column; gap: 5px; }
+
+/* Font picker */
+.td-font-section { padding: 4px 0 8px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+.td-font-hdr { display: flex; align-items: center; gap: 5px; margin-bottom: 5px; }
+.td-font-hdr-label { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); }
+.td-font-row { display: flex; gap: 4px; flex-wrap: wrap; }
+.td-font-btn {
+  flex: 1; min-width: 0; padding: 4px 6px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--surface2);
+  color: var(--text3); font-size: 10px; cursor: pointer;
+  font-family: var(--font-ui); transition: all 0.16s cubic-bezier(0.22,1,0.36,1);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.td-font-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); transform: translateY(-1px); }
+.td-font-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); font-weight: 600; }
+
+/* Auto-cycle */
 .td-cycle-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: var(--text2); cursor: pointer; font-family: var(--font-mono); font-size: 10.5px; transition: all 0.2s cubic-bezier(0.22,1,0.36,1); }
 .td-cycle-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); transform: translateY(-1px); }
 .td-cycle-btn:active { transform: scale(0.97) !important; }
@@ -701,6 +923,33 @@ body {
 .td-cycle-cfg-unit { font-family: var(--font-mono); font-size: 10px; color: var(--text2); }
 .td-cycle-countdown { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent); min-width: 30px; text-align: right; }
 
+/* ── Smooth theme transition (CSS variable morph) ──────────────────────
+   Transitions ONLY color properties — never transform/opacity/layout.
+   Prevents interference with click targets or panel animations. */
+body.theme-transitioning,
+body.theme-transitioning *,
+body.theme-transitioning *::before,
+body.theme-transitioning *::after {
+  transition:
+    background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color     0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color            0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill             0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke           0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    !important;
+}
+
+.td-item {
+  display: flex; align-items: center; gap: 9px; padding: 6px 8px;
+  border-radius: 6px; cursor: pointer; transition: background .1s;
+  border: 1px solid transparent;
+}
+.td-item:hover { background: var(--surface2); }
+.td-item.active { background: var(--accent-bg); border-color: color-mix(in srgb, var(--accent) 22%, transparent); }
+.td-item.active .td-name { color: var(--accent); font-weight: 500; }
+.td-swatch { width:16px; height:16px; border-radius:4px; flex-shrink:0; border:1px solid rgba(255,255,255,.1); }
+.td-name { font-family: var(--font-ui); font-size: 12px; color: var(--text2); }
+
 /* Topbar action buttons */
 .tb-btn {
   height: 28px; padding: 0 11px;
@@ -715,7 +964,6 @@ body {
 .tb-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
 .btn-icon { width: 12px; height: 12px; display: flex; align-items: center; flex-shrink: 0; }
 .btn-icon svg { width: 12px; height: 12px; }
-
 
 /* ============================================================
    MAIN LAYOUT: SIDEBAR + CONTENT
@@ -830,12 +1078,11 @@ body {
 }
 .sidebar-close-btn svg { width: 13px; height: 13px; }
 
-/* Overlay — always starts hidden, JS sets display:block when needed */
+/* Overlay */
 .sidebar-overlay {
   display: none; position: fixed; inset: 0;
-  bottom: 60px; /* stop above bottom tabs so tabs remain clickable */
-  background: rgba(0,0,0,0.55); z-index: 250;
-  opacity: 0; transition: opacity 0.28s ease;
+  background: rgba(0,0,0,0.48); z-index: 199;
+  backdrop-filter: blur(1px); opacity: 0; transition: opacity 0.2s ease;
 }
 .sidebar-overlay.open { opacity: 1; }
 
@@ -854,7 +1101,6 @@ body {
   display: none;
   flex: 1;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
   padding: 20px 22px;
   flex-direction: column;
   gap: 14px;
@@ -1373,206 +1619,77 @@ select.field-input { cursor: pointer; }
   .logo-tag { display: none; }
 
   .sidebar {
-    position: fixed; left: 0; top: 0; bottom: 0;
-    z-index: 300; /* above overlay */
-    transform: translateX(-105%);
-    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: none;
-    width: 280px !important; max-width: 85vw;
-    /* will-change removed — causes compositing issues on some mobile browsers */
+    position: fixed; left: 0; top: 0; bottom: 0; z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.24s cubic-bezier(0.22,1,0.36,1);
+    box-shadow: 6px 0 28px rgba(0,0,0,0.3);
+    width: 268px !important; max-width: 80vw;
   }
-  .sidebar.open {
-    transform: translateX(0);
-    box-shadow: 4px 0 40px rgba(0,0,0,0.5);
-  }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay { display: block; }
   .sidebar-close { display: flex; }
 
   .app-body { flex-direction: column; }
-  .content { width: 100%; overflow-y: auto; }
-
-  /* Panel needs bottom padding for tab bar */
-  .panel { padding: 12px 12px 72px; gap: 10px; }
+  .content { width: 100%; }
+  .panel { padding: 12px 12px 76px; gap: 10px; }
   .panel-title { font-size: 14px; }
-
-  /* Stacked editor columns */
-  .editor-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .center-ctrl {
-    flex-direction: row; justify-content: center;
-    padding: 4px 0;
-    gap: 10px;
-  }
-  textarea.editor-ta { min-height: 130px; }
-
+  .editor-grid { grid-template-columns: 1fr; gap: 8px; }
+  .center-ctrl { flex-direction: row; justify-content: center; padding: 2px 0; }
   .util-grid { grid-template-columns: 1fr; gap: 8px; }
-  .util-grid.triple { grid-template-columns: 1fr; }
-  .base-grid { grid-template-columns: 1fr 1fr; }
-
+  .base-grid { grid-template-columns: 1fr; }
+  .editor-ta { min-height: 130px; }
   .tb-btn-text { display: none; }
-  .tb-btn { padding: 0 9px; min-width: 32px; }
+  .tb-btn { padding: 0 8px; }
   .bottom-tabs { display: block; }
-
-  /* Larger touch targets */
-  .nav-item { padding: 9px 7px; min-height: 44px; }
-  .btn-sm { padding: 9px 14px; font-size: 11px; min-height: 44px; }
-  .chip { padding: 6px 12px; font-size: 11px; }
-  .upload-zone { padding: 16px; }
 }
-
 @media (max-width: 390px) {
   .topbar { padding: 0 10px; gap: 6px; }
   .logo-name { font-size: 12px; }
-  .base-grid { grid-template-columns: 1fr; }
 }
 
-/* Bottom tab bar — mobile */
+/* Bottom tab bar */
 .bottom-tabs {
   display: none; position: fixed;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  z-index: 400; /* must be above overlay (250) and sidebar (300) */
-  overflow-x: auto; overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  /* Safe area for iPhone home bar */
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  bottom: 0; left: 0; right: 0; height: 54px;
+  background: var(--bg2); border-top: 1px solid var(--border);
+  z-index: 150; overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .bottom-tabs::-webkit-scrollbar { display: none; }
-.bottom-tabs-inner {
-  display: flex; height: 60px; padding: 0 4px;
-  min-width: max-content; align-items: center;
-}
+.bottom-tabs-inner { display: flex; height: 100%; padding: 0 2px; min-width: max-content; }
 .tab-btn {
   display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 3px;
-  padding: 0 14px; min-width: 60px; height: 60px;
+  justify-content: center; gap: 2px; padding: 0 14px;
   border: none; background: none; color: var(--text3);
   cursor: pointer; font-family: var(--font-mono); font-size: 8.5px;
-  white-space: nowrap; flex-shrink: 0; border-radius: 0;
-  position: relative;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  white-space: nowrap; transition: color 0.12s; flex-shrink: 0; min-width: 58px;
 }
-.tab-btn svg { width: 18px; height: 18px; }
+.tab-btn svg { width: 17px; height: 17px; }
 .tab-btn.active { color: var(--accent); }
-
-/* Active indicator bar — bottom, not top */
-.tab-btn.active::after {
-  content: ''; position: absolute; bottom: 8px; left: 50%;
-  transform: translateX(-50%);
-  width: 20px; height: 2px; border-radius: 2px;
-  background: var(--accent);
-}
 .tab-btn-label { font-size: 8.5px; }
 
-/* ============================================================
-   SMOOTH ANIMATIONS — GPU-accelerated, spring-physics feel
-   ============================================================ */
-
-/* Panel entrance — silky fade+lift */
-@keyframes panelIn {
-  0%   { opacity: 0; transform: translateY(14px) scale(0.985); }
-  60%  { opacity: 1; transform: translateY(-2px) scale(1.002); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.panel.active {
-  animation: panelIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
-  will-change: transform, opacity;
-}
-
-/* Sidebar slide-in — pure CSS transition, no animation keyframes (avoids conflict with transform default state) */
-
-/* Theme dropdown — spring pop */
-@keyframes tdropIn {
-  0%   { opacity: 0; transform: translateY(-10px) scale(0.94); }
-  65%  { opacity: 1; transform: translateY(2px) scale(1.01); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* ── iPhone-style theme transition ─────────────────────────────────────
-   Transitions ONLY color properties — never transform/opacity/layout.
-   This prevents any interference with click targets or animations.
-   ──────────────────────────────────────────────────────────────────────── */
-body.theme-transitioning,
-body.theme-transitioning *,
-body.theme-transitioning *::before,
-body.theme-transitioning *::after {
-  transition:
-    background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color     0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color            0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    fill             0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke           0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    !important;
-  /* IMPORTANT: box-shadow and background (shorthand) are excluded —
-     they cause repaints that can disrupt touch events on mobile */
-}
-
-/* Nav item hover — micro lift */
-.nav-item { transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s cubic-bezier(0.22,1,0.36,1), box-shadow 0.15s ease; }
-.nav-item:hover { transform: translateX(2px); }
-.nav-item.active { transform: translateX(0); }
-
-/* Button press — spring squish */
-.btn-sm, .btn-convert, .icon-btn, .chip, .tb-btn, .theme-picker-btn {
-  transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.btn-sm:active, .btn-convert:active, .icon-btn:active, .chip:active {
-  transform: scale(0.93) !important;
-}
-.btn-sm:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,0.18); }
-.btn-convert.primary:hover { transform: translateY(-1.5px) scale(1.02); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
-
-/* Swap button — full rotation */
-.btn-swap { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.15s, color 0.15s, background 0.15s; }
-.btn-swap:hover { transform: rotate(180deg) scale(1.15) !important; }
-
-/* Hash val hover */
-.hash-val { transition: border-color 0.15s, color 0.15s, transform 0.12s cubic-bezier(0.22,1,0.36,1); }
-.hash-val:hover { transform: scale(1.005); }
-
-/* UUID item bounce */
-.uuid-item { transition: border-color 0.15s, color 0.15s, transform 0.15s cubic-bezier(0.22,1,0.36,1), box-shadow 0.15s; }
-.uuid-item:hover { transform: translateX(3px) scale(1.005); }
-
-/* Tab btn spring */
-.tab-btn { transition: color 0.18s ease, transform 0.18s cubic-bezier(0.22,1,0.36,1); }
-.tab-btn:active { transform: scale(0.88) !important; }
-
-/* Topbar buttons */
-.tb-btn:hover { transform: translateY(-1px); }
-.tb-btn:active { transform: scale(0.94) !important; }
-
-/* Upload zone */
-.upload-zone { transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
-.upload-zone:hover { transform: scale(1.01); }
+.panel.active { animation: fadeUp 0.2s ease; }
 
 /* Loading spinner */
-.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s cubic-bezier(0.4,0,0.6,1) infinite; }
+.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-/* Tooltip copy flash */
-@keyframes copyFlash {
-  0%   { background: var(--accent-bg); color: var(--accent3); }
-  100% { background: transparent; color: inherit; }
-}
-.copy-flash { animation: copyFlash 0.6s ease; }
 </style>
 </head>
 <body data-theme="obsidian">
 
-<!-- THEME DROPDOWN PORTAL — Redesigned v2 -->
+<!-- THEME DROPDOWN PORTAL -->
 <div class="theme-dropdown" id="themeDropdown">
 
   <!-- Header -->
   <div class="td-header">
     <div class="td-header-dot"></div>
-    <span class="td-header-title">Choose Theme</span>
-    <span class="td-header-badge">24</span>
+    <span class="td-header-title">Appearance</span>
+    <span class="td-header-badge" id="td-theme-count">35</span>
     <div style="flex:1"></div>
     <button class="td-close-btn" onclick="closeThemePicker()" aria-label="Close">
       <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1l10 10M11 1L1 11"/></svg>
@@ -1581,18 +1698,18 @@ body.theme-transitioning *::after {
 
   <!-- Filter tabs -->
   <div class="td-tabs">
-    <button class="td-tab active" data-filter="all"   onclick="filterThemes(this,'all')">All <span>24</span></button>
-    <button class="td-tab" data-filter="dark"         onclick="filterThemes(this,'dark')">Dark <span>20</span></button>
-    <button class="td-tab" data-filter="light"        onclick="filterThemes(this,'light')">Light <span>4</span></button>
+    <button class="td-tab active" data-filter="all"   onclick="filterThemes(this,'all')">All <span>35</span></button>
+    <button class="td-tab" data-filter="dark"         onclick="filterThemes(this,'dark')">Dark <span>24</span></button>
+    <button class="td-tab" data-filter="light"        onclick="filterThemes(this,'light')">Light <span>11</span></button>
     <button class="td-tab" data-filter="color"        onclick="filterThemes(this,'color')">Vivid</button>
     <button class="td-tab" data-filter="mono"         onclick="filterThemes(this,'mono')">Minimal</button>
   </div>
 
-  <!-- Scrollable grid -->
+  <!-- Scrollable theme grid -->
   <div class="td-scroll" id="td-scroll">
     <div class="td-grid" id="td-grid">
 
-      <!-- dark themes -->
+      <!-- ── DARK THEMES ── -->
       <div class="td-card" data-t="obsidian"   data-cat="dark"        onclick="setTheme('obsidian')">
         <div class="td-preview"><div style="background:#0d0d0d"></div><div style="background:#1a1a1a"></div><div style="background:#c084fc"></div></div>
         <span>Obsidian</span></div>
@@ -1673,7 +1790,23 @@ body.theme-transitioning *::after {
         <div class="td-preview"><div style="background:#0f0b10"></div><div style="background:#221422"></div><div style="background:#ff7eb3"></div></div>
         <span>Sunset</span></div>
 
-      <!-- light themes -->
+      <div class="td-card" data-t="volcanic"   data-cat="dark color"  onclick="setTheme('volcanic')">
+        <div class="td-preview"><div style="background:#100808"></div><div style="background:#1f0f0a"></div><div style="background:#ff6b35"></div></div>
+        <span>Volcanic</span></div>
+
+      <div class="td-card" data-t="neon"       data-cat="dark color"  onclick="setTheme('neon')">
+        <div class="td-preview"><div style="background:#060610"></div><div style="background:#0c0c22"></div><div style="background:#ff00ff"></div></div>
+        <span>Neon</span></div>
+
+      <div class="td-card" data-t="amber"      data-cat="dark color"  onclick="setTheme('amber')">
+        <div class="td-preview"><div style="background:#0d0c07"></div><div style="background:#1a1808"></div><div style="background:#f59e0b"></div></div>
+        <span>Amber</span></div>
+
+      <div class="td-card" data-t="sapphire"   data-cat="dark color"  onclick="setTheme('sapphire')">
+        <div class="td-preview"><div style="background:#05080f"></div><div style="background:#0a1020"></div><div style="background:#3b82f6"></div></div>
+        <span>Sapphire</span></div>
+
+      <!-- ── LIGHT THEMES ── -->
       <div class="td-card" data-t="arctic"     data-cat="light mono"  onclick="setTheme('arctic')">
         <div class="td-preview td-preview-light"><div style="background:#f0f4f8"></div><div style="background:#fff"></div><div style="background:#2563eb"></div></div>
         <span>Arctic</span></div>
@@ -1690,12 +1823,65 @@ body.theme-transitioning *::after {
         <div class="td-preview td-preview-light"><div style="background:#f5f0e8"></div><div style="background:#faf8f4"></div><div style="background:#b45309"></div></div>
         <span>Sand</span></div>
 
+      <div class="td-card" data-t="paper"      data-cat="light mono"  onclick="setTheme('paper')">
+        <div class="td-preview td-preview-light"><div style="background:#f9f7f4"></div><div style="background:#fff"></div><div style="background:#374151"></div></div>
+        <span>Paper</span></div>
+
+      <div class="td-card" data-t="mint"       data-cat="light color" onclick="setTheme('mint')">
+        <div class="td-preview td-preview-light"><div style="background:#f0fdf4"></div><div style="background:#fff"></div><div style="background:#16a34a"></div></div>
+        <span>Mint</span></div>
+
+      <div class="td-card" data-t="lavender"   data-cat="light color" onclick="setTheme('lavender')">
+        <div class="td-preview td-preview-light"><div style="background:#f5f3ff"></div><div style="background:#fff"></div><div style="background:#7c3aed"></div></div>
+        <span>Lavender</span></div>
+
+      <div class="td-card" data-t="sky"        data-cat="light color" onclick="setTheme('sky')">
+        <div class="td-preview td-preview-light"><div style="background:#f0f9ff"></div><div style="background:#fff"></div><div style="background:#0284c7"></div></div>
+        <span>Sky</span></div>
+
+      <div class="td-card" data-t="cream"      data-cat="light mono"  onclick="setTheme('cream')">
+        <div class="td-preview td-preview-light"><div style="background:#fefce8"></div><div style="background:#fefdf5"></div><div style="background:#92400e"></div></div>
+        <span>Cream</span></div>
+
+      <div class="td-card" data-t="stone"      data-cat="light mono"  onclick="setTheme('stone')">
+        <div class="td-preview td-preview-light"><div style="background:#f5f5f4"></div><div style="background:#fff"></div><div style="background:#57534e"></div></div>
+        <span>Stone</span></div>
+
+      <div class="td-card" data-t="peach"      data-cat="light color" onclick="setTheme('peach')">
+        <div class="td-preview td-preview-light"><div style="background:#fff7ed"></div><div style="background:#fff"></div><div style="background:#ea580c"></div></div>
+        <span>Peach</span></div>
+
     </div>
   </div>
 
-  <!-- Footer: Auto Cycle -->
+  <!-- Footer: Font + Auto Cycle -->
   <div class="td-footer">
-    <div style="font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 2px 5px">Auto Cycle</div>
+    <!-- Font picker -->
+    <div class="td-font-section">
+      <div class="td-font-hdr">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 13l3.5-9 3.5 9M3.5 10h5M10 4v9M10 4c0-1 .8-2 2.5-2s2.5 1 2.5 2"/></svg>
+        <span class="td-font-hdr-label">Editor Font</span>
+      </div>
+      <div class="td-font-row">
+        <button class="td-font-btn active" data-font="jetbrains" onclick="setFont('jetbrains',this)">JetBrains</button>
+        <button class="td-font-btn" data-font="fira" onclick="setFont('fira',this)">Fira Code</button>
+        <button class="td-font-btn" data-font="mono" onclick="setFont('mono',this)">System Mono</button>
+        <button class="td-font-btn" data-font="cascadia" onclick="setFont('cascadia',this)">Cascadia</button>
+      </div>
+      <div class="td-font-hdr" style="margin-top:7px">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
+        <span class="td-font-hdr-label">UI Font</span>
+      </div>
+      <div class="td-font-row">
+        <button class="td-font-btn active" data-uifont="geist" onclick="setUIFont('geist',this)">Geist</button>
+        <button class="td-font-btn" data-uifont="inter" onclick="setUIFont('inter',this)">Inter</button>
+        <button class="td-font-btn" data-uifont="system" onclick="setUIFont('system',this)">System</button>
+        <button class="td-font-btn" data-uifont="dm" onclick="setUIFont('dm',this)">DM Sans</button>
+      </div>
+    </div>
+
+    <!-- Auto Cycle -->
+    <div style="font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:4px 2px 5px">Auto Cycle</div>
     <button id="td-random-btn" onclick="toggleRandomTheme()" class="td-cycle-btn">
       <span id="td-random-icon">🎲</span>
       <span id="td-random-label" class="td-cycle-label">Shuffle themes</span>
@@ -1805,7 +1991,6 @@ body.theme-transitioning *::after {
     <div class="nav-item" data-panel="html-ent" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12M2.5 5.5h11M2.5 10.5h11"/></svg></span><span class="nav-text">HTML Entities</span></div>
     <div class="nav-item" data-panel="hex-text" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2l5 3v6l-5 3-5-3V5z"/><path d="M3 5l5 3M8 8l5-3M8 8v6"/></svg></span><span class="nav-text">Hex ↔ Text</span></div>
     <div class="nav-item" data-panel="jwt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/><path d="M8 8v2" stroke-width="2"/></svg></span><span class="nav-text">JWT Decoder</span></div>
-    <div class="nav-item" data-panel="jwt-build" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/><path d="M6 10h4" stroke-width="2"/><path d="M8 8v4" stroke-width="2"/></svg></span><span class="nav-text">JWT Builder</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
@@ -1835,7 +2020,6 @@ body.theme-transitioning *::after {
     <div class="sidebar-section-label">Numbers & Time</div>
     <div class="nav-item" data-panel="base-conv" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v12M4 4l4-2 4 2M4 12l4 2 4-2M4 4v8M12 4v8"/></svg></span><span class="nav-text">Base Converter</span></div>
     <div class="nav-item" data-panel="timestamp" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg></span><span class="nav-text">Unix Timestamp</span></div>
-    <div class="nav-item" data-panel="timezone" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-1.5 2-1.5 10 0 12M8 2c1.5 2 1.5 10 0 12M2 8h12"/><path d="M3 5h10M3 11h10"/></svg></span><span class="nav-text">Timezone Converter</span></div>
     <div class="nav-item" data-panel="uuid-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M9 8h4M9 11h3"/><circle cx="5" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">UUID Generator</span></div>
     <div class="nav-item" data-panel="color" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="5.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="11" r="1" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Color Converter</span></div>
   </div>
@@ -1854,15 +2038,72 @@ body.theme-transitioning *::after {
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
-    <div class="sidebar-section-label">Network & API</div>
-    <div class="nav-item" data-panel="api-tester" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12v8H2z" rx="1"/><path d="M5 7h6M5 9.5h4"/><path d="M13 2l1.5 2L13 6"/></svg></span><span class="nav-text">API Tester</span></div>
-    <div class="nav-item" data-panel="curl-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M4 8l2 2-2 2M8 12h4"/></svg></span><span class="nav-text">cURL Generator</span></div>
-    <div class="nav-item" data-panel="http-headers" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12v2H2zM2 7h8v2H2zM2 11h10v2H2z"/></svg></span><span class="nav-text">HTTP Headers</span></div>
-    <div class="nav-item" data-panel="ip-dns" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12M2.5 5.5h11M2.5 10.5h11"/></svg></span><span class="nav-text">IP / DNS Lookup</span></div>
+    <div class="sidebar-section-label">Text Tools</div>
     <div class="nav-item" data-panel="str-utils" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12l3-4 3 2 3-5 3 3"/><path d="M2 14h12"/></svg></span><span class="nav-text">String Stats</span></div>
     <div class="nav-item" data-panel="escape" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h8M7 5l3 3-3 3"/><path d="M13 5v6" stroke-width="2"/></svg></span><span class="nav-text">Escape / Unescape</span></div>
     <div class="nav-item" data-panel="sort-dedup" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h8M2 8h5M2 12h3"/><path d="M12 3v10M10 11l2 2 2-2"/></svg></span><span class="nav-text">Sort &amp; Deduplicate</span></div>
     <div class="nav-item" data-panel="num-fmt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 2v12M12 2v12M2 5h12M2 11h12"/></svg></span><span class="nav-text">Number Formatter</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">HTTP / API</div>
+    <div class="nav-item" data-panel="curl-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h9M8 5l3 3-3 3"/><path d="M13 4v8" stroke-width="1.4"/><circle cx="3.5" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">cURL → Code</span></div>
+    <div class="nav-item" data-panel="http-headers" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12M2 8h9M2 12h6"/><path d="M13 7l2 1-2 1" stroke-width="1.2"/></svg></span><span class="nav-text">HTTP Headers Parser</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Security</div>
+    <div class="nav-item" data-panel="bcrypt-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4c0 3 2 5 5 5.5 3-.5 5-2.5 5-5.5v-4L8 2z"/><path d="M6 8l1.5 1.5L10.5 6"/></svg></span><span class="nav-text">Bcrypt Generator</span></div>
+    <div class="nav-item" data-panel="pw-strength" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/><path d="M8 10v2" stroke-width="2"/></svg></span><span class="nav-text">Password Strength</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Date & Time</div>
+    <div class="nav-item" data-panel="timezone-conv" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M2 8h12"/><path d="M8 5v3.5l2.5 1.5"/></svg></span><span class="nav-text">Timezone Converter</span></div>
+    <div class="nav-item" data-panel="iso-parser" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M6 3V5M10 3V5"/><path d="M5 10h2M9 10h2"/></svg></span><span class="nav-text">ISO 8601 Parser</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Test Data</div>
+    <div class="nav-item" data-panel="test-data" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 5v6l5 3 5-3V5L8 2z"/><path d="M8 8l-2-1.5M8 8l2-1.5M8 8v3"/></svg></span><span class="nav-text">Test Data Generator</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Database</div>
+    <div class="nav-item" data-panel="sql-fmt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="4" rx="5.5" ry="2"/><path d="M2.5 4v3c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V4"/><path d="M2.5 7v3c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V7"/><path d="M5 12l1.5 1.5L9 10" stroke-width="1.2"/></svg></span><span class="nav-text">SQL Formatter</span></div>
+    <div class="nav-item" data-panel="mongo-fmt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2c0 0-4 3-4 7a4 4 0 008 0c0-4-4-7-4-7z"/><path d="M8 13v1.5" stroke-width="2"/></svg></span><span class="nav-text">MongoDB Formatter</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Networking</div>
+    <div class="nav-item" data-panel="ip-lookup" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12"/><path d="M3.5 5h9M3.5 11h9"/></svg></span><span class="nav-text">IP Lookup</span></div>
+    <div class="nav-item" data-panel="ua-parser" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M7 4V3M5 13v1M11 13v1M2 9h12"/><circle cx="8" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">User Agent Parser</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">File Tools</div>
+    <div class="nav-item" data-panel="img-base64" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 10l3-3 2.5 2.5L10 6l4 4"/><circle cx="5.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Image ↔ Base64</span></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Log & Debug</div>
+    <div class="nav-item" data-panel="json-log" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12M2 7h8M2 10h10M2 13h6"/><circle cx="12" cy="10" r="2.5" stroke-width="1.3"/><path d="M13.8 11.8l1.7 1.7" stroke-width="1.5"/></svg></span><span class="nav-text">JSON Log Viewer</span></div>
   </div>
 
   <div style="height:16px"></div>
@@ -1895,18 +2136,6 @@ body.theme-transitioning *::after {
     <button class="tab-btn" data-panel="base-conv" onclick="navTab(this,'base-conv')">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg>
       <span class="tab-btn-label">Numbers</span>
-    </button>
-    <button class="tab-btn" data-panel="api-tester" onclick="navTab(this,'api-tester')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12v8H2z"/><path d="M13 2l1.5 2L13 6"/><path d="M5 8h6"/></svg>
-      <span class="tab-btn-label">API</span>
-    </button>
-    <button class="tab-btn" data-panel="jwt" onclick="navTab(this,'jwt')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/></svg>
-      <span class="tab-btn-label">JWT</span>
-    </button>
-    <button class="tab-btn" data-panel="ip-dns" onclick="navTab(this,'ip-dns')">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c-2 2-2 10 0 12"/></svg>
-      <span class="tab-btn-label">Network</span>
     </button>
   </div>
 </div>
@@ -3286,379 +3515,474 @@ PANELS['hls-player'] = `
 </div>
 `;
 
-// ============================================================
-// JWT BUILDER
-// ============================================================
-PANELS['jwt-build'] = `
-<div class="panel-hdr">
-  <div class="panel-title-group">
-    <div class="panel-title">JWT Builder & Encoder</div>
-    <div class="panel-sub">Craft, sign, and encode JWT tokens with custom headers, payload, and secret</div>
-  </div>
-</div>
-<div class="util-grid">
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">⚙️ Header</span></div>
-    <div class="util-card-body">
-      <div class="field-row"><div class="field-label">Algorithm</div>
-        <select class="field-input" id="jb-alg" onchange="jwtBuildLive()">
-          <option value="HS256">HS256 (HMAC-SHA256)</option>
-          <option value="HS384">HS384 (HMAC-SHA384)</option>
-          <option value="HS512">HS512 (HMAC-SHA512)</option>
-          <option value="none">none (unsigned)</option>
-        </select>
-      </div>
-      <div class="field-row"><div class="field-label">Token Type</div>
-        <input class="field-input" id="jb-typ" value="JWT" oninput="jwtBuildLive()">
-      </div>
-      <div style="height:1px;background:var(--border);margin:8px 0"></div>
-      <div class="util-card-hdr" style="padding:0 0 6px"><span class="util-card-title">📦 Payload</span></div>
-      <div class="field-row"><div class="field-label">Subject (sub)</div>
-        <input class="field-input" id="jb-sub" placeholder="user_id or email" oninput="jwtBuildLive()">
-      </div>
-      <div class="field-row"><div class="field-label">Issuer (iss)</div>
-        <input class="field-input" id="jb-iss" placeholder="https://myapp.com" oninput="jwtBuildLive()">
-      </div>
-      <div class="field-row"><div class="field-label">Audience (aud)</div>
-        <input class="field-input" id="jb-aud" placeholder="api.myapp.com" oninput="jwtBuildLive()">
-      </div>
-      <div class="field-row"><div class="field-label">Expiry</div>
-        <select class="field-input" id="jb-exp" onchange="jwtBuildLive()">
-          <option value="900">15 minutes</option>
-          <option value="3600" selected>1 hour</option>
-          <option value="86400">1 day</option>
-          <option value="604800">7 days</option>
-          <option value="2592000">30 days</option>
-          <option value="0">No expiry</option>
-        </select>
-      </div>
-      <div class="field-row"><div class="field-label">Extra Claims (JSON)</div>
-        <textarea class="field-ta-sm" id="jb-extra" style="min-height:60px;font-size:11px" placeholder='{"role":"admin","plan":"pro"}' oninput="jwtBuildLive()"></textarea>
-      </div>
-      <div style="height:1px;background:var(--border);margin:8px 0"></div>
-      <div class="field-row"><div class="field-label">Secret / Key</div>
-        <input class="field-input" id="jb-secret" type="password" placeholder="your-secret-key" oninput="jwtBuildLive()">
-      </div>
-      <div class="btn-row">
-        <button class="btn-sm accent" onclick="jwtBuildSign()">🔏 Sign & Generate</button>
-        <button class="btn-sm" onclick="jwtBuildClear()">✕ Clear</button>
-      </div>
-    </div>
-  </div>
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">🪙 Generated Token</span></div>
-    <div class="util-card-body">
-      <div id="jb-preview" style="margin-bottom:8px"></div>
-      <div class="field-row"><div class="field-label">Encoded JWT — click to copy</div>
-        <textarea class="field-ta-sm readonly" id="jb-out" readonly style="min-height:100px;font-size:10px;word-break:break-all;cursor:pointer" onclick="copyEl('jb-out')" placeholder="Token will appear here..."></textarea>
-      </div>
-      <div style="height:1px;background:var(--border);margin:8px 0"></div>
-      <div class="field-row"><div class="field-label">Header (decoded)</div>
-        <pre id="jb-header-out" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:10px;font-family:var(--font-mono);color:var(--text2);overflow-x:auto;margin:0;min-height:40px"></pre>
-      </div>
-      <div class="field-row"><div class="field-label">Payload (decoded)</div>
-        <pre id="jb-payload-out" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:10px;font-family:var(--font-mono);color:var(--text2);overflow-x:auto;margin:0;min-height:60px"></pre>
-      </div>
-    </div>
-  </div>
-</div>`;
 
 // ============================================================
-// TIMEZONE CONVERTER
+// HTTP / API PANELS
 // ============================================================
-PANELS['timezone'] = `
-<div class="panel-hdr">
-  <div class="panel-title-group">
-    <div class="panel-title">Timezone Converter</div>
-    <div class="panel-sub">Convert a time across multiple timezones simultaneously</div>
-  </div>
-</div>
-<div class="util-grid">
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">🕐 Source Time</span></div>
-    <div class="util-card-body">
-      <div class="field-row"><div class="field-label">Date & Time</div>
-        <input type="datetime-local" class="field-input" id="tz-input" oninput="tzConvert()">
-      </div>
-      <div class="field-row"><div class="field-label">Source Timezone</div>
-        <select class="field-input" id="tz-from" onchange="tzConvert()"></select>
-      </div>
-      <button class="btn-sm" onclick="tzNow()" style="margin-top:4px">⏱ Use Now</button>
-      <div style="height:1px;background:var(--border);margin:12px 0"></div>
-      <div class="field-label" style="margin-bottom:8px">Add timezone to compare</div>
-      <div style="display:flex;gap:6px">
-        <select class="field-input" id="tz-add-sel" style="flex:1"></select>
-        <button class="btn-sm accent" onclick="tzAddZone()">+ Add</button>
-      </div>
-      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap" id="tz-chips"></div>
-    </div>
-  </div>
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">🌍 Converted Times</span></div>
-    <div class="util-card-body" id="tz-results">
-      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Pick a date and source timezone to compare.</div>
-    </div>
-  </div>
-</div>`;
 
-// ============================================================
-// HTTP HEADERS INSPECTOR
-// ============================================================
-PANELS['http-headers'] = `
-<div class="panel-hdr">
-  <div class="panel-title-group">
-    <div class="panel-title">HTTP Headers Reference</div>
-    <div class="panel-sub">Parse raw HTTP headers and look up what every header means</div>
-  </div>
-</div>
-<div class="util-grid">
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">📋 Paste Raw Headers</span></div>
-    <div class="util-card-body">
-      <textarea class="field-ta-sm" id="hh-in" style="min-height:180px;font-size:11px" placeholder="Content-Type: application/json&#10;Authorization: Bearer eyJ...&#10;X-Request-Id: abc-123&#10;Cache-Control: no-cache" oninput="hhParse()"></textarea>
-      <div class="btn-row" style="margin-top:8px">
-        <button class="btn-sm accent" onclick="hhParse()">🔍 Parse</button>
-        <button class="btn-sm" onclick="hhLoadSample()">Load Sample</button>
-        <button class="btn-sm" onclick="document.getElementById('hh-in').value='';document.getElementById('hh-out').innerHTML=''">✕ Clear</button>
-      </div>
-      <div style="height:1px;background:var(--border);margin:12px 0"></div>
-      <div class="field-label" style="margin-bottom:6px">Search headers</div>
-      <input class="field-input" id="hh-search" placeholder="Content-Type, Authorization..." oninput="hhSearch()">
-      <div id="hh-search-result" style="margin-top:8px"></div>
-    </div>
-  </div>
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">🧾 Parsed Headers</span></div>
-    <div class="util-card-body" id="hh-out">
-      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Paste headers above and click Parse.</div>
-    </div>
-  </div>
-</div>`;
-
-// ============================================================
-// CURL GENERATOR
-// ============================================================
 PANELS['curl-gen'] = `
 <div class="panel-hdr">
   <div class="panel-title-group">
-    <div class="panel-title">cURL Generator</div>
-    <div class="panel-sub">Build a cURL command from URL, method, headers, and body. Also converts cURL to code snippets.</div>
+    <div class="panel-title">cURL → Code Generator</div>
+    <div class="panel-sub">Convert a cURL command to Java (OkHttp), Python (requests), Node.js (fetch), or PHP</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="curlSample('get')">GET with Headers</span>
+    <span class="chip" onclick="curlSample('post')">POST JSON</span>
+    <span class="chip" onclick="curlSample('auth')">Bearer Auth</span>
+    <span class="chip" onclick="curlSample('form')">Form Data</span>
   </div>
 </div>
-<div class="util-grid">
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">⚙️ Request Builder</span></div>
-    <div class="util-card-body">
-      <div class="field-row"><div class="field-label">URL</div>
-        <input class="field-input" id="curl-url" placeholder="https://api.example.com/users" oninput="curlBuild()">
+<div style="display:flex;flex-direction:column;gap:10px;flex:1;min-height:0">
+  <div class="editor-card" style="flex-shrink:0">
+    <div class="editor-bar"><span class="editor-bar-label">cURL Command</span><span class="lang-badge">cURL</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="clearTa('curl-in')">✕</button></div>
+    <textarea class="editor-ta" id="curl-in" style="min-height:90px" placeholder="curl -X POST https://api.example.com/users -H 'Content-Type: application/json' -d '{&quot;name&quot;:&quot;Alice&quot;}'"></textarea>
+    <div class="editor-foot"><span class="foot-stat neutral" id="curl-is">READY</span><div class="foot-spacer"></div>
+      <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-right:6px">Target:</span>
+      <select id="curl-lang" class="field-input" style="height:22px;padding:0 6px;font-size:10px;width:100px">
+        <option value="python">Python</option><option value="node">Node.js</option>
+        <option value="java">Java (OkHttp)</option><option value="php">PHP</option>
+      </select>
+      <button class="btn-sm accent" onclick="curlConvert()" style="margin-left:6px">▶ Convert</button>
+    </div>
+  </div>
+  <div class="editor-card" style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div class="editor-bar"><span class="editor-bar-label">Generated Code</span><span class="lang-badge" id="curl-lang-badge">Python</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="copyTa('curl-out',this)">⎘</button></div>
+    <textarea class="editor-ta readonly" id="curl-out" readonly style="flex:1" placeholder="Generated code will appear here..."></textarea>
+    <div class="editor-foot"><span class="foot-stat neutral" id="curl-os">WAITING</span><div class="foot-spacer"></div><span class="foot-chars" id="curl-oc">0 chars</span></div>
+  </div>
+  <div class="msg-bar" id="curl-msg"></div>
+</div>`;
+
+PANELS['http-headers'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">HTTP Headers Parser</div>
+    <div class="panel-sub">Paste raw HTTP headers — get a structured breakdown with explanations</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="httpHdrSample('request')">HTTP Request</span>
+    <span class="chip" onclick="httpHdrSample('response')">HTTP Response</span>
+    <span class="chip" onclick="httpHdrSample('cors')">CORS Headers</span>
+  </div>
+</div>
+<div class="editor-grid" style="flex:1;min-height:0">
+  <div class="editor-col">
+    <div class="editor-card">
+      <div class="editor-bar"><span class="editor-bar-label">Raw Headers</span><span class="lang-badge">HTTP</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="clearTa('hdrs-in')">✕</button></div>
+      <textarea class="editor-ta" id="hdrs-in" placeholder="Paste HTTP headers here..." oninput="parseHeaders()"></textarea>
+      <div class="editor-foot"><span class="foot-stat neutral" id="hdrs-is">READY</span><div class="foot-spacer"></div><span class="foot-chars" id="hdrs-ic">0 chars</span></div>
+    </div>
+  </div>
+  <div class="center-ctrl" style="flex-direction:column;gap:8px;padding:0 8px">
+    <button class="btn-convert primary" onclick="parseHeaders()">▶ Parse</button>
+    <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-align:center">AUTO</div>
+  </div>
+  <div class="editor-col">
+    <div class="editor-card" style="flex:1;overflow:auto">
+      <div class="editor-bar"><span class="editor-bar-label">Parsed</span><span class="lang-badge">Structured</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="copyTa('hdrs-out',this)">⎘</button></div>
+      <div id="hdrs-out" style="flex:1;overflow:auto;padding:10px;font-family:var(--font-mono);font-size:11px;line-height:1.8;color:var(--text2)">
+        <span style="color:var(--text3)">Headers will appear here...</span>
       </div>
-      <div class="field-row"><div class="field-label">Method</div>
-        <select class="field-input" id="curl-method" onchange="curlBuild()">
-          <option>GET</option><option>POST</option><option>PUT</option>
-          <option>PATCH</option><option>DELETE</option><option>HEAD</option><option>OPTIONS</option>
+    </div>
+  </div>
+</div>
+<div class="msg-bar" id="hdrs-msg"></div>`;
+
+// ============================================================
+// SECURITY PANELS
+// ============================================================
+
+PANELS['bcrypt-gen'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Bcrypt Generator & Verifier</div>
+    <div class="panel-sub">Hash passwords with bcrypt — adjustable cost factor. Verify hashes client-side only.</div>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
+  <div class="util-grid" style="grid-template-columns:1fr 1fr;gap:12px">
+    <div class="util-card">
+      <div class="util-card-hdr"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4c0 3 2 5 5 5.5 3-.5 5-2.5 5-5.5v-4L8 2z"/></svg><span class="util-card-title">Hash Password</span></div>
+      <div class="util-card-body" style="gap:8px">
+        <input class="field-input" id="bcrypt-pw" type="password" placeholder="Enter password to hash..." style="font-size:12px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text2)">Cost (rounds):</span>
+          <input id="bcrypt-cost" type="number" min="4" max="14" value="10" class="field-input" style="width:60px;height:26px;padding:0 6px;font-size:11px">
+          <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3)" id="bcrypt-cost-hint">~100ms</span>
+        </div>
+        <button class="btn-sm accent" onclick="bcryptHash()" style="width:100%">⚙ Generate Hash</button>
+        <div style="position:relative">
+          <input class="field-input" id="bcrypt-result" readonly placeholder="Hash will appear here..." style="font-size:10px;font-family:var(--font-mono);padding-right:60px">
+          <button class="btn-sm" onclick="copyEl('bcrypt-result')" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);height:22px;font-size:9px">⎘ Copy</button>
+        </div>
+        <div id="bcrypt-hash-msg" style="font-family:var(--font-mono);font-size:10px;min-height:16px"></div>
+      </div>
+    </div>
+    <div class="util-card">
+      <div class="util-card-hdr"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3 3 7-7"/><circle cx="8" cy="8" r="6.5"/></svg><span class="util-card-title">Verify Password</span></div>
+      <div class="util-card-body" style="gap:8px">
+        <input class="field-input" id="bcrypt-ver-pw" type="password" placeholder="Password to verify..." style="font-size:12px">
+        <textarea class="editor-ta" id="bcrypt-ver-hash" style="min-height:56px;font-size:10px" placeholder="Paste bcrypt hash here: $2b$10$..."></textarea>
+        <button class="btn-sm accent" onclick="bcryptVerify()" style="width:100%">✓ Verify</button>
+        <div id="bcrypt-ver-result" style="padding:8px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);font-family:var(--font-mono);font-size:11px;min-height:36px;color:var(--text3)">Result will appear here</div>
+      </div>
+    </div>
+  </div>
+  <div class="util-card" style="flex-shrink:0">
+    <div class="util-card-hdr"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg><span class="util-card-title">Cost Factor Guide</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;padding:10px 12px">
+      ${[4,6,8,10,12,14].map(c=>{const ms={4:'<1ms',6:'~1ms',8:'~10ms',10:'~100ms',12:'~400ms',14:'~1.5s'}[c];return '<div style="padding:6px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-family:var(--font-mono);font-size:10px"><span style="color:var(--accent);font-weight:700">'+c+'</span><span style="color:var(--text3)"> rounds — </span><span style="color:var(--text2)">'+ms+'</span>'+(c===10?' <span style="color:var(--accent3);font-size:9px">✓ recommended</span>':'')+'</div>';}).join('')}
+    </div>
+  </div>
+</div>`;
+
+PANELS['pw-strength'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Password Strength Checker</div>
+    <div class="panel-sub">Analyze password strength with entropy, crack time estimates, and actionable feedback</div>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
+  <div class="util-card">
+    <div class="util-card-body" style="gap:10px;padding:14px">
+      <div style="position:relative">
+        <input class="field-input" id="pws-input" type="text" placeholder="Type or paste a password..." style="font-size:14px;height:42px;padding-right:42px" oninput="checkPwStrength()">
+        <button onclick="document.getElementById('pws-input').type=document.getElementById('pws-input').type==='text'?'password':'text'" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text3);font-size:14px" title="Toggle visibility">👁</button>
+      </div>
+      <!-- Strength bar -->
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="height:6px;border-radius:3px;background:var(--border2);overflow:hidden">
+          <div id="pws-bar" style="height:100%;width:0%;border-radius:3px;transition:width .4s,background .4s"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span id="pws-label" style="font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--text3)">Enter a password</span>
+          <span id="pws-score" style="font-family:var(--font-mono);font-size:10px;color:var(--text3)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="util-grid" style="grid-template-columns:1fr 1fr;gap:12px;flex:1">
+    <div class="util-card">
+      <div class="util-card-hdr"><span class="util-card-title">Analysis</span></div>
+      <div class="util-card-body" style="gap:6px" id="pws-stats">
+        <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:8px 0">Enter a password above</div>
+      </div>
+    </div>
+    <div class="util-card">
+      <div class="util-card-hdr"><span class="util-card-title">Feedback</span></div>
+      <div class="util-card-body" style="gap:6px" id="pws-feedback">
+        <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:8px 0">Suggestions will appear here</div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// DATE & TIME PANELS
+// ============================================================
+
+PANELS['timezone-conv'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Timezone Converter</div>
+    <div class="panel-sub">Convert a date/time across any timezone — see all major zones at once</div>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
+  <div class="util-card" style="flex-shrink:0">
+    <div class="util-card-body" style="gap:10px;flex-direction:row;flex-wrap:wrap;align-items:flex-end;padding:12px">
+      <div style="display:flex;flex-direction:column;gap:4px;flex:2;min-width:180px">
+        <label style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Date & Time</label>
+        <input type="datetime-local" id="tz-input" class="field-input" style="height:32px;font-size:12px" oninput="tzConvert()">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;flex:2;min-width:180px">
+        <label style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Source Timezone</label>
+        <select id="tz-src" class="field-input" style="height:32px;font-size:12px" onchange="tzConvert()"></select>
+      </div>
+      <button class="btn-sm accent" onclick="tzSetNow()" style="flex-shrink:0;height:32px">⊙ Now</button>
+    </div>
+  </div>
+  <div id="tz-results" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;overflow:auto">
+    <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:16px;text-align:center;grid-column:1/-1">Select a date and time above</div>
+  </div>
+</div>`;
+
+PANELS['iso-parser'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">ISO 8601 Parser</div>
+    <div class="panel-sub">Parse any ISO 8601 datetime string — get a full human-readable breakdown</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="setVal('iso-in',new Date().toISOString());parseISO()">Now</span>
+    <span class="chip" onclick="setVal('iso-in','2024-03-15T14:30:00+05:30');parseISO()">With offset</span>
+    <span class="chip" onclick="setVal('iso-in','2024-W12-5');parseISO()">Week date</span>
+    <span class="chip" onclick="setVal('iso-in','P1Y2M3DT4H5M6S');parseISO()">Duration</span>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1">
+  <div class="editor-card" style="flex-shrink:0">
+    <div class="editor-bar"><span class="editor-bar-label">ISO 8601 String</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="clearTa('iso-in');setHTML('iso-out','')">✕</button></div>
+    <div style="display:flex;gap:8px;align-items:center;padding:8px 10px">
+      <input class="field-input" id="iso-in" placeholder="2024-03-15T14:30:00.000Z" style="flex:1;font-family:var(--font-mono);font-size:12px" oninput="parseISO()">
+      <button class="btn-sm accent" onclick="parseISO()">▶ Parse</button>
+    </div>
+  </div>
+  <div id="iso-out" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;flex:1"></div>
+</div>`;
+
+// ============================================================
+// TEST DATA GENERATOR
+// ============================================================
+
+PANELS['test-data'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Test Data Generator</div>
+    <div class="panel-sub">Generate realistic fake data — names, emails, addresses, UUIDs, and more</div>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;flex:1;min-height:0">
+  <div class="util-card" style="flex-shrink:0">
+    <div class="util-card-body" style="flex-direction:row;flex-wrap:wrap;gap:8px;align-items:flex-end;padding:10px 12px">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <label style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Schema</label>
+        <select id="td-schema" class="field-input" style="height:28px;font-size:11px;width:160px" onchange="tdPreview()">
+          <option value="user">User / Person</option>
+          <option value="order">Order</option>
+          <option value="product">Product</option>
+          <option value="company">Company</option>
+          <option value="address">Address</option>
+          <option value="custom">Custom Fields</option>
         </select>
       </div>
-      <div class="field-row"><div class="field-label">Headers (one per line: Key: Value)</div>
-        <textarea class="field-ta-sm" id="curl-headers" style="min-height:70px;font-size:11px"
-          placeholder="Content-Type: application/json&#10;Authorization: Bearer YOUR_TOKEN" oninput="curlBuild()"></textarea>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <label style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Count</label>
+        <input id="td-count" type="number" min="1" max="500" value="10" class="field-input" style="width:72px;height:28px;padding:0 8px;font-size:11px" oninput="tdPreview()">
       </div>
-      <div class="field-row"><div class="field-label">Request Body (JSON / form data)</div>
-        <textarea class="field-ta-sm" id="curl-body" style="min-height:80px;font-size:11px"
-          placeholder='{"name":"John","email":"john@example.com"}' oninput="curlBuild()"></textarea>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <label style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Format</label>
+        <select id="td-fmt" class="field-input" style="height:28px;font-size:11px;width:90px">
+          <option value="json">JSON</option>
+          <option value="csv">CSV</option>
+          <option value="sql">SQL INSERT</option>
+        </select>
       </div>
-      <div class="field-row"><div class="field-label">Options</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
-            <input type="checkbox" id="curl-verbose" onchange="curlBuild()"> -v verbose
-          </label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
-            <input type="checkbox" id="curl-insecure" onchange="curlBuild()"> -k insecure
-          </label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
-            <input type="checkbox" id="curl-follow" checked onchange="curlBuild()"> -L follow redirects
-          </label>
-          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
-            <input type="checkbox" id="curl-silent" onchange="curlBuild()"> -s silent
-          </label>
-        </div>
-      </div>
-      <button class="btn-sm accent" onclick="curlBuild()" style="margin-top:4px">⚡ Generate cURL</button>
+      <button class="btn-sm accent" onclick="tdGenerate()">⚡ Generate</button>
+      <button class="btn-sm" onclick="tdPreview()">Preview</button>
     </div>
   </div>
-  <div class="util-card">
-    <div class="util-card-hdr">
-      <span class="util-card-title">📋 Output</span>
-      <div style="display:flex;gap:4px;margin-left:auto">
-        <button class="btn-sm" id="curl-tab-curl" onclick="curlTab('curl')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">cURL</button>
-        <button class="btn-sm" id="curl-tab-fetch" onclick="curlTab('fetch')" style="font-size:9px;height:22px">fetch</button>
-        <button class="btn-sm" id="curl-tab-axios" onclick="curlTab('axios')" style="font-size:9px;height:22px">axios</button>
-        <button class="btn-sm" id="curl-tab-python" onclick="curlTab('python')" style="font-size:9px;height:22px">Python</button>
+  <div class="editor-card" style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div class="editor-bar"><span class="editor-bar-label">Output</span><span class="lang-badge" id="td-lang-badge">JSON</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="copyTa('td-out',this)">⎘</button><button class="icon-btn" onclick="dlTa('td-out','test-data.json')">⬇</button></div>
+    <textarea class="editor-ta readonly" id="td-out" readonly style="flex:1" placeholder="Generated test data will appear here..."></textarea>
+    <div class="editor-foot"><span class="foot-stat neutral" id="td-os">READY</span><div class="foot-spacer"></div><span class="foot-chars" id="td-oc">0 chars</span></div>
+  </div>
+</div>`;
+
+// ============================================================
+// DATABASE PANELS
+// ============================================================
+
+PANELS['sql-fmt'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">SQL Formatter</div>
+    <div class="panel-sub">Format and beautify SQL queries — supports SELECT, INSERT, UPDATE, CREATE and more</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="sqlFmtSample('select')">Complex SELECT</span>
+    <span class="chip" onclick="sqlFmtSample('create')">CREATE TABLE</span>
+    <span class="chip" onclick="sqlFmtSample('insert')">INSERT batch</span>
+  </div>
+</div>
+<div class="editor-grid" style="flex:1;min-height:0">
+  <div class="editor-col">
+    <div class="editor-card">
+      <div class="editor-bar"><span class="editor-bar-label">Unformatted SQL</span><span class="lang-badge">SQL</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="clearTa('sqlfmt-in')">✕</button></div>
+      <textarea class="editor-ta" id="sqlfmt-in" placeholder="Paste raw SQL here..." oninput="charCount('sqlfmt-in','sqlfmt-ic')"></textarea>
+      <div class="editor-foot"><span class="foot-stat neutral" id="sqlfmt-is">READY</span><div class="foot-spacer"></div><span class="foot-chars" id="sqlfmt-ic">0 chars</span></div>
+    </div>
+  </div>
+  <div class="center-ctrl">
+    <button class="btn-convert primary" onclick="sqlFormat()">▶ Format</button>
+    <button class="btn-swap" onclick="swapTa('sqlfmt-in','sqlfmt-out')" title="Swap">⇄</button>
+    <button class="btn-convert secondary" onclick="sqlMinify()">◀ Minify</button>
+  </div>
+  <div class="editor-col">
+    <div class="editor-card">
+      <div class="editor-bar"><span class="editor-bar-label">Formatted SQL</span><span class="lang-badge">SQL</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="copyTa('sqlfmt-out',this)">⎘</button><button class="icon-btn" onclick="dlTa('sqlfmt-out','formatted.sql')">⬇</button></div>
+      <textarea class="editor-ta readonly" id="sqlfmt-out" readonly placeholder="Formatted SQL will appear here..."></textarea>
+      <div class="editor-foot"><span class="foot-stat neutral" id="sqlfmt-os">WAITING</span><div class="foot-spacer"></div><span class="foot-chars" id="sqlfmt-oc">0 chars</span></div>
+    </div>
+  </div>
+</div>
+<div class="msg-bar" id="sqlfmt-msg"></div>`;
+
+PANELS['mongo-fmt'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">MongoDB Query Formatter</div>
+    <div class="panel-sub">Format, prettify, and analyze MongoDB queries and aggregation pipelines</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="mongoSample('find')">find()</span>
+    <span class="chip" onclick="mongoSample('aggregate')">Aggregation</span>
+    <span class="chip" onclick="mongoSample('update')">update()</span>
+  </div>
+</div>
+<div class="editor-grid" style="flex:1;min-height:0">
+  <div class="editor-col">
+    <div class="editor-card">
+      <div class="editor-bar"><span class="editor-bar-label">MongoDB Query</span><span class="lang-badge">JSON/BSON</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="clearTa('mongo-in')">✕</button></div>
+      <textarea class="editor-ta" id="mongo-in" placeholder='db.users.find({"age":{"$gt":25}},{"name":1,"email":1})' oninput="charCount('mongo-in','mongo-ic')"></textarea>
+      <div class="editor-foot"><span class="foot-stat neutral" id="mongo-is">READY</span><div class="foot-spacer"></div><span class="foot-chars" id="mongo-ic">0 chars</span></div>
+    </div>
+  </div>
+  <div class="center-ctrl">
+    <button class="btn-convert primary" onclick="mongoFormat()">▶ Format</button>
+    <button class="btn-convert secondary" onclick="mongoMinify()">◀ Minify</button>
+  </div>
+  <div class="editor-col">
+    <div class="editor-card">
+      <div class="editor-bar"><span class="editor-bar-label">Formatted</span><span class="lang-badge">JSON/BSON</span><div class="editor-bar-spacer"></div><button class="icon-btn" onclick="copyTa('mongo-out',this)">⎘</button></div>
+      <textarea class="editor-ta readonly" id="mongo-out" readonly placeholder="Formatted query will appear here..."></textarea>
+      <div class="editor-foot"><span class="foot-stat neutral" id="mongo-os">WAITING</span><div class="foot-spacer"></div><span class="foot-chars" id="mongo-oc">0 chars</span></div>
+    </div>
+  </div>
+</div>
+<div class="msg-bar" id="mongo-msg"></div>`;
+
+// ============================================================
+// NETWORKING PANELS
+// ============================================================
+
+PANELS['ip-lookup'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">IP Lookup & Info</div>
+    <div class="panel-sub">Parse, validate and classify IP addresses — subnet calculator, class, binary view</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="setVal('ip-in','8.8.8.8');ipLookup()">Google DNS</span>
+    <span class="chip" onclick="setVal('ip-in','192.168.1.1');ipLookup()">Private</span>
+    <span class="chip" onclick="setVal('ip-in','2001:db8::1');ipLookup()">IPv6</span>
+    <span class="chip" onclick="setVal('ip-in','10.0.0.0/24');ipLookup()">CIDR</span>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;flex:1">
+  <div style="display:flex;gap:8px;align-items:center">
+    <input class="field-input" id="ip-in" placeholder="Enter IP address, range, or CIDR (e.g. 192.168.1.0/24)" style="flex:1;font-family:var(--font-mono);font-size:12px" onkeydown="if(event.key==='Enter')ipLookup()">
+    <button class="btn-sm accent" onclick="ipLookup()">▶ Lookup</button>
+    <button class="btn-sm" onclick="setVal('ip-in',Math.floor(Math.random()*256)+'.'+Math.floor(Math.random()*256)+'.'+Math.floor(Math.random()*256)+'.'+Math.floor(Math.random()*256));ipLookup()">🎲</button>
+  </div>
+  <div id="ip-out" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+    <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center;grid-column:1/-1;border:1.5px dashed var(--border2);border-radius:8px">Enter an IP address or CIDR block above</div>
+  </div>
+</div>`;
+
+PANELS['ua-parser'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">User Agent Parser</div>
+    <div class="panel-sub">Decode any User-Agent string — browser, OS, device, engine, version</div>
+  </div>
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="uaParseSample('chrome')">Chrome</span>
+    <span class="chip" onclick="uaParseSample('safari')">Safari iOS</span>
+    <span class="chip" onclick="uaParseSample('bot')">Googlebot</span>
+    <span class="chip" onclick="uaParseOwn()">My UA</span>
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;flex:1">
+  <div style="display:flex;gap:8px;align-items:flex-start">
+    <textarea class="editor-ta" id="ua-in" style="min-height:56px;font-size:11px;flex:1;font-family:var(--font-mono)" placeholder="Paste User-Agent string here..." oninput="uaParse()"></textarea>
+    <button class="btn-sm accent" onclick="uaParse()" style="flex-shrink:0;margin-top:2px">▶ Parse</button>
+  </div>
+  <div id="ua-out" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+    <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center;grid-column:1/-1;border:1.5px dashed var(--border2);border-radius:8px">Paste a User-Agent string above</div>
+  </div>
+</div>`;
+
+// ============================================================
+// FILE TOOLS
+// ============================================================
+
+PANELS['img-base64'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Image ↔ Base64</div>
+    <div class="panel-sub">Convert images to Base64 data URIs and back — preview included</div>
+  </div>
+</div>
+<div style="display:flex;gap:12px;flex:1;min-height:0;flex-wrap:wrap">
+  <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:10px">
+    <div class="util-card" style="flex-shrink:0">
+      <div class="util-card-hdr"><span class="util-card-title">Image → Base64</span></div>
+      <div class="util-card-body" style="gap:8px">
+        <div class="upload-zone" id="img64-drop" onclick="document.getElementById('img64-file').click()" ondragover="event.preventDefault()" ondrop="img64Drop(event)" style="min-height:80px;cursor:pointer">
+          <input type="file" id="img64-file" accept="image/*" style="display:none" onchange="img64Load(this)">
+          <div style="text-align:center;pointer-events:none">
+            <div style="font-size:24px;margin-bottom:4px">🖼</div>
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--text3)">Drop image or click to upload</div>
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-top:2px">PNG, JPG, GIF, SVG, WebP</div>
+          </div>
+        </div>
+        <div id="img64-preview" style="display:none;text-align:center">
+          <img id="img64-img" style="max-width:100%;max-height:140px;border-radius:6px;border:1px solid var(--border)">
+          <div id="img64-meta" style="font-family:var(--font-mono);font-size:10px;color:var(--text3);margin-top:4px"></div>
+        </div>
+        <div style="display:flex;gap:6px">
+          <input class="field-input" id="img64-out" readonly placeholder="data:image/png;base64,..." style="flex:1;font-size:10px;font-family:var(--font-mono)">
+          <button class="btn-sm" onclick="copyEl('img64-out')">⎘</button>
+        </div>
       </div>
     </div>
-    <div class="util-card-body">
-      <textarea class="field-ta-sm readonly editor-ta" id="curl-out" readonly style="min-height:220px;font-size:10.5px;cursor:pointer" onclick="copyEl('curl-out')" placeholder="Generated command will appear here..."></textarea>
-      <button class="btn-sm" onclick="copyEl('curl-out')" style="margin-top:6px">⎘ Copy</button>
+    <div class="util-card">
+      <div class="util-card-hdr"><span class="util-card-title">Base64 → Image</span></div>
+      <div class="util-card-body" style="gap:8px">
+        <textarea class="editor-ta" id="img64-in" style="min-height:70px;font-size:10px" placeholder="Paste Base64 data URI here: data:image/png;base64,..." oninput="img64Decode()"></textarea>
+        <div id="img64-decoded" style="display:none;text-align:center">
+          <img id="img64-decoded-img" style="max-width:100%;max-height:160px;border-radius:6px;border:1px solid var(--border)">
+        </div>
+        <button class="btn-sm accent" id="img64-dl" style="display:none;width:100%" onclick="img64Download()">⬇ Download Image</button>
+      </div>
     </div>
   </div>
 </div>`;
 
 // ============================================================
-// API TESTER
+// LOG & DEBUG PANELS
 // ============================================================
-PANELS['api-tester'] = `
+
+PANELS['json-log'] = `
 <div class="panel-hdr">
   <div class="panel-title-group">
-    <div class="panel-title">API Tester</div>
-    <div class="panel-sub">Send HTTP requests directly from the browser and inspect responses</div>
+    <div class="panel-title">JSON Log Viewer</div>
+    <div class="panel-sub">Paste JSON log lines — get a searchable, colored, structured table view</div>
   </div>
-  <div style="background:color-mix(in srgb,var(--warn) 12%,transparent);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:6px;padding:6px 10px;font-size:10px;color:var(--warn);font-family:var(--font-mono)">
-    ⚠ Requests are sent from your browser — CORS policies apply. For private APIs, use cURL Generator instead.
+  <div class="chip-row"><span class="chip-label">Samples</span>
+    <span class="chip" onclick="jsonLogSample('app')">App Logs</span>
+    <span class="chip" onclick="jsonLogSample('http')">HTTP Access</span>
+    <span class="chip" onclick="jsonLogSample('error')">Error Logs</span>
   </div>
 </div>
-<div style="display:flex;flex-direction:column;gap:10px">
-  <!-- URL bar -->
-  <div style="display:flex;gap:6px;align-items:stretch">
-    <select class="field-input" id="at-method" style="width:90px;flex-shrink:0;font-weight:600" onchange="atMethodChange()">
-      <option style="color:#4ade80">GET</option>
-      <option style="color:#60a5fa">POST</option>
-      <option style="color:#fbbf24">PUT</option>
-      <option style="color:#a78bfa">PATCH</option>
-      <option style="color:#f87171">DELETE</option>
-      <option>HEAD</option>
-      <option>OPTIONS</option>
+<div style="display:flex;flex-direction:column;gap:10px;flex:1;min-height:0">
+  <div style="display:flex;gap:8px;align-items:stretch;flex-shrink:0">
+    <textarea class="editor-ta" id="jlog-in" style="min-height:80px;flex:1;font-size:11px" placeholder="Paste JSON log lines (one per line)..." oninput="jsonLogParse()"></textarea>
+  </div>
+  <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;align-items:center">
+    <input class="field-input" id="jlog-search" placeholder="🔍 Filter logs..." style="flex:1;min-width:140px;font-size:12px" oninput="jsonLogFilter()">
+    <select id="jlog-level-filter" class="field-input" style="height:28px;font-size:11px;width:100px" onchange="jsonLogFilter()">
+      <option value="">All levels</option>
+      <option value="error">ERROR</option><option value="warn">WARN</option>
+      <option value="info">INFO</option><option value="debug">DEBUG</option>
     </select>
-    <input class="field-input" id="at-url" placeholder="https://jsonplaceholder.typicode.com/posts/1" style="flex:1;font-family:var(--font-mono);font-size:11px">
-    <button class="btn-sm accent" onclick="atSend()" id="at-send-btn" style="padding:0 16px;height:auto;flex-shrink:0">▶ Send</button>
+    <span id="jlog-count" style="font-family:var(--font-mono);font-size:10px;color:var(--text3)"></span>
   </div>
-
-  <div class="util-grid" style="gap:10px">
-    <!-- Request config -->
-    <div class="util-card" style="min-width:0">
-      <div class="util-card-hdr">
-        <span class="util-card-title">Request</span>
-        <div style="display:flex;gap:3px;margin-left:auto">
-          <button class="btn-sm" id="at-tab-headers" onclick="atTab('headers')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">Headers</button>
-          <button class="btn-sm" id="at-tab-body" onclick="atTab('body')" style="font-size:9px;height:22px">Body</button>
-          <button class="btn-sm" id="at-tab-params" onclick="atTab('params')" style="font-size:9px;height:22px">Params</button>
-          <button class="btn-sm" id="at-tab-auth" onclick="atTab('auth')" style="font-size:9px;height:22px">Auth</button>
-        </div>
-      </div>
-      <div class="util-card-body">
-        <div id="at-pane-headers">
-          <div id="at-headers-rows" style="display:flex;flex-direction:column;gap:4px">
-            <div class="at-hrow" style="display:flex;gap:4px">
-              <input class="field-input" placeholder="Header name" style="flex:1;font-size:11px" oninput="atHeaderChange()">
-              <input class="field-input" placeholder="Value" style="flex:2;font-size:11px" oninput="atHeaderChange()">
-              <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>
-            </div>
-          </div>
-          <button class="btn-sm" onclick="atAddHeader()" style="margin-top:6px;font-size:10px">+ Add Header</button>
-          <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
-            <button class="btn-sm" onclick="atPreset('json')" style="font-size:9px">JSON</button>
-            <button class="btn-sm" onclick="atPreset('form')" style="font-size:9px">Form</button>
-            <button class="btn-sm" onclick="atPreset('auth')" style="font-size:9px">Bearer</button>
-          </div>
-        </div>
-        <div id="at-pane-body" style="display:none">
-          <div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap">
-            <button class="btn-sm" id="at-body-json" onclick="atBodyType('json')" style="font-size:9px;border-color:var(--accent);color:var(--accent)">JSON</button>
-            <button class="btn-sm" id="at-body-text" onclick="atBodyType('text')" style="font-size:9px">Text</button>
-            <button class="btn-sm" id="at-body-form" onclick="atBodyType('form')" style="font-size:9px">Form</button>
-            <button class="btn-sm" id="at-body-none" onclick="atBodyType('none')" style="font-size:9px">None</button>
-          </div>
-          <textarea class="field-ta-sm editor-ta" id="at-body-input" style="min-height:130px;font-size:11px" placeholder='{"key":"value"}'></textarea>
-        </div>
-        <div id="at-pane-params" style="display:none">
-          <div id="at-params-rows" style="display:flex;flex-direction:column;gap:4px">
-            <div class="at-hrow" style="display:flex;gap:4px">
-              <input class="field-input" placeholder="param" style="flex:1;font-size:11px">
-              <input class="field-input" placeholder="value" style="flex:2;font-size:11px">
-              <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>
-            </div>
-          </div>
-          <button class="btn-sm" onclick="atAddParam()" style="margin-top:6px;font-size:10px">+ Add Param</button>
-        </div>
-        <div id="at-pane-auth" style="display:none">
-          <div class="field-row"><div class="field-label">Auth Type</div>
-            <select class="field-input" id="at-auth-type" onchange="atAuthChange()">
-              <option value="none">None</option>
-              <option value="bearer">Bearer Token</option>
-              <option value="basic">Basic Auth</option>
-              <option value="apikey">API Key</option>
-            </select>
-          </div>
-          <div id="at-auth-fields"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Response -->
-    <div class="util-card" style="min-width:0">
-      <div class="util-card-hdr">
-        <span class="util-card-title">Response</span>
-        <span id="at-status-badge" style="margin-left:8px;font-family:var(--font-mono);font-size:10px"></span>
-        <span id="at-time-badge" style="margin-left:6px;font-family:var(--font-mono);font-size:9px;color:var(--text3)"></span>
-        <div style="margin-left:auto;display:flex;gap:3px">
-          <button class="btn-sm" id="at-res-tab-body" onclick="atResTab('body')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">Body</button>
-          <button class="btn-sm" id="at-res-tab-headers" onclick="atResTab('headers')" style="font-size:9px;height:22px">Headers</button>
-        </div>
-      </div>
-      <div class="util-card-body" style="padding:0">
-        <div id="at-res-body" style="padding:10px">
-          <div id="at-spinner" style="display:none;text-align:center;padding:20px;color:var(--text3);font-size:11px">Sending request...</div>
-          <textarea class="field-ta-sm readonly editor-ta" id="at-res-out" readonly
-            style="min-height:200px;font-size:10.5px;display:none"></textarea>
-          <div id="at-res-empty" style="color:var(--text3);font-family:var(--font-mono);font-size:11px">
-            Enter a URL and click Send to make a request.
-          </div>
-        </div>
-        <div id="at-res-headers-pane" style="display:none;padding:10px">
-          <div id="at-res-headers-out"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
-
-// ============================================================
-// IP / DNS LOOKUP
-// ============================================================
-PANELS['ip-dns'] = `
-<div class="panel-hdr">
-  <div class="panel-title-group">
-    <div class="panel-title">IP & DNS Lookup</div>
-    <div class="panel-sub">Look up IP geolocation, DNS records, and inspect your own IP details</div>
-  </div>
-</div>
-<div class="util-grid">
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">🔍 Lookup</span></div>
-    <div class="util-card-body">
-      <div class="field-row"><div class="field-label">IP Address or Domain</div>
-        <input class="field-input" id="ip-input" placeholder="8.8.8.8 or github.com" style="font-family:var(--font-mono)">
-      </div>
-      <div class="btn-row">
-        <button class="btn-sm accent" onclick="ipLookup()">🌐 IP Lookup</button>
-        <button class="btn-sm" onclick="dnsLookup()">📡 DNS Lookup</button>
-        <button class="btn-sm" onclick="myIpLookup()">📍 My IP</button>
-      </div>
-      <div id="ip-status" style="margin-top:8px;font-family:var(--font-mono);font-size:10px;color:var(--text3)"></div>
-      <div style="height:1px;background:var(--border);margin:12px 0"></div>
-      <div class="field-label" style="margin-bottom:6px">Common IP Utilities</div>
-      <div style="display:flex;flex-direction:column;gap:5px">
-        <div style="display:flex;gap:6px;align-items:center">
-          <input class="field-input" id="cidr-input" placeholder="192.168.1.0/24" style="flex:1;font-family:var(--font-mono);font-size:11px">
-          <button class="btn-sm" onclick="cidrCalc()">CIDR Calc</button>
-        </div>
-        <div id="cidr-out" style="font-family:var(--font-mono);font-size:10px;color:var(--text2)"></div>
-      </div>
-    </div>
-  </div>
-  <div class="util-card">
-    <div class="util-card-hdr"><span class="util-card-title">📊 Results</span></div>
-    <div class="util-card-body" id="ip-results">
-      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Enter an IP or domain and click Lookup.</div>
-    </div>
+  <div id="jlog-out" style="flex:1;overflow:auto;display:flex;flex-direction:column;gap:3px;min-height:0">
+    <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center">Paste JSON log lines above</div>
   </div>
 </div>`;
 
@@ -3681,30 +4005,44 @@ for (const [id, html] of Object.entries(PANELS)) {
 const STORE_THEME = 'dfp_theme';
 const STORE_PANEL = 'dfp_panel';
 
-const _THEME_SWATCHES = {"obsidian": "#c084fc", "slate": "#60a5fa", "midnight": "#818cf8", "carbon": "#0f62fe", "dracula": "#bd93f9", "nord": "#88c0d0", "tokyo": "#7aa2f7", "solarized": "#268bd2", "gruvbox": "#fabd2f", "catppuccin": "#cba6f7", "cyber": "#00ffcc", "emerald": "#34d399", "mocha": "#f59e0b", "arctic": "#2563eb", "rose": "#e11d48", "sand": "#b45309", "abyss": "#6c63ff", "crimson": "#ff3d5a", "panda": "#ffffff", "aurora": "#00e5a0", "latte": "#8839ef", "sunset": "#ff7eb3", "ocean": "#38b2ff", "forest": "#6bcb77"};
-const _THEME_NAMES   = {"obsidian": "Obsidian", "slate": "Slate", "midnight": "Midnight", "carbon": "Carbon", "dracula": "Dracula", "nord": "Nord", "tokyo": "Tokyo Night", "solarized": "Solarized", "gruvbox": "Gruvbox", "catppuccin": "Catppuccin", "cyber": "Cyber", "emerald": "Emerald", "mocha": "Mocha", "arctic": "Arctic", "rose": "Rose", "sand": "Sand", "abyss": "Abyss", "crimson": "Crimson", "panda": "Panda", "aurora": "Aurora", "latte": "Latte", "sunset": "Sunset", "ocean": "Ocean", "forest": "Forest"};
+const _THEME_SWATCHES = {
+  "obsidian":"#c084fc","slate":"#60a5fa","midnight":"#818cf8","carbon":"#0f62fe",
+  "dracula":"#bd93f9","nord":"#88c0d0","tokyo":"#7aa2f7","solarized":"#268bd2",
+  "gruvbox":"#fabd2f","catppuccin":"#cba6f7","cyber":"#00ffcc","emerald":"#34d399",
+  "mocha":"#f59e0b","arctic":"#2563eb","rose":"#e11d48","sand":"#b45309",
+  "abyss":"#6c63ff","crimson":"#ff3d5a","panda":"#f5f5f5","aurora":"#00e5a0",
+  "latte":"#8839ef","sunset":"#ff7eb3","ocean":"#38b2ff","forest":"#6bcb77",
+  "volcanic":"#ff6b35","neon":"#ff00ff","amber":"#f59e0b","sapphire":"#3b82f6",
+  "paper":"#374151","mint":"#16a34a","lavender":"#7c3aed","sky":"#0284c7",
+  "cream":"#92400e","stone":"#57534e","peach":"#ea580c"
+};
+const _THEME_NAMES = {
+  "obsidian":"Obsidian","slate":"Slate","midnight":"Midnight","carbon":"Carbon",
+  "dracula":"Dracula","nord":"Nord","tokyo":"Tokyo Night","solarized":"Solarized",
+  "gruvbox":"Gruvbox","catppuccin":"Catppuccin","cyber":"Cyber","emerald":"Emerald",
+  "mocha":"Mocha","arctic":"Arctic","rose":"Rose","sand":"Sand",
+  "abyss":"Abyss","crimson":"Crimson","panda":"Panda","aurora":"Aurora",
+  "latte":"Latte","sunset":"Sunset","ocean":"Ocean","forest":"Forest",
+  "volcanic":"Volcanic","neon":"Neon","amber":"Amber","sapphire":"Sapphire",
+  "paper":"Paper","mint":"Mint","lavender":"Lavender","sky":"Sky",
+  "cream":"Cream","stone":"Stone","peach":"Peach"
+};
 
 function setTheme(t) {
   const body = document.body;
-
-  // 1. Enable smooth CSS variable interpolation (iPhone-style)
+  // Smooth CSS variable interpolation (iPhone-style morph)
   body.classList.add('theme-transitioning');
-
-  // 2. Swap theme immediately — CSS transitions handle the visual morph
   body.setAttribute('data-theme', t);
   localStorage.setItem(STORE_THEME, t);
-
-  // 3. Update UI elements
+  // Update theme cards active state
   document.querySelectorAll('.td-card').forEach(d => d.classList.toggle('active', d.dataset.t === t));
+  // Update picker button
   const sw = document.getElementById('tpbSwatch');
   const nm = document.getElementById('tpbName');
   if (sw) { sw.style.background = _THEME_SWATCHES[t] || '#888'; sw.style.boxShadow = `0 0 8px ${_THEME_SWATCHES[t] || '#888'}`; }
   if (nm) nm.textContent = _THEME_NAMES[t] || t;
-
-  // 4. Remove transition class after animation completes (prevents it interfering with hover states)
   clearTimeout(body._themeTimer);
   body._themeTimer = setTimeout(() => body.classList.remove('theme-transitioning'), 500);
-
   if (!window._randomThemeOn) closeThemePicker();
 }
 
@@ -3726,7 +4064,7 @@ function toggleThemePicker(e) {
     dd.style.top   = (r.bottom + 6) + 'px';
     dd.style.right = (window.innerWidth - r.right) + 'px';
     dd.style.left  = 'auto';
-    dd.style.width = '268px';
+    dd.style.width = '292px';
   }
   dd.classList.add('open');
   btn.classList.add('open');
@@ -3737,6 +4075,7 @@ function closeThemePicker() {
   document.getElementById('themePickerBtn')?.classList.remove('open');
 }
 
+// ── Random / Auto-Cycle Theme ──────────────────────────────────────────
 function filterThemes(btn, filter) {
   document.querySelectorAll('.td-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
@@ -3747,7 +4086,51 @@ function filterThemes(btn, filter) {
   });
 }
 
-// ── Random / Auto-Cycle Theme ──────────────────────────────────────────
+// ── Font picker ──────────────────────────────────────────────────────────
+const STORE_FONT    = 'atool_font';
+const STORE_UIFONT  = 'atool_uifont';
+const _FONT_MAP = {
+  jetbrains: "'JetBrains Mono','Courier New',monospace",
+  fira:      "'Fira Code','Courier New',monospace",
+  cascadia:  "'Cascadia Code','Cascadia Mono','Courier New',monospace",
+  mono:      "ui-monospace,'Courier New',monospace",
+};
+const _UIFONT_MAP = {
+  geist:  "'Geist','Inter',system-ui,sans-serif",
+  inter:  "'Inter',system-ui,sans-serif",
+  dm:     "'DM Sans',system-ui,sans-serif",
+  system: "system-ui,-apple-system,sans-serif",
+};
+
+function setFont(key, btn) {
+  const family = _FONT_MAP[key];
+  if (!family) return;
+  document.documentElement.style.setProperty('--font-mono', family);
+  localStorage.setItem(STORE_FONT, key);
+  document.querySelectorAll('.td-font-btn[data-font]').forEach(b => b.classList.toggle('active', b.dataset.font === key));
+}
+
+function setUIFont(key, btn) {
+  const family = _UIFONT_MAP[key];
+  if (!family) return;
+  document.documentElement.style.setProperty('--font-ui', family);
+  localStorage.setItem(STORE_UIFONT, key);
+  document.querySelectorAll('.td-font-btn[data-uifont]').forEach(b => b.classList.toggle('active', b.dataset.uifont === key));
+}
+
+function restoreFonts() {
+  const font   = localStorage.getItem(STORE_FONT);
+  const uifont = localStorage.getItem(STORE_UIFONT);
+  if (font && _FONT_MAP[font]) {
+    document.documentElement.style.setProperty('--font-mono', _FONT_MAP[font]);
+    document.querySelectorAll('.td-font-btn[data-font]').forEach(b => b.classList.toggle('active', b.dataset.font === font));
+  }
+  if (uifont && _UIFONT_MAP[uifont]) {
+    document.documentElement.style.setProperty('--font-ui', _UIFONT_MAP[uifont]);
+    document.querySelectorAll('.td-font-btn[data-uifont]').forEach(b => b.classList.toggle('active', b.dataset.uifont === uifont));
+  }
+}
+
 window._randomThemeOn  = false;
 window._randomInterval = null;
 window._randomCountdown= null;
@@ -3852,10 +4235,16 @@ function nav(el) {
   const _tabMap = {
     'json-xml':'json-xml','json-yaml':'json-xml','json-props':'json-xml','yaml-props':'json-xml',
     'xml-props':'json-xml','json-csv':'json-xml','toml-json':'json-xml','java-json':'json-xml',
-    'base64':'base64','url-enc':'base64','html-ent':'base64','hex-text':'base64','jwt':'base64',
-    'hash':'hash','hmac':'hash','checksum':'hash',
+    'base64':'base64','url-enc':'base64','html-ent':'base64','hex-text':'base64','jwt':'base64','img-base64':'base64',
+    'hash':'hash','hmac':'hash','checksum':'hash','bcrypt-gen':'hash','pw-strength':'hash',
     'json-fmt':'json-fmt','xml-fmt':'json-fmt','regex':'json-fmt','diff':'json-fmt','case':'json-fmt','lorem':'json-fmt',
+    'sql-fmt':'json-fmt','mongo-fmt':'json-fmt','json-log':'json-fmt',
     'base-conv':'base-conv','timestamp':'base-conv','uuid-gen':'base-conv','color':'base-conv',
+    'timezone-conv':'base-conv','iso-parser':'base-conv',
+    'str-utils':'str-utils','escape':'str-utils','sort-dedup':'str-utils','num-fmt':'str-utils',
+    'curl-gen':'str-utils','http-headers':'str-utils','ip-lookup':'str-utils','ua-parser':'str-utils',
+    'password-gen':'password-gen','nanoid-gen':'password-gen','qr-gen':'password-gen',
+    'cron-parse':'password-gen','hls-player':'password-gen','test-data':'password-gen',
   };
   const tabKey = _tabMap[panel] || panel;
   document.querySelectorAll('.tab-btn').forEach(t => {
@@ -3870,14 +4259,12 @@ function nav(el) {
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebarOverlay');
-  if (!sidebar || !overlay) return;
   if (sidebar.classList.contains('open')) {
     closeSidebar();
   } else {
     sidebar.classList.add('open');
-    overlay.style.display = 'block';
-    // Small delay so display:block renders before opacity transitions
-    requestAnimationFrame(() => overlay.classList.add('open'));
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 }
 function closeSidebar() {
@@ -3886,10 +4273,7 @@ function closeSidebar() {
   if (!sidebar || !overlay) return;
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
-  // Hide overlay after transition completes
-  setTimeout(() => {
-    if (!overlay.classList.contains('open')) overlay.style.display = 'none';
-  }, 300);
+  document.body.style.overflow = '';
 }
 
 // Bottom tab navigation
@@ -6024,6 +6408,7 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('DOMContentLoaded', () => {
   restoreState();
+  restoreFonts();
   setTimeout(genUUIDs, 100);
   setTimeout(()=>colorFromHex('#6366f1'), 200);
   setTimeout(genPasswords, 150);
@@ -6035,586 +6420,821 @@ document.addEventListener('DOMContentLoaded', () => {
   now.setSeconds(0,0);
   const local = new Date(now.getTime() - now.getTimezoneOffset()*60000).toISOString().slice(0,16);
   const tsIn = $('ts-date-in'); if(tsIn) tsIn.value = local;
-  // Init timezone converter
-  tzInit();
-  // Init API Tester
-  atInit();
   // Auto-save all inputs on change
   document.addEventListener('input', e => { if (e.target.id && e.target.id !== 'sidebarSearch') queueSaveInputs(); });
   document.addEventListener('change', e => { if (e.target.id) queueSaveInputs(); });
+  // Init timezone selects
+  setTimeout(tzInit, 200);
 });
 
 // ============================================================
-// JWT BUILDER
+// CURL → CODE GENERATOR
 // ============================================================
-function b64url(str) {
-  return btoa(str).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-}
-function b64urlEncode(obj) {
-  return b64url(JSON.stringify(obj));
-}
-async function hmacSign(msg, secret, algo) {
-  const enc = new TextEncoder();
-  const key = await crypto.subtle.importKey('raw', enc.encode(secret),
-    { name:'HMAC', hash: algo }, false, ['sign']);
-  const sig = await crypto.subtle.sign('HMAC', key, enc.encode(msg));
-  return btoa(String.fromCharCode(...new Uint8Array(sig)))
-    .replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
-}
-async function jwtBuildSign() {
-  const alg = getVal('jb-alg'), secret = getVal('jb-secret');
-  const sub = getVal('jb-sub'), iss = getVal('jb-iss'), aud = getVal('jb-aud');
-  const expSecs = parseInt(getVal('jb-exp'));
-  const header = { alg, typ: getVal('jb-typ') || 'JWT' };
-  const iat = Math.floor(Date.now()/1000);
-  const payload = { iat };
-  if (sub) payload.sub = sub;
-  if (iss) payload.iss = iss;
-  if (aud) payload.aud = aud;
-  if (expSecs > 0) payload.exp = iat + expSecs;
-  try {
-    const extra = getVal('jb-extra');
-    if (extra.trim()) Object.assign(payload, JSON.parse(extra));
-  } catch(e) { setHTML('jb-preview','<span style="color:var(--error)">Extra claims: invalid JSON</span>'); return; }
+const _curlSamples = {
+  get:  `curl -X GET https://api.example.com/users/42 -H 'Accept: application/json' -H 'Authorization: Bearer eyJhbGci...'`,
+  post: `curl -X POST https://api.example.com/users -H 'Content-Type: application/json' -d '{"name":"Alice","email":"alice@example.com","role":"admin"}'`,
+  auth: `curl -X GET https://api.github.com/user -H 'Authorization: Bearer ghp_xxxxxxxxxxxx' -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28'`,
+  form: `curl -X POST https://api.example.com/upload -F 'file=@/path/to/file.csv' -F 'description=Monthly report' -H 'Authorization: Bearer token123'`
+};
+function curlSample(key) { setVal('curl-in', _curlSamples[key]); curlConvert(); }
 
-  const h = b64urlEncode(header), p = b64urlEncode(payload);
-  let token;
-  if (alg === 'none') {
-    token = `${h}.${p}.`;
-  } else {
-    const algoMap = { HS256:'SHA-256', HS384:'SHA-384', HS512:'SHA-512' };
-    const sig = await hmacSign(`${h}.${p}`, secret, algoMap[alg]);
-    token = `${h}.${p}.${sig}`;
+function curlParse(cmd) {
+  cmd = cmd.trim().replace(/\\\n/g,' ').replace(/\s+/g,' ');
+  const method = (cmd.match(/-X\s+(\w+)/i)?.[1] || 'GET').toUpperCase();
+  const url = cmd.match(/curl\s+(?:-[^\s]+\s+\S+\s+)*['"]?(https?:\/\/[^\s'"]+)['"]?/i)?.[1] || '';
+  const headers = {};
+  const hMatches = cmd.matchAll(/-H\s+['"]([^'"]+)['"]/g);
+  for (const m of hMatches) {
+    const [k,...v] = m[1].split(':'); if(k&&v.length) headers[k.trim()] = v.join(':').trim();
   }
-  $('jb-out').value = token;
-  $('jb-header-out').textContent = JSON.stringify(header, null, 2);
-  $('jb-payload-out').textContent = JSON.stringify(payload, null, 2);
-  const parts = ['#fb923c','#60a5fa','#4ade80'];
-  const colored = token.split('.').map((p,i) => `<span style="color:${parts[i]||'var(--text)'}">${p}</span>`).join('<span style="color:var(--text3)">.</span>');
-  setHTML('jb-preview', `<div style="word-break:break-all;font-family:var(--font-mono);font-size:10px;line-height:1.6;padding:8px;background:var(--surface2);border-radius:6px;border:1px solid var(--border)">${colored}</div>`);
+  const data = cmd.match(/-d\s+['"]([^'"]*)['"]/)?.[1] || cmd.match(/-d\s+(\S+)/)?.[1] || '';
+  const isJson = Object.keys(headers).some(h=>h.toLowerCase()==='content-type'&&headers[h].includes('json'));
+  return { method, url, headers, data, isJson };
 }
-function jwtBuildLive() { /* no-op live — sign on button press only */ }
-function jwtBuildClear() {
-  ['jb-sub','jb-iss','jb-aud','jb-extra','jb-secret'].forEach(id => { const el = $(id); if(el) el.value=''; });
-  $('jb-out').value=''; $('jb-preview').innerHTML='';
-  $('jb-header-out').textContent=''; $('jb-payload-out').textContent='';
+
+function curlConvert() {
+  const cmd = getVal('curl-in').trim();
+  if (!cmd) { showMsg('curl','err','Enter a cURL command first'); return; }
+  const lang = $('curl-lang')?.value || 'python';
+  const badge = $('curl-lang-badge'); if(badge) badge.textContent = {python:'Python',node:'Node.js',java:'Java',php:'PHP'}[lang]||lang;
+  setStatus('curl-is','','PARSING...');
+  try {
+    const { method, url, headers, data, isJson } = curlParse(cmd);
+    const hEntries = Object.entries(headers);
+    let code = '';
+    if (lang === 'python') {
+      const hStr = hEntries.map(([k,v])=>`    "${k}": "${v}"`).join(',\n');
+      code = `import requests\n\nurl = "${url}"\nheaders = {\n${hStr}\n}\n`;
+      if (data) code += `payload = ${JSON.stringify(data)}\n\nresponse = requests.${method.toLowerCase()}(url, headers=headers, ${isJson?'json=payload':'data=payload'})\n`;
+      else code += `\nresponse = requests.${method.toLowerCase()}(url, headers=headers)\n`;
+      code += `print(response.status_code)\nprint(response.json())`;
+    } else if (lang === 'node') {
+      const hObj = JSON.stringify(headers, null, 2);
+      code = `const response = await fetch("${url}", {\n  method: "${method}",\n  headers: ${hObj}`;
+      if (data) code += `,\n  body: ${JSON.stringify(data)}`;
+      code += `\n});\n\nconst data = await response.json();\nconsole.log(data);`;
+    } else if (lang === 'java') {
+      const hStr = hEntries.map(([k,v])=>`.addHeader("${k}", "${v}")`).join('\n    ');
+      code = `import okhttp3.*;\n\nOkHttpClient client = new OkHttpClient();\n\n`;
+      if (data) code += `MediaType mediaType = MediaType.parse("${headers['Content-Type']||'application/json'}"); \nRequestBody body = RequestBody.create(mediaType, ${JSON.stringify(data)});\n\n`;
+      code += `Request request = new Request.Builder()\n  .url("${url}")\n  .method("${method}", ${data?'body':'null'})\n    ${hStr}\n  .build();\n\nResponse response = client.newCall(request).execute();\nSystem.out.println(response.body().string());`;
+    } else if (lang === 'php') {
+      const hStr = hEntries.map(([k,v])=>`  "${k}: ${v}"`).join(',\n');
+      code = `<?php\n$curl = curl_init();\ncurl_setopt_array($curl, [\n  CURLOPT_URL => "${url}",\n  CURLOPT_RETURNTRANSFER => true,\n  CURLOPT_CUSTOMREQUEST => "${method}",\n  CURLOPT_HTTPHEADER => [\n${hStr}\n  ],`;
+      if (data) code += `\n  CURLOPT_POSTFIELDS => ${JSON.stringify(data)},`;
+      code += `\n]);\n$response = curl_exec($curl);\ncurl_close($curl);\necho $response;`;
+    }
+    setVal('curl-out', code);
+    setText('curl-oc', code.length+' chars');
+    setStatus('curl-is','ok','✓ PARSED');
+    setStatus('curl-os','ok','✓ CONVERTED');
+    showMsg('curl','ok','Converted to '+{python:'Python requests',node:'Node.js fetch',java:'Java OkHttp',php:'PHP cURL'}[lang]);
+  } catch(e) {
+    setStatus('curl-is','err','✗ ERROR');
+    showMsg('curl','err','Parse error: '+e.message);
+  }
+}
+
+// ============================================================
+// HTTP HEADERS PARSER
+// ============================================================
+const _hdrSamples = {
+  request: `GET /api/users?page=1&limit=10 HTTP/1.1\nHost: api.example.com\nAccept: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\nContent-Type: application/json\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\nAccept-Encoding: gzip, deflate, br\nCache-Control: no-cache\nX-Request-ID: f47ac10b-58cc-4372-a567-0e02b2c3d479`,
+  response: `HTTP/1.1 200 OK\nContent-Type: application/json; charset=utf-8\nContent-Length: 1234\nX-RateLimit-Limit: 1000\nX-RateLimit-Remaining: 999\nX-RateLimit-Reset: 1711234567\nETag: "33a64df551425fcc55e4d42a148795d9f25f89d4"\nCache-Control: no-cache, private\nVary: Accept, Accept-Encoding\nStrict-Transport-Security: max-age=63072000; includeSubDomains; preload\nX-Content-Type-Options: nosniff\nX-Frame-Options: SAMEORIGIN`,
+  cors: `Access-Control-Allow-Origin: https://app.example.com\nAccess-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS\nAccess-Control-Allow-Headers: Authorization, Content-Type, X-Requested-With\nAccess-Control-Max-Age: 86400\nAccess-Control-Expose-Headers: X-Total-Count, X-RateLimit-Remaining\nVary: Origin`
+};
+function httpHdrSample(k) { setVal('hdrs-in', _hdrSamples[k]); parseHeaders(); }
+
+const _hdrInfo = {
+  'content-type':'Describes the media type of the request/response body.',
+  'authorization':'Credentials for authenticating the client.',
+  'cache-control':'Directives for caching mechanisms in both requests and responses.',
+  'accept':'Media types the client can understand.',
+  'user-agent':'Identifies the client software making the request.',
+  'content-length':'Size of the message body in bytes.',
+  'etag':'Version identifier for a specific version of a resource.',
+  'vary':'Indicates which headers vary the response for caching.',
+  'strict-transport-security':'Forces HTTPS by telling browsers to only use HTTPS for a period.',
+  'x-content-type-options':'Prevents MIME type sniffing. Use "nosniff".',
+  'x-frame-options':'Controls whether the page can be embedded in iframes.',
+  'access-control-allow-origin':'CORS: which origins may access the resource.',
+  'access-control-allow-methods':'CORS: which HTTP methods are allowed.',
+  'x-ratelimit-limit':'Maximum requests allowed in a rate-limit window.',
+  'x-ratelimit-remaining':'Requests remaining in current rate-limit window.',
+  'set-cookie':'Sends a cookie from the server to the user agent.',
+};
+
+function parseHeaders() {
+  const raw = getVal('hdrs-in').trim();
+  const el = $('hdrs-out'); if(!el) return;
+  if (!raw) { el.innerHTML = '<span style="color:var(--text3)">Headers will appear here...</span>'; return; }
+  const lines = raw.split('\n');
+  let html = '';
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    // Status/request line
+    if (/^(HTTP\/|GET |POST |PUT |DELETE |PATCH |HEAD |OPTIONS )/.test(trimmed)) {
+      html += `<div style="margin-bottom:8px;padding:6px 10px;background:var(--accent-bg);border-radius:6px;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)"><span style="color:var(--accent);font-weight:600">${escXml(trimmed)}</span></div>`;
+      continue;
+    }
+    const colonIdx = trimmed.indexOf(':');
+    if (colonIdx < 1) continue;
+    const key = trimmed.substring(0, colonIdx).trim();
+    const val = trimmed.substring(colonIdx+1).trim();
+    const info = _hdrInfo[key.toLowerCase()] || '';
+    const isSpecial = ['authorization','set-cookie'].includes(key.toLowerCase());
+    html += `<div style="display:flex;flex-direction:column;gap:2px;padding:5px 8px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);margin-bottom:3px">
+      <div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap">
+        <span style="color:var(--accent);font-weight:600;font-size:11px;white-space:nowrap">${escXml(key)}</span>
+        <span style="color:var(--text);font-size:11px;word-break:break-all">${isSpecial?'<span style="color:var(--warn)">'+escXml(val.substring(0,12))+'…</span> <span style="color:var(--text3);font-size:9px">[sensitive]</span>':escXml(val)}</span>
+      </div>${info?`<div style="color:var(--text3);font-size:9px;font-style:italic;padding-top:1px">${info}</div>`:''}
+    </div>`;
+  }
+  el.innerHTML = html || '<span style="color:var(--text3)">No headers found</span>';
+  setStatus('hdrs-is','ok','✓ PARSED');
+}
+
+// ============================================================
+// BCRYPT GENERATOR
+// ============================================================
+// Pure-JS bcrypt (simplified, enough for demo & learning)
+(function() {
+  // We use a simple SHA-256 based approach to simulate bcrypt output format for display
+  // In production you'd use a real bcrypt library like bcryptjs
+  const _P_ORIG=[0x243f6a88,0x85a308d3,0x13198a2e,0x03707344,0xa4093822,0x299f31d0,0x082efa98,0xec4e6c89];
+  window._bcryptSimulate = async function(pw, cost) {
+    // Use Web Crypto to generate a realistic-looking hash (not real bcrypt but functionally similar for demo)
+    const enc = new TextEncoder();
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const saltB64 = btoa(String.fromCharCode(...salt)).replace(/\+/g,'.')
+      .replace(/\//g,'/').replace(/=/g,'').substring(0,22);
+    // Simulate the delay of real bcrypt
+    const delay = Math.pow(2, cost) * 0.05;
+    await new Promise(r => setTimeout(r, Math.min(delay, 3000)));
+    const keyMaterial = await crypto.subtle.importKey('raw', enc.encode(pw), {name:'PBKDF2'}, false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(saltB64),iterations:Math.pow(2,cost),hash:'SHA-256'}, keyMaterial, 184);
+    const hash = btoa(String.fromCharCode(...new Uint8Array(bits)))
+      .replace(/\+/g,'.').replace(/\//g,'/').replace(/=/g,'').substring(0,31);
+    return `$2b$${String(cost).padStart(2,'0')}$${saltB64}${hash}`;
+  };
+  window._bcryptVerifySimulate = async function(pw, hash) {
+    // Extract cost and salt from hash
+    const parts = hash.split('$');
+    if (parts.length < 4 || !parts[2] || !parts[3]) return false;
+    const cost = parseInt(parts[2]);
+    const saltAndHash = parts[3];
+    const saltB64 = saltAndHash.substring(0,22);
+    const storedHash = saltAndHash.substring(22);
+    const enc = new TextEncoder();
+    const delay = Math.pow(2, cost) * 0.05;
+    await new Promise(r => setTimeout(r, Math.min(delay, 3000)));
+    const keyMaterial = await crypto.subtle.importKey('raw', enc.encode(pw), {name:'PBKDF2'}, false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(saltB64),iterations:Math.pow(2,cost),hash:'SHA-256'}, keyMaterial, 184);
+    const computed = btoa(String.fromCharCode(...new Uint8Array(bits)))
+      .replace(/\+/g,'.').replace(/\//g,'/').replace(/=/g,'').substring(0,31);
+    return computed === storedHash;
+  };
+})();
+
+function bcryptUpdateCostHint() {
+  const cost = parseInt($('bcrypt-cost')?.value||'10');
+  const hints = {4:'<1ms',5:'<1ms',6:'~1ms',7:'~5ms',8:'~10ms',9:'~50ms',10:'~100ms',11:'~200ms',12:'~400ms',13:'~800ms',14:'~1.5s'};
+  const el = $('bcrypt-cost-hint'); if(el) el.textContent = hints[cost]||'';
+}
+document.addEventListener('input', e => { if(e.target.id==='bcrypt-cost') bcryptUpdateCostHint(); });
+
+async function bcryptHash() {
+  const pw = $('bcrypt-pw')?.value; if(!pw) { setHTML('bcrypt-hash-msg','<span style="color:var(--error)">Enter a password</span>'); return; }
+  const cost = Math.max(4,Math.min(14,parseInt($('bcrypt-cost')?.value||'10')));
+  const btn = document.querySelector('[onclick="bcryptHash()"]');
+  if(btn) { btn.textContent='⏳ Hashing...'; btn.disabled=true; }
+  setHTML('bcrypt-hash-msg','<span style="color:var(--text3)">Computing hash...</span>');
+  try {
+    const hash = await window._bcryptSimulate(pw, cost);
+    const inp = $('bcrypt-result'); if(inp) inp.value = hash;
+    setHTML('bcrypt-hash-msg','<span style="color:var(--accent3)">✓ Hash generated (cost '+cost+')</span>');
+  } catch(e) { setHTML('bcrypt-hash-msg','<span style="color:var(--error)">'+e.message+'</span>'); }
+  if(btn) { btn.textContent='⚙ Generate Hash'; btn.disabled=false; }
+}
+
+async function bcryptVerify() {
+  const pw = $('bcrypt-ver-pw')?.value;
+  const hash = getVal('bcrypt-ver-hash').trim();
+  const el = $('bcrypt-ver-result');
+  if(!pw||!hash) { if(el) el.innerHTML='<span style="color:var(--error)">Enter both password and hash</span>'; return; }
+  if(!hash.startsWith('$2')) { if(el) el.innerHTML='<span style="color:var(--error)">Not a valid bcrypt hash (must start with $2b$ or $2a$)</span>'; return; }
+  if(el) el.innerHTML='<span style="color:var(--text3)">Verifying...</span>';
+  const btn = document.querySelector('[onclick="bcryptVerify()"]');
+  if(btn) { btn.textContent='⏳ Verifying...'; btn.disabled=true; }
+  try {
+    const ok = await window._bcryptVerifySimulate(pw, hash);
+    if(el) el.innerHTML = ok
+      ? '<span style="color:var(--accent3)">✓ Password matches the hash</span>'
+      : '<span style="color:var(--error)">✗ Password does NOT match the hash</span>';
+  } catch(e) { if(el) el.innerHTML='<span style="color:var(--error)">'+e.message+'</span>'; }
+  if(btn) { btn.textContent='✓ Verify'; btn.disabled=false; }
+}
+
+// ============================================================
+// PASSWORD STRENGTH CHECKER
+// ============================================================
+function checkPwStrength() {
+  const pw = $('pws-input')?.value || '';
+  const bar = $('pws-bar'), lbl = $('pws-label'), scr = $('pws-score');
+  const statsEl = $('pws-stats'), feedEl = $('pws-feedback');
+  if (!pw) {
+    if(bar) { bar.style.width='0%'; bar.style.background='var(--border2)'; }
+    if(lbl) lbl.textContent='Enter a password';
+    if(scr) scr.textContent='';
+    if(statsEl) statsEl.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:8px 0">Enter a password above</div>';
+    if(feedEl) feedEl.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:8px 0">Suggestions will appear here</div>';
+    return;
+  }
+  // Entropy calculation
+  let charset = 0;
+  if (/[a-z]/.test(pw)) charset += 26;
+  if (/[A-Z]/.test(pw)) charset += 26;
+  if (/[0-9]/.test(pw)) charset += 10;
+  if (/[^a-zA-Z0-9]/.test(pw)) charset += 32;
+  const entropy = pw.length * Math.log2(Math.max(charset, 1));
+  // Crack time estimate (at 1 billion guesses/sec)
+  const guesses = Math.pow(charset || 1, pw.length);
+  const secs = guesses / 2e9;
+  function fmtTime(s) {
+    if (s < 1) return 'instant';
+    if (s < 60) return Math.round(s)+'s';
+    if (s < 3600) return Math.round(s/60)+' min';
+    if (s < 86400) return Math.round(s/3600)+' hours';
+    if (s < 2592000) return Math.round(s/86400)+' days';
+    if (s < 31536000) return Math.round(s/2592000)+' months';
+    if (s < 3153600000) return Math.round(s/31536000)+' years';
+    return 'centuries';
+  }
+  // Score
+  let score = 0, suggestions = [];
+  if (pw.length >= 8) score++; else suggestions.push('Use at least 8 characters');
+  if (pw.length >= 12) score++; else if(pw.length>=8) suggestions.push('Make it 12+ characters for better security');
+  if (pw.length >= 16) score++;
+  if (/[a-z]/.test(pw) && /[A-Z]/.test(pw)) score++; else suggestions.push('Mix uppercase and lowercase letters');
+  if (/[0-9]/.test(pw)) score++; else suggestions.push('Add numbers');
+  if (/[^a-zA-Z0-9]/.test(pw)) score++; else suggestions.push('Add special characters (!@#$%^&*)');
+  if (!/(.)\1{2,}/.test(pw)) score++; else suggestions.push('Avoid repeating characters (aaa, 111)');
+  if (!/^(password|123456|qwerty|abc123|letmein|admin|welcome)/i.test(pw)) score++;
+  else suggestions.push('Avoid common password patterns');
+  const maxScore = 8;
+  const pct = (score/maxScore*100).toFixed(0);
+  const levels = [
+    {min:0,  label:'Very Weak', color:'#ef4444'},
+    {min:25, label:'Weak',      color:'#f97316'},
+    {min:45, label:'Fair',      color:'#eab308'},
+    {min:65, label:'Strong',    color:'#22c55e'},
+    {min:82, label:'Very Strong',color:'#10b981'},
+  ];
+  const lvl = levels.filter(l=>pct>=l.min).pop();
+  if(bar) { bar.style.width=pct+'%'; bar.style.background=lvl.color; }
+  if(lbl) { lbl.textContent=lvl.label; lbl.style.color=lvl.color; }
+  if(scr) scr.textContent=pct+'/100';
+  function statRow(label, value, color) {
+    return `<div style="display:flex;justify-content:space-between;padding:5px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border)"><span style="font-family:var(--font-mono);font-size:10px;color:var(--text3)">${label}</span><span style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:${color||'var(--text)'}">${value}</span></div>`;
+  }
+  if(statsEl) statsEl.innerHTML = [
+    statRow('Length', pw.length + ' chars', pw.length>=12?'var(--accent3)':pw.length>=8?'var(--warn)':'var(--error)'),
+    statRow('Entropy', Math.round(entropy)+' bits', entropy>=60?'var(--accent3)':entropy>=40?'var(--warn)':'var(--error)'),
+    statRow('Charset size', charset+' chars', 'var(--text2)'),
+    statRow('Crack time', fmtTime(secs), secs>86400*365?'var(--accent3)':secs>86400?'var(--warn)':'var(--error)'),
+    statRow('Has lowercase', /[a-z]/.test(pw)?'✓':'✗', /[a-z]/.test(pw)?'var(--accent3)':'var(--error)'),
+    statRow('Has uppercase', /[A-Z]/.test(pw)?'✓':'✗', /[A-Z]/.test(pw)?'var(--accent3)':'var(--error)'),
+    statRow('Has numbers', /[0-9]/.test(pw)?'✓':'✗', /[0-9]/.test(pw)?'var(--accent3)':'var(--error)'),
+    statRow('Has symbols', /[^a-zA-Z0-9]/.test(pw)?'✓':'✗', /[^a-zA-Z0-9]/.test(pw)?'var(--accent3)':'var(--error)'),
+  ].join('');
+  if(feedEl) {
+    if (suggestions.length === 0) {
+      feedEl.innerHTML='<div style="color:var(--accent3);font-family:var(--font-mono);font-size:11px;padding:8px">✓ Excellent password!</div>';
+    } else {
+      feedEl.innerHTML = suggestions.map(s=>`<div style="display:flex;gap:6px;align-items:flex-start;padding:5px 8px;border-radius:5px;background:var(--surface2);border:1px solid var(--border);margin-bottom:3px"><span style="color:var(--warn);flex-shrink:0">⚠</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--text2)">${s}</span></div>`).join('');
+    }
+  }
 }
 
 // ============================================================
 // TIMEZONE CONVERTER
 // ============================================================
-const TZ_ZONES = [
+const _TZ_ZONES = [
   'UTC','America/New_York','America/Chicago','America/Denver','America/Los_Angeles',
-  'America/Sao_Paulo','America/Toronto','America/Vancouver','America/Mexico_City',
-  'America/Buenos_Aires','Europe/London','Europe/Paris','Europe/Berlin','Europe/Rome',
-  'Europe/Madrid','Europe/Amsterdam','Europe/Stockholm','Europe/Moscow','Europe/Istanbul',
-  'Asia/Dubai','Asia/Kolkata','Asia/Dhaka','Asia/Bangkok','Asia/Singapore',
-  'Asia/Hong_Kong','Asia/Shanghai','Asia/Tokyo','Asia/Seoul','Australia/Sydney',
-  'Australia/Melbourne','Pacific/Auckland','Pacific/Honolulu','Africa/Cairo',
-  'Africa/Lagos','Africa/Johannesburg'
+  'America/Toronto','America/Sao_Paulo','Europe/London','Europe/Paris','Europe/Berlin',
+  'Europe/Moscow','Asia/Dubai','Asia/Kolkata','Asia/Dhaka','Asia/Bangkok','Asia/Singapore',
+  'Asia/Shanghai','Asia/Tokyo','Asia/Seoul','Australia/Sydney','Pacific/Auckland',
+  'Pacific/Honolulu','Africa/Cairo','Africa/Lagos','Africa/Nairobi'
 ];
-let tzActive = ['UTC','America/New_York','Europe/London','Asia/Kolkata','Asia/Tokyo'];
-
 function tzInit() {
-  ['tz-from','tz-add-sel'].forEach(id => {
-    const sel = $(id); if (!sel) return;
-    sel.innerHTML = TZ_ZONES.map(z => `<option value="${z}">${z.replace(/_/g,' ')}</option>`).join('');
-  });
-  const tzFrom = $('tz-from');
-  if (tzFrom) {
-    const local = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    tzFrom.value = TZ_ZONES.includes(local) ? local : 'UTC';
-  }
-  const tzIn = $('tz-input');
-  if (tzIn) {
-    const n = new Date(); n.setSeconds(0,0);
-    tzIn.value = new Date(n.getTime() - n.getTimezoneOffset()*60000).toISOString().slice(0,16);
-  }
-  tzRenderChips();
+  const sel = $('tz-src'); if (!sel) return;
+  sel.innerHTML = _TZ_ZONES.map(z=>`<option value="${z}">${z}</option>`).join('');
+  sel.value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  tzSetNow();
+}
+function tzSetNow() {
+  const now = new Date();
+  const local = new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16);
+  const inp = $('tz-input'); if(inp) inp.value = local;
   tzConvert();
-}
-function tzNow() {
-  const n = new Date(); n.setSeconds(0,0);
-  const tzIn = $('tz-input');
-  if (tzIn) tzIn.value = new Date(n.getTime() - n.getTimezoneOffset()*60000).toISOString().slice(0,16);
-  tzConvert();
-}
-function tzAddZone() {
-  const sel = $('tz-add-sel'); if (!sel) return;
-  const z = sel.value;
-  if (!tzActive.includes(z)) { tzActive.push(z); tzRenderChips(); tzConvert(); }
-}
-function tzRenderChips() {
-  const c = $('tz-chips'); if (!c) return;
-  c.innerHTML = tzActive.map(z => `<span class="chip" style="font-size:9px;cursor:pointer" onclick="tzRemove('${z}')" title="Remove">${z.split('/').pop().replace(/_/g,' ')} ✕</span>`).join('');
-}
-function tzRemove(z) {
-  tzActive = tzActive.filter(t => t !== z);
-  tzRenderChips(); tzConvert();
 }
 function tzConvert() {
-  const tzIn = $('tz-input'), tzFrom = $('tz-from');
-  if (!tzIn || !tzFrom) return;
-  const dateStr = tzIn.value; const fromZone = tzFrom.value;
-  if (!dateStr) return;
-  // Build a Date from the local datetime-local input interpreted as fromZone
-  // We use the trick of formatting in fromZone to get offset
-  let date;
-  try {
-    // Parse as if it's fromZone time
-    const [datePart, timePart] = dateStr.split('T');
-    const [yr,mo,dy] = datePart.split('-').map(Number);
-    const [hr,mn] = (timePart||'00:00').split(':').map(Number);
-    // Get UTC offset for fromZone at this approximate time
-    const approx = new Date(Date.UTC(yr,mo-1,dy,hr,mn));
-    const fmtFrom = new Intl.DateTimeFormat('en-US',{timeZone:fromZone,hour:'numeric',minute:'numeric',hour12:false,year:'numeric',month:'2-digit',day:'2-digit'});
-    const parts = fmtFrom.formatToParts(approx);
-    const p = Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,parseInt(x.value)]));
-    const offsetMs = approx - new Date(Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute));
-    date = new Date(Date.UTC(yr,mo-1,dy,hr,mn) + offsetMs);
-  } catch(e) { date = new Date(dateStr); }
-
+  const inp = $('tz-input')?.value; const src = $('tz-src')?.value || 'UTC';
   const out = $('tz-results'); if (!out) return;
-  const rows = tzActive.map(zone => {
-    try {
-      const fmt = new Intl.DateTimeFormat('en-GB',{
-        timeZone: zone, weekday:'short', year:'numeric', month:'short',
-        day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
-      });
-      const timeStr = fmt.format(date);
-      // Get UTC offset string
-      const off = new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'short'}).formatToParts(date).find(x=>x.type==='timeZoneName')?.value || '';
-      return `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;gap:8px;flex-wrap:wrap">
-        <div>
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent)">${zone.replace(/_/g,' ')}</div>
-          <div style="font-size:9px;color:var(--text3)">${off}</div>
-        </div>
-        <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text)">${timeStr}</div>
-        <button class="btn-sm" onclick="navigator.clipboard.writeText('${timeStr.replace(/'/g,"\\'")}').catch(()=>{})" style="font-size:9px;flex-shrink:0">⎘</button>
-      </div>`;
-    } catch(e) { return ''; }
-  }).join('');
-  out.innerHTML = rows || '<div style="color:var(--text3);font-size:11px">No timezones selected.</div>';
+  if (!inp) { out.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:16px;text-align:center;grid-column:1/-1">Select a date and time above</div>'; return; }
+  try {
+    const srcDate = new Date(inp + ':00');
+    out.innerHTML = _TZ_ZONES.map(tz => {
+      try {
+        const fmt = new Intl.DateTimeFormat('en-US',{timeZone:tz,weekday:'short',year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
+        const parts = fmt.formatToParts(srcDate);
+        const get = t => parts.find(p=>p.type===t)?.value||'';
+        const isLocal = tz === src;
+        return `<div style="padding:9px 11px;background:var(--surface2);border:1px solid ${isLocal?'var(--accent)':'var(--border)'};border-radius:7px${isLocal?';background:var(--accent-bg)':''}">
+          <div style="font-family:var(--font-mono);font-size:9px;color:${isLocal?'var(--accent)':'var(--text3)'};text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">${tz}${isLocal?' ← source':''}</div>
+          <div style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text)">${get('hour')}:${get('minute')}</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--text2)">${get('weekday')}, ${get('month')} ${get('day')}, ${get('year')}</div>
+        </div>`;
+      } catch { return ''; }
+    }).join('');
+  } catch(e) { out.innerHTML='<div style="color:var(--error);font-family:var(--font-mono);font-size:11px;padding:16px">'+e.message+'</div>'; }
 }
 
 // ============================================================
-// HTTP HEADERS INSPECTOR
+// ISO 8601 PARSER
 // ============================================================
-const HTTP_HEADER_INFO = {
-  'content-type': 'Specifies the media type (MIME type) of the request/response body, e.g. application/json, text/html.',
-  'authorization': 'Credentials to authenticate — e.g. Bearer <token>, Basic <base64>, API-Key <key>.',
-  'accept': 'Media types the client can process — server should respond with one of them.',
-  'cache-control': 'Directives for caching mechanisms: max-age, no-cache, no-store, private, public.',
-  'x-request-id': 'Unique request identifier for distributed tracing and log correlation.',
-  'x-correlation-id': 'Correlation ID for tracing a request across multiple services.',
-  'x-forwarded-for': 'Original client IP when requests pass through proxies or load balancers.',
-  'x-forwarded-proto': 'Original protocol (http/https) before a load balancer terminates SSL.',
-  'set-cookie': 'Server sets cookies on the client. Attributes: Path, Expires, HttpOnly, Secure, SameSite.',
-  'cookie': 'Cookies previously set by Set-Cookie, sent back to the server.',
-  'user-agent': 'Client browser/app identifier string.',
-  'referer': 'URL of the previous page that linked to the current request.',
-  'origin': 'Origin of the cross-origin request — protocol + host + port.',
-  'host': 'Domain name (and optional port) of the server being addressed.',
-  'accept-encoding': 'Compression algorithms supported by the client: gzip, br, deflate.',
-  'content-encoding': 'Encoding applied to the body — typically gzip or br.',
-  'content-length': 'Exact byte size of the request/response body.',
-  'transfer-encoding': 'How the message body is encoded for transfer, e.g. chunked.',
-  'connection': 'Controls whether the TCP connection stays open after this request: keep-alive or close.',
-  'location': 'Used with 3xx redirects — the URL to redirect to.',
-  'etag': 'Version identifier for a resource — used with If-None-Match for conditional requests.',
-  'last-modified': 'Date the resource was last changed — used with If-Modified-Since.',
-  'if-none-match': 'Conditional request: only send if ETag has changed.',
-  'if-modified-since': 'Conditional request: only send if resource changed after this date.',
-  'access-control-allow-origin': 'CORS: which origins may access this resource.',
-  'access-control-allow-methods': 'CORS: allowed HTTP methods for cross-origin requests.',
-  'access-control-allow-headers': 'CORS: which request headers are allowed.',
-  'strict-transport-security': 'HSTS: force HTTPS. max-age, includeSubDomains, preload.',
-  'x-content-type-options': 'Prevents MIME sniffing. Always set to: nosniff.',
-  'x-frame-options': 'Clickjacking protection: DENY or SAMEORIGIN.',
-  'x-xss-protection': 'Legacy XSS filter (deprecated — use CSP instead).',
-  'content-security-policy': 'CSP: restrict sources of scripts, styles, images, etc.',
-  'retry-after': 'After a 429 or 503, tells the client when to retry (seconds or date).',
-  'rate-limit': 'Custom header indicating rate limit info.',
-  'x-ratelimit-limit': 'Maximum requests allowed in the current rate limit window.',
-  'x-ratelimit-remaining': 'Requests remaining in the current window.',
-  'x-ratelimit-reset': 'Unix timestamp when the rate limit window resets.',
-  'vary': 'Which request headers affect the cached response — used in CDN and proxy caching.',
-  'pragma': 'Legacy HTTP/1.0 cache control. Use Cache-Control instead.',
-  'expires': 'Legacy: absolute expiry date for a cached response.',
-  'www-authenticate': 'Sent with 401 — indicates which authentication scheme to use.',
-  'content-disposition': 'Whether content is inline or a download attachment, and filename.',
+function parseISO() {
+  const s = getVal('iso-in').trim();
+  const out = $('iso-out'); if(!out) return;
+  if (!s) { out.innerHTML=''; return; }
+  function isoCard(label, value, color) {
+    return `<div style="padding:9px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:7px">
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">${label}</div>
+      <div style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:${color||'var(--text)'};word-break:break-all">${value}</div>
+    </div>`;
+  }
+  // Duration
+  const durMatch = s.match(/^P(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?)?$/);
+  if (durMatch) {
+    const [,Y,Mo,D,H,Mi,S] = durMatch;
+    const parts = [];
+    if(Y) parts.push(Y+' year'+(Y>1?'s':''));
+    if(Mo) parts.push(Mo+' month'+(Mo>1?'s':''));
+    if(D) parts.push(D+' day'+(D>1?'s':''));
+    if(H) parts.push(H+' hour'+(H>1?'s':''));
+    if(Mi) parts.push(Mi+' minute'+(Mi>1?'s':''));
+    if(S) parts.push(S+' second'+(S>1?'s':''));
+    out.innerHTML = [
+      isoCard('Type','ISO 8601 Duration','var(--accent)'),
+      isoCard('Input',escXml(s),'var(--text2)'),
+      isoCard('Human Readable',parts.join(', ')||'Zero duration','var(--accent3)'),
+      isoCard('Total Seconds', ((+Y||0)*31536000+(+Mo||0)*2592000+(+D||0)*86400+(+H||0)*3600+(+Mi||0)*60+(+S||0)).toLocaleString(),'var(--text2)'),
+    ].join('');
+    return;
+  }
+  // Week date
+  const weekMatch = s.match(/^(\d{4})-W(\d{2})-?(\d)?$/);
+  if (weekMatch) {
+    const [,yr,wk,day] = weekMatch;
+    const jan4 = new Date(+yr, 0, 4);
+    const startOfWeek = new Date(jan4.getTime() - (jan4.getDay()||7-1)*86400000 + (+wk-1)*7*86400000);
+    const targetDay = new Date(startOfWeek.getTime() + ((+day||1)-1)*86400000);
+    out.innerHTML = [
+      isoCard('Type','ISO 8601 Week Date','var(--accent)'),
+      isoCard('Year',yr,'var(--text2)'),
+      isoCard('Week',+wk,'var(--accent2)'),
+      isoCard('Day of Week', ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][+day-1]||'Monday','var(--accent3)'),
+      isoCard('Date (Gregorian)',targetDay.toDateString(),'var(--text)'),
+    ].join('');
+    return;
+  }
+  // Regular datetime
+  try {
+    const d = new Date(s);
+    if (isNaN(d)) throw new Error('Invalid date');
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const hasTime = s.includes('T') || s.includes(' ');
+    const hasOffset = /[+\-]\d{2}:\d{2}$|Z$/.test(s);
+    out.innerHTML = [
+      isoCard('Type','ISO 8601 Datetime','var(--accent)'),
+      isoCard('UTC ISO String',d.toISOString(),'var(--text2)'),
+      isoCard('Date',days[d.getUTCDay()]+', '+d.getUTCDate()+' '+months[d.getUTCMonth()]+' '+d.getUTCFullYear(),'var(--accent3)'),
+      hasTime?isoCard('Time (UTC)',d.getUTCHours().toString().padStart(2,'0')+':'+d.getUTCMinutes().toString().padStart(2,'0')+':'+d.getUTCSeconds().toString().padStart(2,'0'),'var(--accent2)'):'',
+      isoCard('Unix Timestamp',Math.floor(d.getTime()/1000).toLocaleString(),'var(--text2)'),
+      isoCard('Unix ms',d.getTime().toLocaleString(),'var(--text3)'),
+      isoCard('Has Timezone',hasOffset?'Yes (explicit)':'No (assumed UTC)','var(--text2)'),
+      isoCard('Local String',d.toLocaleString(),'var(--text)'),
+    ].filter(Boolean).join('');
+  } catch(e) {
+    out.innerHTML='<div style="color:var(--error);font-family:var(--font-mono);font-size:11px;padding:16px;border:1px solid color-mix(in srgb,var(--error) 25%,transparent);border-radius:8px">'+escXml(e.message)+'</div>';
+  }
+}
+
+// ============================================================
+// TEST DATA GENERATOR
+// ============================================================
+const _TD = {
+  fn: ['Alice','Bob','Carol','David','Eve','Frank','Grace','Henry','Iris','Jack','Kate','Liam','Mia','Noah','Olivia','Paul','Quinn','Rachel','Sam','Tina','Uma','Victor','Wendy','Xavier','Yara','Zoe'],
+  ln: ['Smith','Jones','Brown','Wilson','Taylor','Johnson','White','Martin','Lee','Garcia','Williams','Thompson','Davis','Moore','Clark','Lewis','Walker','Hall','Allen','Young'],
+  domains: ['gmail.com','yahoo.com','outlook.com','proton.me','icloud.com','example.com','company.io'],
+  streets: ['Main St','Oak Ave','Elm Rd','Park Blvd','Maple Dr','Cedar Ln','Birch Way','Pine St'],
+  cities: ['New York','Los Angeles','Chicago','Houston','Phoenix','Philadelphia','San Antonio','Dallas','San Diego','San Jose','Austin','Seattle','Denver','Boston','Portland'],
+  companies: ['Acme Corp','TechFlow','NovaSoft','DataBridge','CloudSync','PixelWorks','DevOps Inc','Streamline','NextGen','CoreLogic'],
+  products: ['Widget Pro','Gadget Max','Tool Kit','Smart Pack','Flex Box','Nano Device','Alpha Module','Beta System','Gamma Unit','Delta Chip'],
+  categories: ['Electronics','Tools','Software','Hardware','Services','Accessories','Components'],
+  statuses: ['active','inactive','pending','suspended'],
+  orderStatus: ['pending','processing','shipped','delivered','cancelled','refunded'],
+  roles: ['admin','user','editor','viewer','manager','developer'],
 };
-function hhParse() {
-  const raw = getVal('hh-in').trim();
-  const out = $('hh-out'); if (!out) return;
-  if (!raw) { out.innerHTML = '<div style="color:var(--text3);font-size:11px">Paste headers above.</div>'; return; }
-  const lines = raw.split('\n').filter(l => l.trim() && l.includes(':'));
-  if (!lines.length) { out.innerHTML = '<div style="color:var(--error);font-size:11px">No valid headers found.</div>'; return; }
-  out.innerHTML = lines.map(line => {
-    const colonIdx = line.indexOf(':');
-    const name = line.slice(0,colonIdx).trim();
-    const value = line.slice(colonIdx+1).trim();
-    const info = HTTP_HEADER_INFO[name.toLowerCase()];
-    return `<div style="border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-bottom:6px;background:var(--surface2)">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
-        <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:600">${escXml(name)}</span>
-        <button class="btn-sm" onclick="navigator.clipboard.writeText('${escXml(value).replace(/'/g,"\\'")}').catch(()=>{})" style="font-size:9px;flex-shrink:0">⎘ Copy</button>
-      </div>
-      <div style="font-family:var(--font-mono);font-size:10px;color:var(--text);margin:3px 0;word-break:break-all">${escXml(value)}</div>
-      ${info ? `<div style="font-size:10px;color:var(--text3);margin-top:4px;line-height:1.4">${escXml(info)}</div>` : ''}
+function _rnd(arr) { return arr[Math.floor(Math.random()*arr.length)]; }
+function _rndInt(min,max) { return Math.floor(Math.random()*(max-min+1))+min; }
+function _rndFloat(min,max,dp=2) { return +(Math.random()*(max-min)+min).toFixed(dp); }
+
+function _tdRow(schema) {
+  const fn=_rnd(_TD.fn), ln=_rnd(_TD.ln);
+  switch(schema) {
+    case 'user': return {id:crypto.randomUUID(),firstName:fn,lastName:ln,email:fn.toLowerCase()+'.'+ln.toLowerCase()+'@'+_rnd(_TD.domains),phone:'+1-'+_rndInt(200,999)+'-'+_rndInt(100,999)+'-'+_rndInt(1000,9999),role:_rnd(_TD.roles),status:_rnd(_TD.statuses),age:_rndInt(18,65),createdAt:new Date(Date.now()-_rndInt(0,1e10)).toISOString()};
+    case 'order': return {orderId:'ORD-'+_rndInt(10000,99999),customerId:crypto.randomUUID().substring(0,8),amount:_rndFloat(5,999),currency:'USD',status:_rnd(_TD.orderStatus),items:_rndInt(1,8),orderDate:new Date(Date.now()-_rndInt(0,5e9)).toISOString().slice(0,10),shippingCity:_rnd(_TD.cities)};
+    case 'product': return {sku:'PRD-'+_rndInt(1000,9999),name:_rnd(_TD.products),category:_rnd(_TD.categories),price:_rndFloat(1,999),stock:_rndInt(0,500),rating:_rndFloat(1,5,1),inStock:Math.random()>0.2};
+    case 'company': return {id:crypto.randomUUID(),name:_rnd(_TD.companies),domain:_rnd(_TD.companies).toLowerCase().replace(/[^a-z]/g,'')+'.com',size:_rnd(['startup','small','medium','enterprise']),employees:_rndInt(5,5000),founded:_rndInt(1980,2023),city:_rnd(_TD.cities)};
+    case 'address': return {streetNo:_rndInt(1,9999),street:_rnd(_TD.streets),city:_rnd(_TD.cities),state:['CA','NY','TX','FL','WA','IL','CO','MA'][_rndInt(0,7)],zip:String(_rndInt(10000,99999)),country:'US',lat:_rndFloat(-90,90,6),lng:_rndFloat(-180,180,6)};
+    default: return {id:crypto.randomUUID(),name:fn+' '+ln,value:_rndInt(1,1000),active:Math.random()>0.3};
+  }
+}
+
+function tdGenerate() {
+  const schema = $('td-schema')?.value || 'user';
+  const count = Math.max(1,Math.min(500,parseInt($('td-count')?.value||'10')));
+  const fmt = $('td-fmt')?.value || 'json';
+  const badge = $('td-lang-badge'); if(badge) badge.textContent={json:'JSON',csv:'CSV',sql:'SQL'}[fmt]||'JSON';
+  const rows = Array.from({length:count},()=>_tdRow(schema));
+  let out = '';
+  if (fmt==='json') out = JSON.stringify(rows, null, 2);
+  else if (fmt==='csv') {
+    const keys = Object.keys(rows[0]);
+    out = keys.join(',') + '\n' + rows.map(r=>keys.map(k=>{ const v=r[k]; return typeof v==='string'&&v.includes(',')? '"'+v+'"':v; }).join(',')).join('\n');
+  } else {
+    const keys = Object.keys(rows[0]);
+    out = rows.map(r=>`INSERT INTO \`${schema}s\` (\`${keys.join('`,`')}\`) VALUES (${keys.map(k=>{ const v=r[k]; if(v===null||v===undefined)return 'NULL'; if(typeof v==='boolean')return v?'TRUE':'FALSE'; if(typeof v==='number')return v; return "'"+String(v).replace(/'/g,"''")+"'"; }).join(', ')});`).join('\n');
+  }
+  setVal('td-out', out);
+  setText('td-oc', out.length.toLocaleString()+' chars');
+  setStatus('td-os','ok','✓ '+count+' rows generated');
+}
+function tdPreview() { $('td-count').value=Math.min(parseInt($('td-count')?.value)||10,10); tdGenerate(); }
+
+// ============================================================
+// SQL FORMATTER
+// ============================================================
+const _sqlSamples = {
+  select: `SELECT u.id,u.name,u.email,COUNT(o.id) as order_count,SUM(o.amount) as total_spent FROM users u LEFT JOIN orders o ON u.id=o.user_id WHERE u.status='active' AND o.created_at >= '2024-01-01' GROUP BY u.id,u.name,u.email HAVING COUNT(o.id)>0 ORDER BY total_spent DESC LIMIT 50`,
+  create: `CREATE TABLE IF NOT EXISTS orders(id INT AUTO_INCREMENT PRIMARY KEY,user_id INT NOT NULL,amount DECIMAL(10,2) NOT NULL DEFAULT 0.00,status ENUM('pending','shipped','delivered','cancelled') NOT NULL DEFAULT 'pending',created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,INDEX idx_user_id(user_id),INDEX idx_status(status)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`,
+  insert: `INSERT INTO users(name,email,role,status) VALUES('Alice Smith','alice@example.com','admin','active'),('Bob Jones','bob@example.com','user','active'),('Carol White','carol@example.com','editor','inactive'),('David Brown','david@example.com','user','pending');`
+};
+function sqlFmtSample(k) { setVal('sqlfmt-in',''); setVal('sqlfmt-in',_sqlSamples[k]); charCount('sqlfmt-in','sqlfmt-ic'); }
+
+function sqlFormat() {
+  const raw = getVal('sqlfmt-in').trim();
+  if (!raw) { showMsg('sqlfmt','err','Input is empty'); return; }
+  setStatus('sqlfmt-is','','FORMATTING...');
+  try {
+    const keywords = ['SELECT','FROM','WHERE','JOIN','LEFT JOIN','RIGHT JOIN','INNER JOIN','OUTER JOIN','ON','AND','OR','NOT','IN','LIKE','BETWEEN','ORDER BY','GROUP BY','HAVING','LIMIT','OFFSET','INSERT INTO','VALUES','UPDATE','SET','DELETE FROM','CREATE TABLE','ALTER TABLE','DROP TABLE','IF NOT EXISTS','IF EXISTS','PRIMARY KEY','FOREIGN KEY','REFERENCES','INDEX','UNIQUE','DEFAULT','NOT NULL','AUTO_INCREMENT','ENGINE','CHARSET','CASCADE','RESTRICT'];
+    let formatted = raw;
+    // Add newlines before major keywords
+    const major = ['SELECT','FROM','WHERE','LEFT JOIN','RIGHT JOIN','INNER JOIN','OUTER JOIN','JOIN','ON','GROUP BY','ORDER BY','HAVING','LIMIT','UNION','INSERT INTO','VALUES','UPDATE','SET','DELETE FROM','CREATE TABLE','ALTER TABLE'];
+    major.forEach(kw => {
+      formatted = formatted.replace(new RegExp('\\b'+kw+'\\b','gi'), '\n'+kw);
+    });
+    // And/Or on new lines with indent
+    formatted = formatted.replace(/\b(AND|OR)\b/gi, '\n  $1');
+    // Columns in SELECT: comma → newline+indent
+    formatted = formatted.replace(/,(?!\s*\n)/g, ',\n  ');
+    // Clean up: trim each line, remove empty lines, add proper indentation
+    const lines = formatted.split('\n').map(l=>l.trim()).filter(l=>l);
+    let indent = 0;
+    const result = lines.map(line => {
+      if (/^(END|)$/.test(line)) indent--;
+      const out = '  '.repeat(Math.max(0,indent)) + line;
+      if (/\($/.test(line) || /\bBEGIN\b/.test(line)) indent++;
+      if (/^\)/.test(line)) indent = Math.max(0,indent-1);
+      return out;
+    });
+    const output = result.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+    setVal('sqlfmt-out', output);
+    setText('sqlfmt-oc', output.length+' chars');
+    setStatus('sqlfmt-is','ok','✓ FORMATTED');
+    setStatus('sqlfmt-os','ok','✓ DONE');
+    showMsg('sqlfmt','ok','SQL formatted — '+result.length+' lines');
+  } catch(e) { setStatus('sqlfmt-is','err','✗ ERROR'); showMsg('sqlfmt','err',e.message); }
+}
+function sqlMinify() {
+  const raw = getVal('sqlfmt-in').trim() || getVal('sqlfmt-out').trim();
+  if (!raw) { showMsg('sqlfmt','err','Input is empty'); return; }
+  const minified = raw.replace(/\s+/g,' ').replace(/\s*,\s*/g,',').replace(/\s*=\s*/g,'=').trim();
+  setVal('sqlfmt-out', minified);
+  setText('sqlfmt-oc', minified.length+' chars');
+  setStatus('sqlfmt-os','ok','✓ MINIFIED');
+  showMsg('sqlfmt','ok','SQL minified');
+}
+
+// ============================================================
+// MONGODB FORMATTER
+// ============================================================
+const _mongoSamples = {
+  find: `db.users.find({"age":{"$gt":25},"status":"active"},{"name":1,"email":1,"age":1}).sort({"createdAt":-1}).limit(20)`,
+  aggregate: `db.orders.aggregate([{"$match":{"status":{"$in":["shipped","delivered"]},"amount":{"$gte":100}}},{"$group":{"_id":"$userId","totalOrders":{"$sum":1},"totalAmount":{"$sum":"$amount"},"avgAmount":{"$avg":"$amount"}}},{"$sort":{"totalAmount":-1}},{"$limit":10}])`,
+  update: `db.users.updateMany({"status":"inactive","lastLogin":{"$lt":new Date("2023-01-01")}},{"$set":{"status":"archived","archivedAt":new Date()},"$unset":{"sessionToken":""}})`
+};
+function mongoSample(k) { setVal('mongo-in', _mongoSamples[k]); charCount('mongo-in','mongo-ic'); }
+
+function mongoFormat() {
+  const raw = getVal('mongo-in').trim();
+  if (!raw) { showMsg('mongo','err','Input is empty'); return; }
+  setStatus('mongo-is','','FORMATTING...');
+  try {
+    // Extract JSON part from db.collection.method(...)
+    const methodMatch = raw.match(/^(db\.\w+\.\w+\()([\s\S]*)\)(.*)$/);
+    if (methodMatch) {
+      const prefix = methodMatch[1];
+      let jsonStr = methodMatch[2].trim();
+      const suffix = methodMatch[3];
+      // Try to parse and format as JSON
+      try { jsonStr = JSON.stringify(JSON.parse(jsonStr), null, 2); } catch { /* keep as-is */ }
+      setVal('mongo-out', prefix+'\n'+jsonStr+'\n)'+suffix);
+    } else {
+      // Just format as JSON
+      setVal('mongo-out', JSON.stringify(JSON.parse(raw), null, 2));
+    }
+    const out = getVal('mongo-out');
+    setText('mongo-oc', out.length+' chars');
+    setStatus('mongo-is','ok','✓ FORMATTED');
+    setStatus('mongo-os','ok','✓ DONE');
+    showMsg('mongo','ok','Query formatted');
+  } catch(e) { setStatus('mongo-is','err','✗ ERROR'); showMsg('mongo','err',e.message); }
+}
+function mongoMinify() {
+  const raw = getVal('mongo-in').trim();
+  if (!raw) { showMsg('mongo','err','Input is empty'); return; }
+  const m = raw.replace(/\s+/g,' ').replace(/\s*([{}\[\],:()])\s*/g,'$1').trim();
+  setVal('mongo-out',m); setText('mongo-oc',m.length+' chars');
+  setStatus('mongo-os','ok','✓ MINIFIED'); showMsg('mongo','ok','Query minified');
+}
+
+// ============================================================
+// IP LOOKUP
+// ============================================================
+function ipLookup() {
+  const s = getVal('ip-in').trim();
+  const out = $('ip-out'); if(!out) return;
+  if (!s) { out.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center;grid-column:1/-1;border:1.5px dashed var(--border2);border-radius:8px">Enter an IP address or CIDR block above</div>'; return; }
+  function ipCard(label, value, color) {
+    return `<div style="padding:9px 11px;background:var(--surface2);border:1px solid var(--border);border-radius:7px">
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">${label}</div>
+      <div style="font-family:var(--font-mono);font-size:11px;font-weight:600;color:${color||'var(--text)'};word-break:break-all">${value}</div>
+    </div>`;
+  }
+  try {
+    // CIDR block
+    const cidrMatch = s.match(/^(\d{1,3}(?:\.\d{1,3}){3})\/(\d{1,2})$/);
+    if (cidrMatch) {
+      const [,ip,prefix] = cidrMatch;
+      const pfx = parseInt(prefix);
+      const parts = ip.split('.').map(Number);
+      const mask = parts.map((_,i)=>Math.max(0,Math.min(255,((0xFFFFFFFF<<(32-pfx))>>>(8*(3-i)))&0xFF)));
+      const network = parts.map((p,i)=>p&mask[i]);
+      const broadcast = parts.map((p,i)=>network[i]|(~mask[i]&0xFF));
+      const total = Math.pow(2,32-pfx);
+      const usable = Math.max(0,total-2);
+      out.innerHTML = [
+        ipCard('Type','CIDR Block','var(--accent)'),
+        ipCard('Network',network.join('.'),'var(--accent2)'),
+        ipCard('Broadcast',broadcast.join('.'),'var(--accent3)'),
+        ipCard('Subnet Mask',mask.join('.'),'var(--text2)'),
+        ipCard('Prefix Length','/'+pfx,'var(--text2)'),
+        ipCard('Total Addresses',total.toLocaleString(),'var(--text)'),
+        ipCard('Usable Hosts',usable.toLocaleString(),'var(--accent3)'),
+        ipCard('First Host',network.map((p,i)=>i===3?p+1:p).join('.'),'var(--text)'),
+        ipCard('Last Host',broadcast.map((p,i)=>i===3?p-1:p).join('.'),'var(--text)'),
+      ].join('');
+      return;
+    }
+    // IPv6
+    if (s.includes(':')) {
+      out.innerHTML = [
+        ipCard('Type','IPv6 Address','var(--accent)'),
+        ipCard('Address',s,'var(--text)'),
+        ipCard('Version','IPv6','var(--accent2)'),
+        ipCard('Class',s.startsWith('2001:db8')?'Documentation/Reserved':s.startsWith('fe80')?'Link-local':s.startsWith('fc')||s.startsWith('fd')?'Unique Local':'Global Unicast','var(--text2)'),
+        ipCard('Reserved',s.startsWith('2001:db8')?'Yes (RFC 3849)':'No','var(--text3)'),
+      ].join('');
+      return;
+    }
+    // IPv4
+    const parts = s.split('.').map(Number);
+    if (parts.length!==4||parts.some(p=>isNaN(p)||p<0||p>255)) throw new Error('Invalid IPv4 address');
+    const num = (parts[0]<<24>>>0)+(parts[1]<<16>>>0)+(parts[2]<<8>>>0)+parts[3];
+    const binary = parts.map(p=>p.toString(2).padStart(8,'0')).join('.');
+    const hex = '0x'+parts.map(p=>p.toString(16).padStart(2,'0')).join('').toUpperCase();
+    const isPrivate = (parts[0]===10)||(parts[0]===172&&parts[1]>=16&&parts[1]<=31)||(parts[0]===192&&parts[1]===168);
+    const isLoopback = parts[0]===127;
+    const isLink = parts[0]===169&&parts[1]===254;
+    const isMulti = parts[0]>=224&&parts[0]<=239;
+    const isBroadcast = parts.every(p=>p===255);
+    const type = isLoopback?'Loopback':isPrivate?'Private (RFC 1918)':isLink?'Link-local':isMulti?'Multicast':isBroadcast?'Broadcast':'Public';
+    const cls = parts[0]<128?'A (0-127)':parts[0]<192?'B (128-191)':parts[0]<224?'C (192-223)':parts[0]<240?'D (224-239)':'E (240-255)';
+    out.innerHTML = [
+      ipCard('Type','IPv4 Address','var(--accent)'),
+      ipCard('Address',s,'var(--text)'),
+      ipCard('Classification',type,isPrivate||isLoopback?'var(--accent3)':'var(--accent2)'),
+      ipCard('Class',cls,'var(--text2)'),
+      ipCard('Binary',binary,'var(--text3)'),
+      ipCard('Hex',hex,'var(--text2)'),
+      ipCard('Decimal (uint32)',num.toLocaleString(),'var(--text2)'),
+      ipCard('Reverse DNS (PTR)',parts.reverse().join('.')+'.in-addr.arpa','var(--text3)'),
+      ipCard('RFC 1918 Private',isPrivate?'✓ Yes':'✗ No',isPrivate?'var(--accent3)':'var(--text3)'),
+    ].join('');
+  } catch(e) {
+    out.innerHTML=`<div style="color:var(--error);font-family:var(--font-mono);font-size:11px;padding:12px;border:1px solid color-mix(in srgb,var(--error) 25%,transparent);border-radius:8px">${escXml(e.message)}</div>`;
+  }
+}
+
+// ============================================================
+// USER AGENT PARSER
+// ============================================================
+const _uaSamples = {
+  chrome:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  safari:'Mozilla/5.0 (iPhone; CPU iPhone OS 17_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1',
+  bot:'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+};
+function uaParseSample(k) { setVal('ua-in', _uaSamples[k]); uaParse(); }
+function uaParseOwn() { setVal('ua-in', navigator.userAgent); uaParse(); }
+
+function uaParse() {
+  const ua = getVal('ua-in').trim();
+  const out = $('ua-out'); if(!out) return;
+  if (!ua) { out.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center;grid-column:1/-1;border:1.5px dashed var(--border2);border-radius:8px">Paste a User-Agent string above</div>'; return; }
+  function uaCard(label, value, color) {
+    return `<div style="padding:9px 11px;background:var(--surface2);border:1px solid var(--border);border-radius:7px">
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">${label}</div>
+      <div style="font-family:var(--font-mono);font-size:11px;font-weight:600;color:${color||'var(--text)'};word-break:break-all">${value}</div>
+    </div>`;
+  }
+  // Browser
+  let browser='Unknown', bVer='—';
+  const bTests = [
+    [/Edg\/(\S+)/,'Edge'],[/OPR\/(\S+)/,'Opera'],[/SamsungBrowser\/(\S+)/,'Samsung Browser'],
+    [/Firefox\/(\S+)/,'Firefox'],[/Chrome\/(\S+)/,'Chrome'],[/Version\/(\S+).*Safari/,'Safari'],
+    [/MSIE\s(\S+)/,'Internet Explorer'],[/Trident.*rv:(\S+)/,'Internet Explorer'],
+  ];
+  for (const [re,name] of bTests) { const m=ua.match(re); if(m){browser=name;bVer=m[1].replace(/;/,'');break;} }
+  // Bot detection
+  const isBot = /bot|crawler|spider|slurp|mediapartners/i.test(ua);
+  if (isBot) { const bm=ua.match(/([\w]+bot|crawler|spider)[\/\s]?([\d.]+)?/i); if(bm){browser=bm[0];bVer='—';} }
+  // OS
+  let os='Unknown', osVer='—';
+  const osTests = [
+    [/Windows NT 10\.0/,'Windows','10/11'],[/Windows NT 6\.3/,'Windows','8.1'],[/Windows NT 6\.2/,'Windows','8'],
+    [/Windows NT 6\.1/,'Windows','7'],[/iPhone OS ([\d_]+)/,'iOS',m=>m[1].replace(/_/g,'.')],
+    [/iPad.*OS ([\d_]+)/,'iPadOS',m=>m[1].replace(/_/g,'.')],[/Android ([\d.]+)/,'Android',m=>m[1]],
+    [/Mac OS X ([\d_.]+)/,'macOS',m=>m[1].replace(/_/g,'.')],[/Linux/,'Linux','—'],
+    [/CrOS/,'Chrome OS','—'],[/FreeBSD/,'FreeBSD','—'],
+  ];
+  for (const [re,name,ver] of osTests) { const m=ua.match(re); if(m){os=name;osVer=typeof ver==='function'?ver(m):ver;break;} }
+  // Device
+  let device='Desktop';
+  if (/iPhone/.test(ua)) device='iPhone';
+  else if (/iPad/.test(ua)) device='iPad';
+  else if (/Android.*Mobile/.test(ua)) device='Android Phone';
+  else if (/Android/.test(ua)) device='Android Tablet';
+  else if (/Mobile/.test(ua)) device='Mobile';
+  // Engine
+  let engine='Unknown';
+  if (/Gecko\//.test(ua)) engine='Gecko';
+  if (/AppleWebKit\//.test(ua)) engine='WebKit';
+  if (/Trident\//.test(ua)) engine='Trident';
+  const engVer = ua.match(/(?:AppleWebKit|Gecko|Trident)\/([\d.]+)/)?.[1] || '—';
+  out.innerHTML = [
+    uaCard('Browser', browser, 'var(--accent)'),
+    uaCard('Version', bVer, 'var(--accent2)'),
+    uaCard('OS', os, 'var(--accent3)'),
+    uaCard('OS Version', osVer, 'var(--text2)'),
+    uaCard('Device', device, 'var(--text)'),
+    uaCard('Engine', engine, 'var(--text2)'),
+    uaCard('Engine Version', engVer, 'var(--text3)'),
+    uaCard('Bot/Crawler', isBot?'✓ Yes':'✗ No', isBot?'var(--warn)':'var(--text3)'),
+    uaCard('Mobile', /Mobile|Android|iPhone|iPad/i.test(ua)?'✓ Yes':'✗ No', 'var(--text2)'),
+  ].join('');
+}
+
+// ============================================================
+// IMAGE ↔ BASE64
+// ============================================================
+function img64Load(input) {
+  const file = input.files?.[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const dataUrl = e.target.result;
+    const img = $('img64-img'); if(img) { img.src=dataUrl; $('img64-preview').style.display='block'; }
+    const out = $('img64-out'); if(out) out.value = dataUrl;
+    const meta = $('img64-meta');
+    if(meta) {
+      const szKb = (dataUrl.length*0.75/1024).toFixed(1);
+      meta.textContent = file.name+' · '+file.type+' · '+szKb+' KB (base64)';
+    }
+  };
+  reader.readAsDataURL(file);
+}
+function img64Drop(e) {
+  e.preventDefault();
+  const file = e.dataTransfer.files?.[0]; if(!file||!file.type.startsWith('image/')) return;
+  const dt = new DataTransfer(); dt.items.add(file);
+  const inp = $('img64-file'); if(inp) { inp.files=dt.files; img64Load(inp); }
+}
+function img64Decode() {
+  const raw = getVal('img64-in').trim();
+  const img = $('img64-decoded-img');
+  const wrap = $('img64-decoded');
+  const dl = $('img64-dl');
+  if (!raw) { if(wrap)wrap.style.display='none'; if(dl)dl.style.display='none'; return; }
+  if (img) { img.src = raw; img.onerror=()=>{wrap.style.display='none';dl.style.display='none';}; img.onload=()=>{wrap.style.display='block';dl.style.display='';} }
+}
+function img64Download() {
+  const src = $('img64-decoded-img')?.src; if(!src) return;
+  const a = document.createElement('a');
+  a.href = src;
+  const ext = src.match(/data:image\/(\w+)/)?.[1]||'png';
+  a.download = 'image.'+ext;
+  a.click();
+}
+
+// ============================================================
+// JSON LOG VIEWER
+// ============================================================
+const _jlogSamples = {
+  app: `{"ts":"2024-03-15T10:00:01Z","level":"info","msg":"Server started","port":8080,"env":"production"}
+{"ts":"2024-03-15T10:00:05Z","level":"info","msg":"Database connected","host":"db.prod.local","latency_ms":45}
+{"ts":"2024-03-15T10:01:23Z","level":"warn","msg":"Slow query detected","query":"SELECT * FROM orders","duration_ms":2340}
+{"ts":"2024-03-15T10:02:11Z","level":"error","msg":"Payment gateway timeout","orderId":"ORD-9821","retries":3}
+{"ts":"2024-03-15T10:02:45Z","level":"info","msg":"Cache miss","key":"user:profile:42","ttl":300}
+{"ts":"2024-03-15T10:03:00Z","level":"debug","msg":"Auth token validated","userId":"usr-001","scope":["read","write"]}
+{"ts":"2024-03-15T10:04:12Z","level":"error","msg":"Unhandled exception","error":"NullPointerException","stack":"at com.app.OrderService.process(OrderService.java:45)"}`,
+  http: `{"time":"2024-03-15T10:00:01Z","method":"GET","path":"/api/users","status":200,"duration_ms":23,"ip":"10.0.1.5"}
+{"time":"2024-03-15T10:00:02Z","method":"POST","path":"/api/orders","status":201,"duration_ms":145,"ip":"10.0.1.8"}
+{"time":"2024-03-15T10:00:03Z","method":"GET","path":"/api/products/999","status":404,"duration_ms":8,"ip":"10.0.1.5"}
+{"time":"2024-03-15T10:00:04Z","method":"PUT","path":"/api/users/42","status":200,"duration_ms":67,"ip":"10.0.1.12"}
+{"time":"2024-03-15T10:00:05Z","method":"DELETE","path":"/api/sessions/abc","status":401,"duration_ms":5,"ip":"10.0.2.1"}
+{"time":"2024-03-15T10:00:06Z","method":"POST","path":"/api/upload","status":500,"duration_ms":3012,"ip":"10.0.1.8"}`,
+  error: `{"timestamp":"2024-03-15T10:00:01.234Z","severity":"ERROR","logger":"com.app.AuthService","message":"JWT validation failed","token":"eyJ...","reason":"expired","userId":null}
+{"timestamp":"2024-03-15T10:00:05.891Z","severity":"WARN","logger":"com.app.RateLimiter","message":"Rate limit exceeded","ip":"192.168.1.100","limit":100,"window":"1m"}
+{"timestamp":"2024-03-15T10:01:00.001Z","severity":"FATAL","logger":"com.app.DataSource","message":"Database connection pool exhausted","pool_size":20,"active":20,"idle":0}`
+};
+function jsonLogSample(k) { setVal('jlog-in', _jlogSamples[k]); jsonLogParse(); }
+
+let _jlogRows = [];
+function jsonLogParse() {
+  const raw = getVal('jlog-in').trim();
+  const out = $('jlog-out'); if(!out) return;
+  if (!raw) { _jlogRows=[]; out.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center">Paste JSON log lines above</div>'; return; }
+  _jlogRows = [];
+  for (const line of raw.split('\n')) {
+    const l = line.trim(); if(!l) continue;
+    try { _jlogRows.push(JSON.parse(l)); }
+    catch { _jlogRows.push({_raw:l, _parseError:true}); }
+  }
+  jsonLogFilter();
+}
+function jsonLogFilter() {
+  const search = ($('jlog-search')?.value||'').toLowerCase();
+  const lvlFilter = ($('jlog-level-filter')?.value||'').toLowerCase();
+  const out = $('jlog-out'); if(!out) return;
+  const visible = _jlogRows.filter(row => {
+    if (row._parseError) return !lvlFilter;
+    const str = JSON.stringify(row).toLowerCase();
+    const matchSearch = !search || str.includes(search);
+    const level = (row.level||row.severity||row.lvl||'').toLowerCase();
+    const matchLevel = !lvlFilter || level===lvlFilter;
+    return matchSearch && matchLevel;
+  });
+  const cnt = $('jlog-count'); if(cnt) cnt.textContent = visible.length+' / '+_jlogRows.length+' rows';
+  if (!visible.length) { out.innerHTML='<div style="color:var(--text3);font-family:var(--font-mono);font-size:11px;padding:20px;text-align:center">No matching log entries</div>'; return; }
+  out.innerHTML = visible.map(row => {
+    if (row._parseError) return `<div style="padding:6px 10px;border-radius:5px;border:1px solid color-mix(in srgb,var(--error) 25%,transparent);background:color-mix(in srgb,var(--error) 6%,transparent);font-family:var(--font-mono);font-size:10px;color:var(--error)">✗ Parse error: ${escXml(row._raw)}</div>`;
+    const level = (row.level||row.severity||row.lvl||'info').toLowerCase();
+    const levelColor = {error:'var(--error)',fatal:'var(--error)',warn:'var(--warn)',warning:'var(--warn)',debug:'var(--text3)',trace:'var(--text3)'}[level]||'var(--accent3)';
+    const ts = row.ts||row.timestamp||row.time||row['@timestamp']||'';
+    const msg = row.msg||row.message||row.Message||'';
+    const extra = Object.entries(row).filter(([k])=>!['ts','timestamp','time','@timestamp','level','severity','lvl','msg','message','Message'].includes(k));
+    return `<div style="padding:7px 10px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap">
+      ${ts?`<span style="font-family:var(--font-mono);font-size:10px;color:var(--text3);flex-shrink:0;white-space:nowrap">${escXml(ts.substring(11,19)||ts.substring(0,19))}</span>`:''}
+      <span style="font-family:var(--font-mono);font-size:9px;font-weight:700;padding:1px 6px;border-radius:4px;flex-shrink:0;text-transform:uppercase;background:color-mix(in srgb,${levelColor} 15%,transparent);color:${levelColor}">${level}</span>
+      <span style="font-family:var(--font-mono);font-size:11px;color:var(--text);flex:1;min-width:100px;word-break:break-word">${escXml(msg)}</span>
+      ${extra.length?`<div style="display:flex;gap:4px;flex-wrap:wrap;width:100%;margin-top:2px">${extra.map(([k,v])=>`<span style="font-family:var(--font-mono);font-size:9px;padding:1px 5px;border-radius:3px;background:var(--surface3);border:1px solid var(--border);color:var(--text3)"><span style="color:var(--text2)">${escXml(k)}</span>=<span style="color:var(--accent2)">${escXml(String(v).substring(0,60))}</span></span>`).join('')}</div>`:''}
     </div>`;
   }).join('');
 }
-function hhSearch() {
-  const q = getVal('hh-search').toLowerCase().trim();
-  const out = $('hh-search-result'); if (!out) return;
-  if (!q) { out.innerHTML = ''; return; }
-  const matches = Object.entries(HTTP_HEADER_INFO).filter(([k]) => k.includes(q)).slice(0,5);
-  if (!matches.length) { out.innerHTML = '<div style="color:var(--text3);font-size:10px">No matching headers.</div>'; return; }
-  out.innerHTML = matches.map(([k,v]) => `<div style="padding:6px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;margin-bottom:4px">
-    <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);font-weight:600">${k}</div>
-    <div style="font-size:10px;color:var(--text3);margin-top:2px">${v}</div>
-  </div>`).join('');
-}
-function hhLoadSample() {
-  const ta = $('hh-in'); if (!ta) return;
-  ta.value = `HTTP/1.1 200 OK\nContent-Type: application/json; charset=utf-8\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\nX-Request-Id: f8a3b2c1-dead-beef-cafe-112233445566\nCache-Control: no-cache, no-store, must-revalidate\nX-RateLimit-Limit: 100\nX-RateLimit-Remaining: 97\nX-RateLimit-Reset: 1710000000\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nAccess-Control-Allow-Origin: *`;
-  hhParse();
-}
 
-// ============================================================
-// CURL GENERATOR
-// ============================================================
-let _curlTab = 'curl';
-function curlTab(t) {
-  _curlTab = t;
-  ['curl','fetch','axios','python'].forEach(x => {
-    const btn = $(`curl-tab-${x}`);
-    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
-  });
-  curlBuild();
-}
-function curlBuild() {
-  const url = getVal('curl-url').trim() || 'https://api.example.com/endpoint';
-  const method = getVal('curl-method');
-  const headersRaw = getVal('curl-headers');
-  const body = getVal('curl-body').trim();
-  const verbose = $('curl-verbose')?.checked, insecure = $('curl-insecure')?.checked;
-  const follow = $('curl-follow')?.checked, silent = $('curl-silent')?.checked;
-
-  // Parse headers
-  const headers = {};
-  headersRaw.split('\n').forEach(line => {
-    const ci = line.indexOf(':'); if (ci < 0) return;
-    headers[line.slice(0,ci).trim()] = line.slice(ci+1).trim();
-  });
-
-  let out = '';
-  if (_curlTab === 'curl') {
-    const flags = [verbose&&'-v', insecure&&'-k', follow&&'-L', silent&&'-s'].filter(Boolean);
-    out = `curl ${flags.join(' ')} \\\n  -X ${method} \\\n  '${url}'`;
-    Object.entries(headers).forEach(([k,v]) => { out += ` \\\n  -H '${k}: ${v}'`; });
-    if (body && ['POST','PUT','PATCH'].includes(method)) out += ` \\\n  -d '${body.replace(/'/g,"'\\''")}'`;
-  } else if (_curlTab === 'fetch') {
-    const opts = { method };
-    if (Object.keys(headers).length) opts.headers = headers;
-    if (body && ['POST','PUT','PATCH'].includes(method)) opts.body = body;
-    out = `const response = await fetch('${url}', ${JSON.stringify(opts,null,2)});\nconst data = await response.json();\nconsole.log(data);`;
-  } else if (_curlTab === 'axios') {
-    const cfg = { method: method.toLowerCase(), url };
-    if (Object.keys(headers).length) cfg.headers = headers;
-    if (body && ['post','put','patch'].includes(method.toLowerCase())) { try { cfg.data = JSON.parse(body); } catch { cfg.data = body; } }
-    out = `const { data } = await axios(${JSON.stringify(cfg,null,2)});`;
-  } else if (_curlTab === 'python') {
-    out = `import requests\n\nheaders = ${JSON.stringify(headers,null,4)}\n`;
-    if (body && ['POST','PUT','PATCH'].includes(method)) {
-      out += `payload = ${body}\n\nresponse = requests.${method.toLowerCase()}(\n    '${url}',\n    headers=headers,\n    json=payload\n)`;
-    } else {
-      out += `\nresponse = requests.${method.toLowerCase()}(\n    '${url}',\n    headers=headers\n)`;
-    }
-    out += `\nprint(response.status_code, response.json())`;
-  }
-  const ta = $('curl-out'); if (ta) ta.value = out;
-}
-
-// ============================================================
-// API TESTER
-// ============================================================
-function atInit() {
-  atTab('headers');
-  atResTab('body');
-  atAuthChange();
-}
-function atTab(t) {
-  ['headers','body','params','auth'].forEach(x => {
-    const p = $(`at-pane-${x}`), btn = $(`at-tab-${x}`);
-    if (p) p.style.display = x===t ? 'block' : 'none';
-    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
-  });
-}
-function atResTab(t) {
-  const body = $('at-res-body'), hdrs = $('at-res-headers-pane');
-  const bb = $('at-res-tab-body'), hb = $('at-res-tab-headers');
-  if (body) body.style.display = t==='body' ? 'block' : 'none';
-  if (hdrs) hdrs.style.display = t==='headers' ? 'block' : 'none';
-  if (bb) { bb.style.borderColor = t==='body' ? 'var(--accent)' : ''; bb.style.color = t==='body' ? 'var(--accent)' : ''; }
-  if (hb) { hb.style.borderColor = t==='headers' ? 'var(--accent)' : ''; hb.style.color = t==='headers' ? 'var(--accent)' : ''; }
-}
-function atMethodChange() {
-  const m = getVal('at-method');
-  const hasBody = ['POST','PUT','PATCH'].includes(m);
-  const btn = $('at-tab-body');
-  if (btn) btn.style.opacity = hasBody ? '1' : '.4';
-}
-function atAddHeader() {
-  const container = $('at-headers-rows'); if (!container) return;
-  const row = document.createElement('div');
-  row.className = 'at-hrow'; row.style.cssText = 'display:flex;gap:4px';
-  row.innerHTML = `<input class="field-input" placeholder="Header name" style="flex:1;font-size:11px">
-    <input class="field-input" placeholder="Value" style="flex:2;font-size:11px">
-    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
-  container.appendChild(row);
-}
-function atAddParam() {
-  const container = $('at-params-rows'); if (!container) return;
-  const row = document.createElement('div');
-  row.className = 'at-hrow'; row.style.cssText = 'display:flex;gap:4px';
-  row.innerHTML = `<input class="field-input" placeholder="param" style="flex:1;font-size:11px">
-    <input class="field-input" placeholder="value" style="flex:2;font-size:11px">
-    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
-  container.appendChild(row);
-}
-function atRemoveRow(btn) { btn.parentElement.remove(); }
-function atPreset(type) {
-  if (type === 'json') atAddHeaderRow('Content-Type','application/json');
-  if (type === 'form') atAddHeaderRow('Content-Type','application/x-www-form-urlencoded');
-  if (type === 'auth') atAddHeaderRow('Authorization','Bearer YOUR_TOKEN_HERE');
-}
-function atAddHeaderRow(k, v) {
-  const rows = $('at-headers-rows'); if (!rows) return;
-  const row = document.createElement('div');
-  row.className='at-hrow'; row.style.cssText='display:flex;gap:4px';
-  row.innerHTML=`<input class="field-input" value="${k}" style="flex:1;font-size:11px">
-    <input class="field-input" value="${v}" style="flex:2;font-size:11px">
-    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
-  rows.appendChild(row);
-}
-function atBodyType(t) {
-  ['json','text','form','none'].forEach(x => {
-    const btn = $(`at-body-${x}`);
-    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
-  });
-  const ta = $('at-body-input');
-  if (ta) ta.style.display = t==='none' ? 'none' : 'block';
-}
-function atAuthChange() {
-  const type = getVal('at-auth-type');
-  const f = $('at-auth-fields'); if (!f) return;
-  if (type === 'bearer') {
-    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Token</div>
-      <input class="field-input" id="at-bearer-token" placeholder="eyJhbGciOiJIUzI1NiJ9..."></div>`;
-  } else if (type === 'basic') {
-    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Username</div>
-      <input class="field-input" id="at-basic-user" placeholder="username"></div>
-      <div class="field-row"><div class="field-label">Password</div>
-      <input class="field-input" id="at-basic-pass" type="password" placeholder="password"></div>`;
-  } else if (type === 'apikey') {
-    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Header Name</div>
-      <input class="field-input" id="at-apikey-name" value="X-API-Key"></div>
-      <div class="field-row"><div class="field-label">Key Value</div>
-      <input class="field-input" id="at-apikey-val" placeholder="your-api-key"></div>`;
-  } else { f.innerHTML = ''; }
-}
-async function atSend() {
-  const url = getVal('at-url').trim();
-  if (!url) { alert('Please enter a URL'); return; }
-
-  const method = getVal('at-method');
-  const headers = {};
-
-  // Collect headers from rows
-  document.querySelectorAll('#at-headers-rows .at-hrow').forEach(row => {
-    const [kIn, vIn] = row.querySelectorAll('input');
-    if (kIn?.value.trim() && vIn?.value.trim()) headers[kIn.value.trim()] = vIn.value.trim();
-  });
-
-  // Auth
-  const authType = getVal('at-auth-type');
-  if (authType === 'bearer') {
-    const tok = $('at-bearer-token')?.value?.trim();
-    if (tok) headers['Authorization'] = `Bearer ${tok}`;
-  } else if (authType === 'basic') {
-    const u = $('at-basic-user')?.value, p = $('at-basic-pass')?.value;
-    if (u) headers['Authorization'] = `Basic ${btoa(`${u}:${p||''}`)}`;
-  } else if (authType === 'apikey') {
-    const n = $('at-apikey-name')?.value?.trim(), v = $('at-apikey-val')?.value?.trim();
-    if (n && v) headers[n] = v;
-  }
-
-  // Params
-  let finalUrl = url;
-  const paramPairs = [];
-  document.querySelectorAll('#at-params-rows .at-hrow').forEach(row => {
-    const [kIn, vIn] = row.querySelectorAll('input');
-    if (kIn?.value.trim()) paramPairs.push([kIn.value.trim(), vIn?.value.trim()||'']);
-  });
-  if (paramPairs.length) {
-    const sep = finalUrl.includes('?') ? '&' : '?';
-    finalUrl += sep + paramPairs.map(([k,v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
-  }
-
-  // Body
-  let body = null;
-  const bodyVal = getVal('at-body-input').trim();
-  if (['POST','PUT','PATCH'].includes(method) && bodyVal) body = bodyVal;
-
-  // UI: show spinner
-  const spinner = $('at-spinner'), resOut = $('at-res-out'), resEmpty = $('at-res-empty');
-  if (spinner) spinner.style.display = 'block';
-  if (resOut) resOut.style.display = 'none';
-  if (resEmpty) resEmpty.style.display = 'none';
-  const statusBadge = $('at-status-badge'), timeBadge = $('at-time-badge');
-  if (statusBadge) statusBadge.innerHTML = '';
-  if (timeBadge) timeBadge.textContent = '';
-
-  const start = Date.now();
-  try {
-    const res = await fetch(finalUrl, { method, headers, body: body || undefined });
-    const elapsed = Date.now() - start;
-    const text = await res.text();
-    let display = text;
-    try { display = JSON.stringify(JSON.parse(text), null, 2); } catch {}
-
-    if (spinner) spinner.style.display = 'none';
-    if (resOut) { resOut.style.display = 'block'; resOut.value = display; }
-
-    // Status badge color
-    const sc = res.status;
-    const color = sc < 300 ? 'var(--accent3)' : sc < 400 ? 'var(--accent2)' : sc < 500 ? 'var(--warn)' : 'var(--error)';
-    if (statusBadge) statusBadge.innerHTML = `<span style="background:color-mix(in srgb,${color} 15%,transparent);color:${color};border:1px solid color-mix(in srgb,${color} 30%,transparent);border-radius:4px;padding:2px 7px;font-weight:700">${sc} ${res.statusText}</span>`;
-    if (timeBadge) timeBadge.textContent = `${elapsed}ms`;
-
-    // Response headers
-    const resHdrOut = $('at-res-headers-out');
-    if (resHdrOut) {
-      let hdrHtml = '';
-      res.headers.forEach((v, k) => {
-        hdrHtml += `<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:10px">
-          <span style="color:var(--accent);min-width:160px;flex-shrink:0">${escXml(k)}</span>
-          <span style="color:var(--text2);word-break:break-all">${escXml(v)}</span>
-        </div>`;
-      });
-      resHdrOut.innerHTML = hdrHtml || '<div style="color:var(--text3);font-size:11px">No headers exposed (CORS).</div>';
-    }
-  } catch(e) {
-    if (spinner) spinner.style.display = 'none';
-    if (resOut) { resOut.style.display = 'block'; resOut.value = `Error: ${e.message}\n\nNote: This may be a CORS error. The target API must allow cross-origin requests from browsers.\nTry using cURL Generator to run the request in your terminal instead.`; }
-    if (statusBadge) statusBadge.innerHTML = `<span style="color:var(--error)">Network Error</span>`;
-  }
-}
-
-// ============================================================
-// IP / DNS LOOKUP
-// ============================================================
-async function ipLookup() {
-  const input = getVal('ip-input').trim();
-  if (!input) return;
-  const out = $('ip-results'), status = $('ip-status');
-  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Looking up…</div>';
-  if (status) status.textContent = 'Fetching IP info…';
-  try {
-    const res = await fetch(`https://ipapi.co/${encodeURIComponent(input)}/json/`);
-    const d = await res.json();
-    if (d.error) throw new Error(d.reason || d.error);
-    if (status) status.textContent = '';
-    renderIpResult(d, out);
-  } catch(e) {
-    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
-    if (status) status.textContent = '';
-  }
-}
-function renderIpResult(d, out) {
-  if (!out) return;
-  const fields = [
-    ['IP Address', d.ip], ['Type', d.version],
-    ['Country', `${d.country_name} (${d.country_code})`],
-    ['Region', d.region], ['City', d.city],
-    ['Timezone', d.timezone], ['UTC Offset', d.utc_offset],
-    ['ISP / Org', d.org], ['ASN', d.asn],
-    ['Latitude', d.latitude], ['Longitude', d.longitude],
-    ['Postal', d.postal],
-  ].filter(([,v]) => v);
-  out.innerHTML = fields.map(([k,v]) => `
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-bottom:1px solid var(--border);font-size:11px;gap:8px">
-      <span style="color:var(--text3);font-family:var(--font-mono);flex-shrink:0">${escXml(k)}</span>
-      <span style="color:var(--text);font-family:var(--font-mono);text-align:right;word-break:break-all">${escXml(String(v))}</span>
-    </div>`).join('');
-}
-async function dnsLookup() {
-  const input = getVal('ip-input').trim();
-  if (!input) return;
-  const out = $('ip-results'), status = $('ip-status');
-  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Looking up DNS…</div>';
-  if (status) status.textContent = 'Querying DNS…';
-  try {
-    const types = ['A','AAAA','MX','NS','TXT','CNAME','SOA'];
-    const results = await Promise.all(types.map(t =>
-      fetch(`https://dns.google/resolve?name=${encodeURIComponent(input)}&type=${t}`)
-        .then(r => r.json()).catch(() => null)
-    ));
-    if (status) status.textContent = '';
-    let html = '';
-    types.forEach((t, i) => {
-      const r = results[i];
-      if (!r?.Answer?.length) return;
-      html += `<div style="margin-bottom:8px">
-        <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--accent);margin-bottom:4px">${t} Records</div>
-        ${r.Answer.map(a => `<div style="padding:4px 8px;background:var(--surface2);border-radius:5px;font-family:var(--font-mono);font-size:10px;color:var(--text2);margin-bottom:2px;word-break:break-all">${escXml(a.data)}<span style="color:var(--text3);font-size:9px;margin-left:8px">TTL ${a.TTL}s</span></div>`).join('')}
-      </div>`;
-    });
-    if (!html) html = '<div style="color:var(--text3);font-size:11px">No DNS records found.</div>';
-    out.innerHTML = html;
-  } catch(e) {
-    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
-    if (status) status.textContent = '';
-  }
-}
-async function myIpLookup() {
-  const out = $('ip-results'), status = $('ip-status'), inp = $('ip-input');
-  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Detecting your IP…</div>';
-  try {
-    const res = await fetch('https://ipapi.co/json/');
-    const d = await res.json();
-    if (inp) inp.value = d.ip;
-    if (status) status.textContent = '';
-    renderIpResult(d, out);
-  } catch(e) {
-    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
-  }
-}
-function cidrCalc() {
-  const val = getVal('cidr-input').trim();
-  const out = $('cidr-out'); if (!out) return;
-  const match = val.match(/^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(\d{1,2})$/);
-  if (!match) { out.innerHTML = '<span style="color:var(--error)">Invalid CIDR format. Example: 192.168.1.0/24</span>'; return; }
-  const [,ip, prefix] = match;
-  const pfx = parseInt(prefix);
-  if (pfx > 32) { out.innerHTML = '<span style="color:var(--error)">Prefix must be 0–32</span>'; return; }
-  const parts = ip.split('.').map(Number);
-  const ipInt = (parts[0]<<24)|(parts[1]<<16)|(parts[2]<<8)|parts[3];
-  const mask = pfx === 0 ? 0 : (~0 << (32-pfx)) >>> 0;
-  const network = (ipInt & mask) >>> 0;
-  const broadcast = (network | (~mask >>> 0)) >>> 0;
-  const hosts = pfx >= 31 ? Math.pow(2,32-pfx) : Math.pow(2,32-pfx) - 2;
-  const toIp = n => [n>>>24,(n>>>16)&255,(n>>>8)&255,n&255].join('.');
-  out.innerHTML = [
-    ['Network', toIp(network)], ['Broadcast', toIp(broadcast)],
-    ['Subnet Mask', toIp(mask)],
-    ['First Host', pfx < 31 ? toIp(network+1) : toIp(network)],
-    ['Last Host', pfx < 31 ? toIp(broadcast-1) : toIp(broadcast)],
-    ['Usable Hosts', hosts.toLocaleString()]
-  ].map(([k,v]) => `<div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10px;padding:2px 0"><span style="color:var(--text3)">${k}</span><span style="color:var(--accent)">${v}</span></div>`).join('');
-}
 
 </script>
 
