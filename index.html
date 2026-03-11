@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Tool</title>
+<title>1EQ Tech Utils</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
 <style>
 /* ============================================================
    THEME SYSTEM — 4 professional themes
    ============================================================ */
 :root {
-  --transition: 0.15s ease;
+  --transition: 0.18s cubic-bezier(0.22, 1, 0.36, 1);
   --radius: 10px;
   --radius-sm: 6px;
   --radius-lg: 14px;
@@ -342,22 +343,192 @@
   --warn:      #f9e2af;
 }
 
+/* THEME: Abyss (ultra-dark void) */
+[data-theme="abyss"] {
+  --bg:        #000005;
+  --bg2:       #03040e;
+  --surface:   #070916;
+  --surface2:  #0c0e1f;
+  --surface3:  #111428;
+  --border:    #181c35;
+  --border2:   #222848;
+  --text:      #d4d8ff;
+  --text2:     #7880c8;
+  --text3:     #38406a;
+  --accent:    #6c63ff;
+  --accent-bg: rgba(108,99,255,0.12);
+  --accent2:   #00d4ff;
+  --accent3:   #ff6584;
+  --error:     #ff4757;
+  --warn:      #ffa502;
+}
+
+/* THEME: Crimson (dark red passion) */
+[data-theme="crimson"] {
+  --bg:        #0f0608;
+  --bg2:       #170a0c;
+  --surface:   #200d10;
+  --surface2:  #2a1215;
+  --surface3:  #35181c;
+  --border:    #481e24;
+  --border2:   #5e2830;
+  --text:      #f5d4d8;
+  --text2:     #c08890;
+  --text3:     #7a4850;
+  --accent:    #ff3d5a;
+  --accent-bg: rgba(255,61,90,0.1);
+  --accent2:   #ff9f43;
+  --accent3:   #ffd32a;
+  --error:     #ff4757;
+  --warn:      #ffa502;
+}
+
+/* THEME: Panda (black & white minimal) */
+[data-theme="panda"] {
+  --bg:        #0d0d0d;
+  --bg2:       #141414;
+  --surface:   #1c1c1c;
+  --surface2:  #242424;
+  --surface3:  #2e2e2e;
+  --border:    #383838;
+  --border2:   #484848;
+  --text:      #f5f5f5;
+  --text2:     #aaaaaa;
+  --text3:     #606060;
+  --accent:    #ffffff;
+  --accent-bg: rgba(255,255,255,0.07);
+  --accent2:   #e5e5e5;
+  --accent3:   #cccccc;
+  --error:     #ff4a4a;
+  --warn:      #ffcc00;
+}
+
+/* THEME: Aurora (northern lights) */
+[data-theme="aurora"] {
+  --bg:        #060e12;
+  --bg2:       #091520;
+  --surface:   #0e1f2e;
+  --surface2:  #132738;
+  --surface3:  #193244;
+  --border:    #1f3f57;
+  --border2:   #2a5470;
+  --text:      #c8f0e0;
+  --text2:     #78b8a0;
+  --text3:     #3a6858;
+  --accent:    #00e5a0;
+  --accent-bg: rgba(0,229,160,0.09);
+  --accent2:   #7b5ea7;
+  --accent3:   #e040fb;
+  --error:     #ff5370;
+  --warn:      #ffcb6b;
+}
+
+/* THEME: Latte (Catppuccin light) */
+[data-theme="latte"] {
+  --bg:        #eff1f5;
+  --bg2:       #e6e9ef;
+  --surface:   #dce0e8;
+  --surface2:  #ccd0da;
+  --surface3:  #bcc0cc;
+  --border:    #acb0be;
+  --border2:   #9ca0b0;
+  --text:      #4c4f69;
+  --text2:     #6c6f85;
+  --text3:     #9ca0b0;
+  --accent:    #8839ef;
+  --accent-bg: rgba(136,57,239,0.08);
+  --accent2:   #40a02b;
+  --accent3:   #179299;
+  --error:     #d20f39;
+  --warn:      #df8e1d;
+}
+
+/* THEME: Sunset (warm gradient dark) */
+[data-theme="sunset"] {
+  --bg:        #0f0b10;
+  --bg2:       #180f18;
+  --surface:   #221422;
+  --surface2:  #2c1b2e;
+  --surface3:  #37223a;
+  --border:    #4a2e50;
+  --border2:   #613c68;
+  --text:      #f5e0f8;
+  --text2:     #c090cc;
+  --text3:     #785888;
+  --accent:    #ff7eb3;
+  --accent-bg: rgba(255,126,179,0.1);
+  --accent2:   #ffb347;
+  --accent3:   #ffd700;
+  --error:     #ff4757;
+  --warn:      #ffb347;
+}
+
+/* THEME: Ocean (deep sea) */
+[data-theme="ocean"] {
+  --bg:        #020c18;
+  --bg2:       #041422;
+  --surface:   #071e30;
+  --surface2:  #0b2840;
+  --surface3:  #0f3354;
+  --border:    #154068;
+  --border2:   #1d5080;
+  --text:      #c8e8ff;
+  --text2:     #7ab0d8;
+  --text3:     #3a6888;
+  --accent:    #38b2ff;
+  --accent-bg: rgba(56,178,255,0.1);
+  --accent2:   #00e5d4;
+  --accent3:   #a78bfa;
+  --error:     #ff5370;
+  --warn:      #ffcb6b;
+}
+
+/* THEME: Forest (natural green) */
+[data-theme="forest"] {
+  --bg:        #060d08;
+  --bg2:       #0a1510;
+  --surface:   #0f1e14;
+  --surface2:  #14281a;
+  --surface3:  #1a3322;
+  --border:    #224430;
+  --border2:   #2c5840;
+  --text:      #d8f0de;
+  --text2:     #88b898;
+  --text3:     #486858;
+  --accent:    #6bcb77;
+  --accent-bg: rgba(107,203,119,0.09);
+  --accent2:   #ffd166;
+  --accent3:   #4ecdc4;
+  --error:     #ff6b6b;
+  --warn:      #ffd166;
+}
+
 /* ============================================================
    BASE RESET & LAYOUT
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { height: 100%; }
+html { height: 100%; touch-action: manipulation; }
+
+/* Kill 300ms tap delay on all interactive elements */
+a, button, input, select, textarea, label,
+.nav-item, .chip, .td-card, .tab-btn, .menu-btn,
+.icon-btn, .btn-sm, .btn-convert, .hash-val, .uuid-item {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-ui);
   font-size: 13px;
-  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: background var(--transition), color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* ============================================================
@@ -390,46 +561,145 @@ body {
 /* Hamburger (mobile only) */
 .menu-btn {
   display: none; align-items: center; justify-content: center;
-  width: 32px; height: 32px; border-radius: 6px;
+  width: 36px; height: 36px; border-radius: 8px;
   border: 1px solid var(--border); background: var(--surface);
   color: var(--text2); cursor: pointer; flex-shrink: 0;
   transition: all var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .menu-btn:hover { border-color: var(--accent); color: var(--accent); }
 .menu-btn svg { width: 16px; height: 16px; }
 
-/* Theme section in topbar */
-.topbar-theme {
-  display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+
+/* ══════════════════════════════════════════════════════════
+   PREMIUM THEME PICKER — Redesigned v2
+   ══════════════════════════════════════════════════════════ */
+
+/* Trigger button */
+.theme-picker-btn {
+  height: 32px; padding: 0 12px; gap: 8px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text2); cursor: pointer;
+  display: flex; align-items: center; flex-shrink: 0;
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .03em;
+  transition: all 0.2s cubic-bezier(0.22,1,0.36,1); user-select: none;
 }
-.topbar-theme-label {
-  font-size: 9px; font-weight: 600; font-family: var(--font-mono);
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3);
-  margin-right: 2px;
+.theme-picker-btn:hover, .theme-picker-btn.open {
+  border-color: var(--accent); color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
 }
-.theme-dot {
-  width: 16px; height: 16px; border-radius: 50%; cursor: pointer;
-  border: 2px solid transparent; transition: transform 0.12s, border-color 0.12s;
-  flex-shrink: 0;
+.tpb-swatch { width:10px; height:10px; border-radius:50%; flex-shrink:0; border:1.5px solid rgba(255,255,255,.2); }
+.tpb-name { font-size:10.5px; }
+.tpb-caret { font-size:8px; opacity:.5; transition: transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+.theme-picker-btn.open .tpb-caret { transform: rotate(180deg); }
+
+/* Dropdown shell */
+.theme-dropdown {
+  position: fixed; z-index: 900; width: 292px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 4px 20px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.04) inset;
+  display: none; flex-direction: column; overflow: hidden;
+  animation: tdropIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.theme-dot:hover { transform: scale(1.25); }
-.theme-dot.active { border-color: var(--text2); }
-.theme-dot[data-t="obsidian"]  { background: linear-gradient(135deg,#c084fc,#1a1a1a); }
-.theme-dot[data-t="slate"]     { background: linear-gradient(135deg,#60a5fa,#1c2333); }
-.theme-dot[data-t="midnight"]  { background: linear-gradient(135deg,#818cf8,#060812); }
-.theme-dot[data-t="carbon"]    { background: linear-gradient(135deg,#0f62fe,#161616); }
-.theme-dot[data-t="dracula"]   { background: linear-gradient(135deg,#bd93f9,#282a36); }
-.theme-dot[data-t="nord"]      { background: linear-gradient(135deg,#88c0d0,#2e3440); }
-.theme-dot[data-t="tokyo"]     { background: linear-gradient(135deg,#7aa2f7,#1a1b26); }
-.theme-dot[data-t="solarized"] { background: linear-gradient(135deg,#268bd2,#002b36); }
-.theme-dot[data-t="gruvbox"]   { background: linear-gradient(135deg,#fabd2f,#282828); }
-.theme-dot[data-t="catppuccin"]{ background: linear-gradient(135deg,#cba6f7,#1e1e2e); }
-.theme-dot[data-t="cyber"]     { background: linear-gradient(135deg,#00ffcc,#070708); }
-.theme-dot[data-t="emerald"]   { background: linear-gradient(135deg,#34d399,#111e15); }
-.theme-dot[data-t="mocha"]     { background: linear-gradient(135deg,#f59e0b,#211a14); }
-.theme-dot[data-t="arctic"]    { background: linear-gradient(135deg,#2563eb,#f0f4f8); }
-.theme-dot[data-t="rose"]      { background: linear-gradient(135deg,#e11d48,#fdf6f7); }
-.theme-dot[data-t="sand"]      { background: linear-gradient(135deg,#b45309,#f5f0e8); }
+.theme-dropdown.open { display: flex; }
+
+/* Header */
+.td-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px 10px; flex-shrink: 0;
+  border-bottom: 1px solid var(--border); background: var(--surface);
+}
+.td-header-dot {
+  width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); opacity: .85;
+}
+.td-header-title { font-family: var(--font-ui); font-size: 12.5px; font-weight: 650; color: var(--text); letter-spacing: -.02em; }
+.td-header-badge { font-family: var(--font-mono); font-size: 9px; color: var(--text3); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 1px 7px; }
+.td-close-btn {
+  width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--surface2);
+  color: var(--text3); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; margin-left: 4px;
+}
+.td-close-btn:hover { border-color: var(--error); color: var(--error); background: color-mix(in srgb,var(--error) 10%,transparent); }
+
+/* Filter tabs */
+.td-tabs {
+  display: flex; gap: 3px; padding: 8px 10px 6px; flex-shrink: 0;
+  overflow-x: auto; scrollbar-width: none;
+  border-bottom: 1px solid var(--border); background: var(--bg2);
+}
+.td-tabs::-webkit-scrollbar { display: none; }
+.td-tab {
+  flex-shrink: 0; padding: 4px 10px; border-radius: 20px;
+  border: 1px solid transparent; background: transparent;
+  color: var(--text3); font-family: var(--font-mono); font-size: 10px;
+  cursor: pointer; white-space: nowrap;
+  transition: all 0.18s cubic-bezier(0.22,1,0.36,1);
+  display: flex; align-items: center; gap: 4px;
+}
+.td-tab span { font-size: 8.5px; opacity: .6; }
+.td-tab:hover { color: var(--text2); background: var(--surface2); }
+.td-tab.active { background: var(--accent-bg); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 30%, transparent); font-weight: 600; }
+
+/* Grid container */
+.td-scroll { overflow-y: auto; overflow-x: hidden; max-height: 360px; padding: 10px; flex: 1; }
+.td-scroll::-webkit-scrollbar { width: 3px; }
+.td-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+.td-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+
+/* Theme card */
+.td-card {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 5px 4px 6px; border-radius: 10px; cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.22s cubic-bezier(0.22,1,0.36,1), border-color 0.15s, box-shadow 0.2s, background 0.15s;
+  will-change: transform;
+}
+.td-card:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,.35); border-color: var(--border2); background: var(--surface2); }
+.td-card:active { transform: scale(0.92) !important; transition-duration: 0.1s; }
+.td-card.active { border-color: var(--accent); background: var(--accent-bg); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent); }
+.td-card.td-hidden { display: none; }
+
+/* Preview — 3-stripe mini-palette */
+.td-preview {
+  width: 44px; height: 32px; border-radius: 7px; overflow: hidden;
+  display: flex; border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.4); flex-shrink: 0;
+  transition: box-shadow 0.15s;
+}
+.td-preview-light { border-color: rgba(0,0,0,.1); box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.td-preview div:nth-child(1) { flex: 4; }
+.td-preview div:nth-child(2) { flex: 3; }
+.td-preview div:nth-child(3) { flex: 2; }
+.td-card:hover .td-preview { box-shadow: 0 4px 16px rgba(0,0,0,.5); }
+.td-card.active .td-preview { box-shadow: 0 0 0 2px var(--accent), 0 4px 12px rgba(0,0,0,.4); }
+
+.td-card > span { font-family: var(--font-ui); font-size: 8.5px; color: var(--text3); text-align: center; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.2; transition: color 0.15s; }
+.td-card:hover > span { color: var(--text2); }
+.td-card.active > span { color: var(--accent); font-weight: 600; }
+
+/* Footer */
+.td-footer { padding: 8px 10px 10px; flex-shrink: 0; border-top: 1px solid var(--border); background: var(--surface); display: flex; flex-direction: column; gap: 5px; }
+.td-cycle-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: var(--text2); cursor: pointer; font-family: var(--font-mono); font-size: 10.5px; transition: all 0.2s cubic-bezier(0.22,1,0.36,1); }
+.td-cycle-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); transform: translateY(-1px); }
+.td-cycle-btn:active { transform: scale(0.97) !important; }
+.td-cycle-btn.td-random-active { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.td-cycle-label { flex: 1; text-align: left; }
+.td-cycle-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); flex-shrink: 0; transition: background .25s, box-shadow .25s; }
+.td-cycle-btn.td-random-active .td-cycle-dot { background: #4ade80; box-shadow: 0 0 8px #4ade80; animation: cyclePulse 1.4s ease-in-out infinite; }
+@keyframes cyclePulse { 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.5); opacity:.6; } }
+.td-cycle-cfg { padding: 8px 10px; background: var(--surface2); border-radius: 7px; border: 1px solid var(--border); }
+.td-cycle-cfg-row { display: flex; align-items: center; gap: 7px; }
+.td-cycle-cfg-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--text3); text-transform: uppercase; letter-spacing: .07em; }
+.td-cycle-input { width: 48px; height: 24px; padding: 0 6px; background: var(--surface3); border: 1px solid var(--border2); border-radius: 5px; color: var(--text); font-family: var(--font-mono); font-size: 11px; outline: none; transition: border-color .15s; }
+.td-cycle-input:focus { border-color: var(--accent); }
+.td-cycle-cfg-unit { font-family: var(--font-mono); font-size: 10px; color: var(--text2); }
+.td-cycle-countdown { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent); min-width: 30px; text-align: right; }
 
 /* Topbar action buttons */
 .tb-btn {
@@ -445,6 +715,7 @@ body {
 .tb-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
 .btn-icon { width: 12px; height: 12px; display: flex; align-items: center; flex-shrink: 0; }
 .btn-icon svg { width: 12px; height: 12px; }
+
 
 /* ============================================================
    MAIN LAYOUT: SIDEBAR + CONTENT
@@ -559,11 +830,12 @@ body {
 }
 .sidebar-close-btn svg { width: 13px; height: 13px; }
 
-/* Overlay */
+/* Overlay — always starts hidden, JS sets display:block when needed */
 .sidebar-overlay {
   display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.48); z-index: 199;
-  backdrop-filter: blur(1px); opacity: 0; transition: opacity 0.2s ease;
+  bottom: 60px; /* stop above bottom tabs so tabs remain clickable */
+  background: rgba(0,0,0,0.55); z-index: 250;
+  opacity: 0; transition: opacity 0.28s ease;
 }
 .sidebar-overlay.open { opacity: 1; }
 
@@ -582,6 +854,7 @@ body {
   display: none;
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
   padding: 20px 22px;
   flex-direction: column;
   gap: 14px;
@@ -1089,8 +1362,6 @@ select.field-input { cursor: pointer; }
   :root { --sidebar-w: 192px; }
   .topbar { padding: 0 14px; gap: 8px; }
   .logo-tag { display: none; }
-  .topbar-theme-label { display: none; }
-  .theme-dot { width: 14px; height: 14px; }
   .panel { padding: 16px 18px; }
   .util-grid { grid-template-columns: 1fr; }
   .base-grid { grid-template-columns: 1fr; }
@@ -1100,106 +1371,389 @@ select.field-input { cursor: pointer; }
   .menu-btn { display: flex; }
   .topbar { padding: 0 12px; gap: 8px; }
   .logo-tag { display: none; }
-  .topbar-theme-label { display: none; }
-  .theme-dot { width: 13px; height: 13px; }
-  .theme-dot:nth-child(n+8) { display: none; }
 
   .sidebar {
-    position: fixed; left: 0; top: 0; bottom: 0; z-index: 200;
-    transform: translateX(-100%);
-    transition: transform 0.24s cubic-bezier(0.22,1,0.36,1);
-    box-shadow: 6px 0 28px rgba(0,0,0,0.3);
-    width: 268px !important; max-width: 80vw;
+    position: fixed; left: 0; top: 0; bottom: 0;
+    z-index: 300; /* above overlay */
+    transform: translateX(-105%);
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: none;
+    width: 280px !important; max-width: 85vw;
+    /* will-change removed — causes compositing issues on some mobile browsers */
   }
-  .sidebar.open { transform: translateX(0); }
-  .sidebar-overlay { display: block; }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 40px rgba(0,0,0,0.5);
+  }
   .sidebar-close { display: flex; }
 
   .app-body { flex-direction: column; }
-  .content { width: 100%; }
-  .panel { padding: 12px 12px 76px; gap: 10px; }
+  .content { width: 100%; overflow-y: auto; }
+
+  /* Panel needs bottom padding for tab bar */
+  .panel { padding: 12px 12px 72px; gap: 10px; }
   .panel-title { font-size: 14px; }
-  .editor-grid { grid-template-columns: 1fr; gap: 8px; }
-  .center-ctrl { flex-direction: row; justify-content: center; padding: 2px 0; }
+
+  /* Stacked editor columns */
+  .editor-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .center-ctrl {
+    flex-direction: row; justify-content: center;
+    padding: 4px 0;
+    gap: 10px;
+  }
+  textarea.editor-ta { min-height: 130px; }
+
   .util-grid { grid-template-columns: 1fr; gap: 8px; }
-  .base-grid { grid-template-columns: 1fr; }
-  .editor-ta { min-height: 130px; }
+  .util-grid.triple { grid-template-columns: 1fr; }
+  .base-grid { grid-template-columns: 1fr 1fr; }
+
   .tb-btn-text { display: none; }
-  .tb-btn { padding: 0 8px; }
+  .tb-btn { padding: 0 9px; min-width: 32px; }
   .bottom-tabs { display: block; }
+
+  /* Larger touch targets */
+  .nav-item { padding: 9px 7px; min-height: 44px; }
+  .btn-sm { padding: 9px 14px; font-size: 11px; min-height: 44px; }
+  .chip { padding: 6px 12px; font-size: 11px; }
+  .upload-zone { padding: 16px; }
 }
+
 @media (max-width: 390px) {
   .topbar { padding: 0 10px; gap: 6px; }
   .logo-name { font-size: 12px; }
-  .theme-dot { width: 12px; height: 12px; }
-  .theme-dot:nth-child(n+7) { display: none; }
+  .base-grid { grid-template-columns: 1fr; }
 }
 
-/* Bottom tab bar */
+/* Bottom tab bar — mobile */
 .bottom-tabs {
   display: none; position: fixed;
-  bottom: 0; left: 0; right: 0; height: 54px;
-  background: var(--bg2); border-top: 1px solid var(--border);
-  z-index: 150; overflow-x: auto; overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  z-index: 400; /* must be above overlay (250) and sidebar (300) */
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Safe area for iPhone home bar */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 .bottom-tabs::-webkit-scrollbar { display: none; }
-.bottom-tabs-inner { display: flex; height: 100%; padding: 0 2px; min-width: max-content; }
+.bottom-tabs-inner {
+  display: flex; height: 60px; padding: 0 4px;
+  min-width: max-content; align-items: center;
+}
 .tab-btn {
   display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 2px; padding: 0 14px;
+  justify-content: center; gap: 3px;
+  padding: 0 14px; min-width: 60px; height: 60px;
   border: none; background: none; color: var(--text3);
   cursor: pointer; font-family: var(--font-mono); font-size: 8.5px;
-  white-space: nowrap; transition: color 0.12s; flex-shrink: 0; min-width: 58px;
+  white-space: nowrap; flex-shrink: 0; border-radius: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-.tab-btn svg { width: 17px; height: 17px; }
+.tab-btn svg { width: 18px; height: 18px; }
 .tab-btn.active { color: var(--accent); }
+
+/* Active indicator bar — bottom, not top */
+.tab-btn.active::after {
+  content: ''; position: absolute; bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 2px; border-radius: 2px;
+  background: var(--accent);
+}
 .tab-btn-label { font-size: 8.5px; }
 
-/* Animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* ============================================================
+   SMOOTH ANIMATIONS — GPU-accelerated, spring-physics feel
+   ============================================================ */
+
+/* Panel entrance — silky fade+lift */
+@keyframes panelIn {
+  0%   { opacity: 0; transform: translateY(14px) scale(0.985); }
+  60%  { opacity: 1; transform: translateY(-2px) scale(1.002); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-.panel.active { animation: fadeUp 0.2s ease; }
+.panel.active {
+  animation: panelIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+
+/* Sidebar slide-in — pure CSS transition, no animation keyframes (avoids conflict with transform default state) */
+
+/* Theme dropdown — spring pop */
+@keyframes tdropIn {
+  0%   { opacity: 0; transform: translateY(-10px) scale(0.94); }
+  65%  { opacity: 1; transform: translateY(2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── iPhone-style theme transition ─────────────────────────────────────
+   Transitions ONLY color properties — never transform/opacity/layout.
+   This prevents any interference with click targets or animations.
+   ──────────────────────────────────────────────────────────────────────── */
+body.theme-transitioning,
+body.theme-transitioning *,
+body.theme-transitioning *::before,
+body.theme-transitioning *::after {
+  transition:
+    background-color 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color     0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color            0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill             0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke           0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    !important;
+  /* IMPORTANT: box-shadow and background (shorthand) are excluded —
+     they cause repaints that can disrupt touch events on mobile */
+}
+
+/* Nav item hover — micro lift */
+.nav-item { transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s cubic-bezier(0.22,1,0.36,1), box-shadow 0.15s ease; }
+.nav-item:hover { transform: translateX(2px); }
+.nav-item.active { transform: translateX(0); }
+
+/* Button press — spring squish */
+.btn-sm, .btn-convert, .icon-btn, .chip, .tb-btn, .theme-picker-btn {
+  transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-sm:active, .btn-convert:active, .icon-btn:active, .chip:active {
+  transform: scale(0.93) !important;
+}
+.btn-sm:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,0.18); }
+.btn-convert.primary:hover { transform: translateY(-1.5px) scale(1.02); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
+/* Swap button — full rotation */
+.btn-swap { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.15s, color 0.15s, background 0.15s; }
+.btn-swap:hover { transform: rotate(180deg) scale(1.15) !important; }
+
+/* Hash val hover */
+.hash-val { transition: border-color 0.15s, color 0.15s, transform 0.12s cubic-bezier(0.22,1,0.36,1); }
+.hash-val:hover { transform: scale(1.005); }
+
+/* UUID item bounce */
+.uuid-item { transition: border-color 0.15s, color 0.15s, transform 0.15s cubic-bezier(0.22,1,0.36,1), box-shadow 0.15s; }
+.uuid-item:hover { transform: translateX(3px) scale(1.005); }
+
+/* Tab btn spring */
+.tab-btn { transition: color 0.18s ease, transform 0.18s cubic-bezier(0.22,1,0.36,1); }
+.tab-btn:active { transform: scale(0.88) !important; }
+
+/* Topbar buttons */
+.tb-btn:hover { transform: translateY(-1px); }
+.tb-btn:active { transform: scale(0.94) !important; }
+
+/* Upload zone */
+.upload-zone { transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+.upload-zone:hover { transform: scale(1.01); }
 
 /* Loading spinner */
-.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; }
+.spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s cubic-bezier(0.4,0,0.6,1) infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* Tooltip copy flash */
+@keyframes copyFlash {
+  0%   { background: var(--accent-bg); color: var(--accent3); }
+  100% { background: transparent; color: inherit; }
+}
+.copy-flash { animation: copyFlash 0.6s ease; }
 </style>
 </head>
 <body data-theme="obsidian">
 
+<!-- THEME DROPDOWN PORTAL — Redesigned v2 -->
+<div class="theme-dropdown" id="themeDropdown">
+
+  <!-- Header -->
+  <div class="td-header">
+    <div class="td-header-dot"></div>
+    <span class="td-header-title">Choose Theme</span>
+    <span class="td-header-badge">24</span>
+    <div style="flex:1"></div>
+    <button class="td-close-btn" onclick="closeThemePicker()" aria-label="Close">
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1l10 10M11 1L1 11"/></svg>
+    </button>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="td-tabs">
+    <button class="td-tab active" data-filter="all"   onclick="filterThemes(this,'all')">All <span>24</span></button>
+    <button class="td-tab" data-filter="dark"         onclick="filterThemes(this,'dark')">Dark <span>20</span></button>
+    <button class="td-tab" data-filter="light"        onclick="filterThemes(this,'light')">Light <span>4</span></button>
+    <button class="td-tab" data-filter="color"        onclick="filterThemes(this,'color')">Vivid</button>
+    <button class="td-tab" data-filter="mono"         onclick="filterThemes(this,'mono')">Minimal</button>
+  </div>
+
+  <!-- Scrollable grid -->
+  <div class="td-scroll" id="td-scroll">
+    <div class="td-grid" id="td-grid">
+
+      <!-- dark themes -->
+      <div class="td-card" data-t="obsidian"   data-cat="dark"        onclick="setTheme('obsidian')">
+        <div class="td-preview"><div style="background:#0d0d0d"></div><div style="background:#1a1a1a"></div><div style="background:#c084fc"></div></div>
+        <span>Obsidian</span></div>
+
+      <div class="td-card" data-t="midnight"   data-cat="dark"        onclick="setTheme('midnight')">
+        <div class="td-preview"><div style="background:#060812"></div><div style="background:#0d1128"></div><div style="background:#818cf8"></div></div>
+        <span>Midnight</span></div>
+
+      <div class="td-card" data-t="abyss"      data-cat="dark mono"   onclick="setTheme('abyss')">
+        <div class="td-preview"><div style="background:#000005"></div><div style="background:#070916"></div><div style="background:#6c63ff"></div></div>
+        <span>Abyss</span></div>
+
+      <div class="td-card" data-t="panda"      data-cat="dark mono"   onclick="setTheme('panda')">
+        <div class="td-preview"><div style="background:#0d0d0d"></div><div style="background:#1c1c1c"></div><div style="background:#f5f5f5"></div></div>
+        <span>Panda</span></div>
+
+      <div class="td-card" data-t="carbon"     data-cat="dark mono"   onclick="setTheme('carbon')">
+        <div class="td-preview"><div style="background:#161616"></div><div style="background:#262626"></div><div style="background:#0f62fe"></div></div>
+        <span>Carbon</span></div>
+
+      <div class="td-card" data-t="slate"      data-cat="dark"        onclick="setTheme('slate')">
+        <div class="td-preview"><div style="background:#0f1117"></div><div style="background:#1c2333"></div><div style="background:#60a5fa"></div></div>
+        <span>Slate</span></div>
+
+      <div class="td-card" data-t="tokyo"      data-cat="dark color"  onclick="setTheme('tokyo')">
+        <div class="td-preview"><div style="background:#1a1b26"></div><div style="background:#1f2335"></div><div style="background:#7aa2f7"></div></div>
+        <span>Tokyo Night</span></div>
+
+      <div class="td-card" data-t="nord"       data-cat="dark"        onclick="setTheme('nord')">
+        <div class="td-preview"><div style="background:#2e3440"></div><div style="background:#3b4252"></div><div style="background:#88c0d0"></div></div>
+        <span>Nord</span></div>
+
+      <div class="td-card" data-t="dracula"    data-cat="dark color"  onclick="setTheme('dracula')">
+        <div class="td-preview"><div style="background:#1e1f29"></div><div style="background:#282a36"></div><div style="background:#bd93f9"></div></div>
+        <span>Dracula</span></div>
+
+      <div class="td-card" data-t="catppuccin" data-cat="dark color"  onclick="setTheme('catppuccin')">
+        <div class="td-preview"><div style="background:#1e1e2e"></div><div style="background:#313244"></div><div style="background:#cba6f7"></div></div>
+        <span>Catppuccin</span></div>
+
+      <div class="td-card" data-t="gruvbox"    data-cat="dark color"  onclick="setTheme('gruvbox')">
+        <div class="td-preview"><div style="background:#282828"></div><div style="background:#32302f"></div><div style="background:#fabd2f"></div></div>
+        <span>Gruvbox</span></div>
+
+      <div class="td-card" data-t="mocha"      data-cat="dark color"  onclick="setTheme('mocha')">
+        <div class="td-preview"><div style="background:#13100e"></div><div style="background:#211a14"></div><div style="background:#f59e0b"></div></div>
+        <span>Mocha</span></div>
+
+      <div class="td-card" data-t="solarized"  data-cat="dark"        onclick="setTheme('solarized')">
+        <div class="td-preview"><div style="background:#002b36"></div><div style="background:#073642"></div><div style="background:#268bd2"></div></div>
+        <span>Solarized</span></div>
+
+      <div class="td-card" data-t="cyber"      data-cat="dark color"  onclick="setTheme('cyber')">
+        <div class="td-preview"><div style="background:#070708"></div><div style="background:#101018"></div><div style="background:#00ffcc"></div></div>
+        <span>Cyber</span></div>
+
+      <div class="td-card" data-t="emerald"    data-cat="dark color"  onclick="setTheme('emerald')">
+        <div class="td-preview"><div style="background:#080f0a"></div><div style="background:#111e15"></div><div style="background:#34d399"></div></div>
+        <span>Emerald</span></div>
+
+      <div class="td-card" data-t="aurora"     data-cat="dark color"  onclick="setTheme('aurora')">
+        <div class="td-preview"><div style="background:#060e12"></div><div style="background:#0e1f2e"></div><div style="background:#00e5a0"></div></div>
+        <span>Aurora</span></div>
+
+      <div class="td-card" data-t="ocean"      data-cat="dark color"  onclick="setTheme('ocean')">
+        <div class="td-preview"><div style="background:#020c18"></div><div style="background:#071e30"></div><div style="background:#38b2ff"></div></div>
+        <span>Ocean</span></div>
+
+      <div class="td-card" data-t="forest"     data-cat="dark color"  onclick="setTheme('forest')">
+        <div class="td-preview"><div style="background:#060d08"></div><div style="background:#0f1e14"></div><div style="background:#6bcb77"></div></div>
+        <span>Forest</span></div>
+
+      <div class="td-card" data-t="crimson"    data-cat="dark color"  onclick="setTheme('crimson')">
+        <div class="td-preview"><div style="background:#0f0608"></div><div style="background:#200d10"></div><div style="background:#ff3d5a"></div></div>
+        <span>Crimson</span></div>
+
+      <div class="td-card" data-t="sunset"     data-cat="dark color"  onclick="setTheme('sunset')">
+        <div class="td-preview"><div style="background:#0f0b10"></div><div style="background:#221422"></div><div style="background:#ff7eb3"></div></div>
+        <span>Sunset</span></div>
+
+      <!-- light themes -->
+      <div class="td-card" data-t="arctic"     data-cat="light mono"  onclick="setTheme('arctic')">
+        <div class="td-preview td-preview-light"><div style="background:#f0f4f8"></div><div style="background:#fff"></div><div style="background:#2563eb"></div></div>
+        <span>Arctic</span></div>
+
+      <div class="td-card" data-t="latte"      data-cat="light color" onclick="setTheme('latte')">
+        <div class="td-preview td-preview-light"><div style="background:#eff1f5"></div><div style="background:#dce0e8"></div><div style="background:#8839ef"></div></div>
+        <span>Latte</span></div>
+
+      <div class="td-card" data-t="rose"       data-cat="light color" onclick="setTheme('rose')">
+        <div class="td-preview td-preview-light"><div style="background:#fdf6f7"></div><div style="background:#fff"></div><div style="background:#e11d48"></div></div>
+        <span>Rose</span></div>
+
+      <div class="td-card" data-t="sand"       data-cat="light color" onclick="setTheme('sand')">
+        <div class="td-preview td-preview-light"><div style="background:#f5f0e8"></div><div style="background:#faf8f4"></div><div style="background:#b45309"></div></div>
+        <span>Sand</span></div>
+
+    </div>
+  </div>
+
+  <!-- Footer: Auto Cycle -->
+  <div class="td-footer">
+    <div style="font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 2px 5px">Auto Cycle</div>
+    <button id="td-random-btn" onclick="toggleRandomTheme()" class="td-cycle-btn">
+      <span id="td-random-icon">🎲</span>
+      <span id="td-random-label" class="td-cycle-label">Shuffle themes</span>
+      <span id="td-random-dot" class="td-cycle-dot"></span>
+    </button>
+    <div id="td-random-cfg" class="td-cycle-cfg" style="display:none">
+      <div class="td-cycle-cfg-row">
+        <span class="td-cycle-cfg-label">Every</span>
+        <input id="td-random-secs" type="number" min="1" max="3600" value="5" class="td-cycle-input" onchange="updateRandomInterval()" oninput="updateRandomInterval()">
+        <span class="td-cycle-cfg-unit">sec</span>
+        <div style="flex:1"></div>
+        <span id="td-random-countdown" class="td-cycle-countdown"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- TOP BAR -->
 <div class="topbar">
   <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()" aria-label="Menu"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h12M2 8h12M2 12h12"/></svg></button>
-  <div class="logo">
-    <div class="logo-mark"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M9 2L4 9h5l-1 5 6-7H9l1-5z"/></svg></div>
+  <div class="logo" style="gap:10px;cursor:default">
+    <!-- Refined SVG logo: stacked code windows + bold A + arrow, inspired by reference -->
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+      <!-- Back window (offset) -->
+      <rect x="6" y="4" width="26" height="20" rx="3" fill="var(--surface3)" stroke="var(--border2)" stroke-width="1"/>
+      <rect x="6" y="4" width="26" height="5" rx="3" fill="var(--border2)"/>
+      <rect x="6" y="7" width="26" height="2" fill="var(--border2)"/>
+      <circle cx="9.5" cy="6.5" r="1" fill="var(--error)" opacity=".7"/>
+      <circle cx="12.5" cy="6.5" r="1" fill="var(--warn)" opacity=".7"/>
+      <circle cx="15.5" cy="6.5" r="1" fill="var(--accent3)" opacity=".7"/>
+      <!-- Front window (main) -->
+      <rect x="2" y="8" width="26" height="22" rx="3" fill="var(--surface2)" stroke="var(--border2)" stroke-width="1"/>
+      <rect x="2" y="8" width="26" height="5.5" rx="3" fill="var(--surface3)"/>
+      <rect x="2" y="11.5" width="26" height="2" fill="var(--surface3)"/>
+      <circle cx="5.5" cy="10.5" r="1" fill="var(--error)" opacity=".7"/>
+      <circle cx="8.5" cy="10.5" r="1" fill="var(--warn)" opacity=".7"/>
+      <circle cx="11.5" cy="10.5" r="1" fill="var(--accent3)" opacity=".7"/>
+      <!-- Code lines -->
+      <rect x="6" y="17" width="14" height="1.5" rx="0.75" fill="var(--accent)" opacity=".6"/>
+      <rect x="6" y="20.5" width="10" height="1.5" rx="0.75" fill="var(--accent2)" opacity=".5"/>
+      <rect x="6" y="24" width="12" height="1.5" rx="0.75" fill="var(--accent3)" opacity=".4"/>
+      <!-- Bold "A" letter overlay -->
+      <text x="20" y="33" font-family="'Geist','Inter',system-ui" font-weight="800" font-size="17" fill="var(--accent)" opacity=".95" letter-spacing="-1">A</text>
+      <!-- Conversion arrow -->
+      <path d="M27 22 L34 22 M31.5 19 L34 22 L31.5 25" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     <div class="logo-text">
-      <span class="logo-name">A Tool</span>
-      <span class="logo-tag">Developer Toolkit</span>
+      <span class="logo-name" style="font-size:14px;font-weight:700;letter-spacing:-0.03em">A Tool</span>
+      <span class="logo-tag" style="font-size:8px;letter-spacing:0.18em">CONVERSION · VALIDATION · MINIFY</span>
     </div>
   </div>
   <div class="topbar-spacer"></div>
-  <div class="topbar-theme">
-    <span class="topbar-theme-label">Theme</span>
-    <div class="theme-dot" data-t="obsidian" onclick="setTheme('obsidian')" title="Obsidian"></div>
-    <div class="theme-dot" data-t="slate" onclick="setTheme('slate')" title="Slate Pro"></div>
-    <div class="theme-dot" data-t="midnight" onclick="setTheme('midnight')" title="Midnight"></div>
-    <div class="theme-dot" data-t="carbon" onclick="setTheme('carbon')" title="Carbon"></div>
-    <div class="theme-dot" data-t="dracula" onclick="setTheme('dracula')" title="Dracula"></div>
-    <div class="theme-dot" data-t="nord" onclick="setTheme('nord')" title="Nord"></div>
-    <div class="theme-dot" data-t="tokyo" onclick="setTheme('tokyo')" title="Tokyo Night"></div>
-    <div class="theme-dot" data-t="solarized" onclick="setTheme('solarized')" title="Solarized Dark"></div>
-    <div class="theme-dot" data-t="gruvbox" onclick="setTheme('gruvbox')" title="Gruvbox"></div>
-    <div class="theme-dot" data-t="catppuccin" onclick="setTheme('catppuccin')" title="Catppuccin"></div>
-    <div class="theme-dot" data-t="cyber" onclick="setTheme('cyber')" title="Cyber"></div>
-    <div class="theme-dot" data-t="emerald" onclick="setTheme('emerald')" title="Emerald"></div>
-    <div class="theme-dot" data-t="mocha" onclick="setTheme('mocha')" title="Mocha"></div>
-    <div class="theme-dot" data-t="arctic" onclick="setTheme('arctic')" title="Arctic Light"></div>
-    <div class="theme-dot" data-t="rose" onclick="setTheme('rose')" title="Rose"></div>
-    <div class="theme-dot" data-t="sand" onclick="setTheme('sand')" title="Sand"></div>
-  </div>
+  <button class="theme-picker-btn" id="themePickerBtn" onclick="toggleThemePicker(event)">
+    <span class="tpb-swatch" id="tpbSwatch"></span>
+    <span class="tpb-name"  id="tpbName">Theme</span>
+    <span class="tpb-caret">▾</span>
+  </button>
   <button class="tb-btn" onclick="clearAll()"><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><span class="tb-btn-text">Clear All</span></button>
   <button class="tb-btn" id="kbdHint" title="Ctrl+Enter to convert"><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 10l-2-3 2-3M11 10l2-3-2-3M7 10l2-4"/></svg></span><span class="tb-btn-text">Ctrl+↵</span></button>
 </div>
@@ -1251,6 +1805,7 @@ select.field-input { cursor: pointer; }
     <div class="nav-item" data-panel="html-ent" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12M2.5 5.5h11M2.5 10.5h11"/></svg></span><span class="nav-text">HTML Entities</span></div>
     <div class="nav-item" data-panel="hex-text" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2l5 3v6l-5 3-5-3V5z"/><path d="M3 5l5 3M8 8l5-3M8 8v6"/></svg></span><span class="nav-text">Hex ↔ Text</span></div>
     <div class="nav-item" data-panel="jwt" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/><path d="M8 8v2" stroke-width="2"/></svg></span><span class="nav-text">JWT Decoder</span></div>
+    <div class="nav-item" data-panel="jwt-build" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/><path d="M6 10h4" stroke-width="2"/><path d="M8 8v4" stroke-width="2"/></svg></span><span class="nav-text">JWT Builder</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
@@ -1280,10 +1835,10 @@ select.field-input { cursor: pointer; }
     <div class="sidebar-section-label">Numbers & Time</div>
     <div class="nav-item" data-panel="base-conv" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v12M4 4l4-2 4 2M4 12l4 2 4-2M4 4v8M12 4v8"/></svg></span><span class="nav-text">Base Converter</span></div>
     <div class="nav-item" data-panel="timestamp" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg></span><span class="nav-text">Unix Timestamp</span></div>
+    <div class="nav-item" data-panel="timezone" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-1.5 2-1.5 10 0 12M8 2c1.5 2 1.5 10 0 12M2 8h12"/><path d="M3 5h10M3 11h10"/></svg></span><span class="nav-text">Timezone Converter</span></div>
     <div class="nav-item" data-panel="uuid-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M9 8h4M9 11h3"/><circle cx="5" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">UUID Generator</span></div>
     <div class="nav-item" data-panel="color" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="5.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="11" r="1" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Color Converter</span></div>
   </div>
-
 
   <div class="sidebar-divider"></div>
 
@@ -1293,12 +1848,17 @@ select.field-input { cursor: pointer; }
     <div class="nav-item" data-panel="nanoid-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="2"/><circle cx="5.5" cy="5.5" r=".8" fill="currentColor" stroke="none"/><circle cx="10.5" cy="5.5" r=".8" fill="currentColor" stroke="none"/><circle cx="5.5" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="10.5" cy="10.5" r=".8" fill="currentColor" stroke="none"/><circle cx="8" cy="8" r=".8" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">Nano ID Generator</span></div>
     <div class="nav-item" data-panel="qr-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx=".5"/><rect x="9" y="2" width="5" height="5" rx=".5"/><rect x="2" y="9" width="5" height="5" rx=".5"/><path d="M9 9h1M12 9h2M9 11h3M12 12v2M9 14h2"/></svg></span><span class="nav-text">QR Code Generator</span></div>
     <div class="nav-item" data-panel="cron-parse" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/><path d="M2 2l12 12" stroke-width="1" opacity=".3"/></svg></span><span class="nav-text">Cron Parser</span></div>
+    <div class="nav-item" data-panel="hls-player" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M6 6l4 2-4 2V6z" fill="currentColor" stroke="none"/></svg></span><span class="nav-text">HLS / M3U8 Player</span></div>
   </div>
 
   <div class="sidebar-divider"></div>
 
   <div class="sidebar-section">
-    <div class="sidebar-section-label">Text Tools</div>
+    <div class="sidebar-section-label">Network & API</div>
+    <div class="nav-item" data-panel="api-tester" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12v8H2z" rx="1"/><path d="M5 7h6M5 9.5h4"/><path d="M13 2l1.5 2L13 6"/></svg></span><span class="nav-text">API Tester</span></div>
+    <div class="nav-item" data-panel="curl-gen" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M4 8l2 2-2 2M8 12h4"/></svg></span><span class="nav-text">cURL Generator</span></div>
+    <div class="nav-item" data-panel="http-headers" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12v2H2zM2 7h8v2H2zM2 11h10v2H2z"/></svg></span><span class="nav-text">HTTP Headers</span></div>
+    <div class="nav-item" data-panel="ip-dns" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 2c-2 2-2 10 0 12M8 2c2 2 2 10 0 12M2 8h12M2.5 5.5h11M2.5 10.5h11"/></svg></span><span class="nav-text">IP / DNS Lookup</span></div>
     <div class="nav-item" data-panel="str-utils" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12l3-4 3 2 3-5 3 3"/><path d="M2 14h12"/></svg></span><span class="nav-text">String Stats</span></div>
     <div class="nav-item" data-panel="escape" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h8M7 5l3 3-3 3"/><path d="M13 5v6" stroke-width="2"/></svg></span><span class="nav-text">Escape / Unescape</span></div>
     <div class="nav-item" data-panel="sort-dedup" onclick="nav(this)"><span class="nav-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h8M2 8h5M2 12h3"/><path d="M12 3v10M10 11l2 2 2-2"/></svg></span><span class="nav-text">Sort &amp; Deduplicate</span></div>
@@ -1335,6 +1895,18 @@ select.field-input { cursor: pointer; }
     <button class="tab-btn" data-panel="base-conv" onclick="navTab(this,'base-conv')">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 2"/></svg>
       <span class="tab-btn-label">Numbers</span>
+    </button>
+    <button class="tab-btn" data-panel="api-tester" onclick="navTab(this,'api-tester')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12v8H2z"/><path d="M13 2l1.5 2L13 6"/><path d="M5 8h6"/></svg>
+      <span class="tab-btn-label">API</span>
+    </button>
+    <button class="tab-btn" data-panel="jwt" onclick="navTab(this,'jwt')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="7" rx="1.5"/><path d="M5 5V4a3 3 0 016 0v1"/></svg>
+      <span class="tab-btn-label">JWT</span>
+    </button>
+    <button class="tab-btn" data-panel="ip-dns" onclick="navTab(this,'ip-dns')">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c-2 2-2 10 0 12"/></svg>
+      <span class="tab-btn-label">Network</span>
     </button>
   </div>
 </div>
@@ -1424,7 +1996,7 @@ PANELS['xml-props'] = splitPanel('xml-props','XML ↔ .Properties','Flatten XML 
   '<config>\n  <database>\n    <host>localhost</host>\n    <port>5432</port>\n  </database>\n</config>','Properties output will appear here...');
 
 PANELS['json-csv'] = splitPanel('json-csv','JSON ↔ CSV','Convert JSON arrays to CSV and back','Input','JSON','Output','CSV','→ To CSV',"convert('json-to-csv')",'← To JSON',"convert('csv-to-json')",
-  [{key:'users',label:'Users'},{key:'products',label:'Products'}],
+  [{key:'users',label:'Users'},{key:'products',label:'Products'},{key:'orders',label:'Orders'}],
   '[\n  {"id":1,"name":"Alice","age":30},\n  {"id":2,"name":"Bob","age":25}\n]','CSV output will appear here...');
 
 PANELS['toml-json'] = splitPanel('toml-json','TOML ↔ JSON','Convert TOML configuration to JSON and back','Input','TOML','Output','JSON','→ To JSON',"convert('toml-to-json')",'← To TOML',"convert('json-to-toml')",
@@ -2211,7 +2783,7 @@ PANELS['md-html'] = splitPanel('md-html','Markdown ↔ HTML','Convert Markdown t
   '# Hello World\n\nThis is **bold** and *italic*.\n\n- Item 1\n- Item 2\n\n    console.log(\"hello\");\n\n> A blockquote\n\n[Link](https://example.com)','HTML output will appear here...');
 
 PANELS['sql-json'] = splitPanel('sql-json','JSON ↔ SQL','Generate INSERT statements from JSON array, or parse SQL back to JSON','Input','JSON','Output','SQL','→ To SQL',"convert('json-to-sql')",'← To JSON',"convert('sql-to-json')",
-  [{key:'users',label:'Users'},{key:'products',label:'Products'}],
+  [{key:'users',label:'Users'},{key:'products',label:'Products'},{key:'orders',label:'Orders'}],
   '[\n  {"id":1,"name":"Alice","email":"alice@example.com","age":30},\n  {"id":2,"name":"Bob","email":"bob@example.com","age":25}\n]','SQL output will appear here...');
 
 PANELS['csv-sql'] = `
@@ -2588,6 +3160,508 @@ PANELS['num-fmt'] = `
   </div>
 </div>`;
 
+PANELS['hls-player'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">HLS / M3U8 Stream Player</div>
+    <div class="panel-sub">Load any .m3u8 URL — quality switching, playback controls, stream stats, playlist viewer</div>
+  </div>
+  <div class="chip-row">
+    <span class="chip-label">Samples</span>
+    <span class="chip" onclick="hlsLoadSample('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8')">Big Buck Bunny</span>
+    <span class="chip" onclick="hlsLoadSample('https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8')">Apple HLS Demo</span>
+    <span class="chip" onclick="hlsLoadSample('https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8')">Sintel</span>
+  </div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px;flex:1;min-height:0">
+
+  <!-- URL Input Row -->
+  <div style="display:flex;gap:8px;align-items:center">
+    <input class="field-input" id="hls-url"
+      placeholder="https://example.com/stream/master.m3u8"
+      style="flex:1;font-family:var(--font-mono);font-size:12px"
+      onkeydown="if(event.key==='Enter')hlsLoad()">
+    <span id="hls-status-pill" style="font-family:var(--font-mono);font-size:9px;padding:3px 10px;border-radius:12px;white-space:nowrap;background:var(--surface3);color:var(--text3);border:1px solid var(--border);transition:all .25s">IDLE</span>
+    <button class="btn-sm accent" onclick="hlsLoad()" style="flex-shrink:0">&#9654; Load</button>
+    <button class="btn-sm" onclick="hlsClear()" style="flex-shrink:0">&#x2715;</button>
+  </div>
+
+  <!-- Error box -->
+  <div id="hls-err" style="display:none;padding:10px 14px;border-radius:7px;border:1px solid color-mix(in srgb,var(--error) 35%,transparent);background:color-mix(in srgb,var(--error) 9%,transparent);font-family:var(--font-mono);font-size:11px;color:var(--error);line-height:1.6"></div>
+
+  <!-- Idle hint -->
+  <div id="hls-idle" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:32px;border:1.5px dashed var(--border2);border-radius:10px;color:var(--text3);font-family:var(--font-mono);font-size:11px;text-align:center;line-height:1.9">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style="opacity:.25"><rect x="2" y="6" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/><path d="M16 14l10 6-10 6V14z" fill="currentColor"/></svg>
+    Paste an <strong style="color:var(--text2)">.m3u8 URL</strong> above and press <strong style="color:var(--text2)">Load</strong><br>
+    Supports HLS live streams &middot; VOD &middot; ABR &middot; MPEG-TS &middot; fMP4<br>
+    <span style="opacity:.6;font-size:10px">CORS-enabled streams only &middot; Powered by hls.js</span>
+  </div>
+
+  <!-- Player area (hidden until stream loads) -->
+  <div id="hls-player-area" style="display:none;flex-direction:column;gap:10px;flex:1;min-height:0">
+
+    <!-- Video + right panel -->
+    <div style="display:flex;gap:10px;flex:1;min-height:0;flex-wrap:wrap">
+
+      <!-- Left: video + controls -->
+      <div style="flex:2;min-width:260px;display:flex;flex-direction:column;gap:8px">
+
+        <!-- Video -->
+        <div style="background:#000;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+          <video id="hls-video" style="width:100%;display:block;max-height:360px"
+            onplay="hlsOnPlay()" onpause="hlsOnPause()" ontimeupdate="hlsTimeUpdate()"></video>
+        </div>
+
+        <!-- Controls -->
+        <div class="util-card" style="padding:10px 12px">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+
+            <!-- Play/Pause -->
+            <button id="hls-playbtn" class="icon-btn" onclick="hlsTogglePlay()"
+              style="width:32px;height:32px;font-size:15px;flex-shrink:0">&#9654;</button>
+
+            <!-- Seek bar + time -->
+            <div style="flex:1;min-width:80px;display:flex;flex-direction:column;gap:2px">
+              <div style="position:relative;height:4px;border-radius:2px;background:var(--border2);cursor:pointer"
+                onclick="hlsSeekClick(event,this)" id="hls-seek-track">
+                <div id="hls-seek-buf"  style="position:absolute;left:0;top:0;height:100%;border-radius:2px;background:var(--border2);opacity:.6;transition:width .5s;width:0%"></div>
+                <div id="hls-seek-prog" style="position:absolute;left:0;top:0;height:100%;border-radius:2px;background:var(--accent);transition:width .25s;width:0%"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:9px;color:var(--text3)">
+                <span id="hls-tc">0:00</span><span id="hls-td">--:--</span>
+              </div>
+            </div>
+
+            <!-- Volume -->
+            <button class="icon-btn" id="hls-mutebtn" onclick="hlsToggleMute()" style="font-size:12px;flex-shrink:0">&#128266;</button>
+            <input type="range" id="hls-vol" min="0" max="100" value="80"
+              style="width:56px;height:4px;accent-color:var(--accent);cursor:pointer;flex-shrink:0"
+              oninput="hlsSetVol(this.value)">
+
+            <!-- Speed -->
+            <select class="field-input" id="hls-speed" onchange="hlsSetSpeed(this.value)"
+              style="height:26px;padding:0 5px;font-size:10px;width:60px;flex-shrink:0">
+              <option value="0.25">0.25×</option>
+              <option value="0.5">0.5×</option>
+              <option value="0.75">0.75×</option>
+              <option value="1" selected>1×</option>
+              <option value="1.25">1.25×</option>
+              <option value="1.5">1.5×</option>
+              <option value="2">2×</option>
+            </select>
+
+            <!-- Quality -->
+            <select class="field-input" id="hls-qual" onchange="hlsSetQuality(this.value)"
+              style="height:26px;padding:0 5px;font-size:10px;width:84px;flex-shrink:0;display:none">
+            </select>
+
+            <!-- Fullscreen -->
+            <button class="icon-btn" onclick="hlsFullscreen()" title="Fullscreen"
+              style="font-size:12px;flex-shrink:0">&#x26F6;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: stats + playlist -->
+      <div style="flex:1;min-width:200px;display:flex;flex-direction:column;gap:8px;min-height:0">
+
+        <!-- Stats grid -->
+        <div id="hls-stats" style="display:grid;grid-template-columns:1fr 1fr;gap:5px"></div>
+
+        <!-- Playlist viewer -->
+        <div style="display:flex;flex-direction:column;gap:5px;flex:1;min-height:0">
+          <div style="display:flex;align-items:center">
+            <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Playlist</span>
+            <div style="flex:1"></div>
+            <button class="btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('hls-m3u8').value)" style="font-size:9px;height:22px;padding:0 8px">&#x2398; Copy</button>
+          </div>
+          <textarea id="hls-m3u8" class="editor-ta readonly" readonly
+            style="flex:1;min-height:160px;font-size:10px;resize:none;background:var(--surface2)"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+`;
+
+// ============================================================
+// JWT BUILDER
+// ============================================================
+PANELS['jwt-build'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">JWT Builder & Encoder</div>
+    <div class="panel-sub">Craft, sign, and encode JWT tokens with custom headers, payload, and secret</div>
+  </div>
+</div>
+<div class="util-grid">
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">⚙️ Header</span></div>
+    <div class="util-card-body">
+      <div class="field-row"><div class="field-label">Algorithm</div>
+        <select class="field-input" id="jb-alg" onchange="jwtBuildLive()">
+          <option value="HS256">HS256 (HMAC-SHA256)</option>
+          <option value="HS384">HS384 (HMAC-SHA384)</option>
+          <option value="HS512">HS512 (HMAC-SHA512)</option>
+          <option value="none">none (unsigned)</option>
+        </select>
+      </div>
+      <div class="field-row"><div class="field-label">Token Type</div>
+        <input class="field-input" id="jb-typ" value="JWT" oninput="jwtBuildLive()">
+      </div>
+      <div style="height:1px;background:var(--border);margin:8px 0"></div>
+      <div class="util-card-hdr" style="padding:0 0 6px"><span class="util-card-title">📦 Payload</span></div>
+      <div class="field-row"><div class="field-label">Subject (sub)</div>
+        <input class="field-input" id="jb-sub" placeholder="user_id or email" oninput="jwtBuildLive()">
+      </div>
+      <div class="field-row"><div class="field-label">Issuer (iss)</div>
+        <input class="field-input" id="jb-iss" placeholder="https://myapp.com" oninput="jwtBuildLive()">
+      </div>
+      <div class="field-row"><div class="field-label">Audience (aud)</div>
+        <input class="field-input" id="jb-aud" placeholder="api.myapp.com" oninput="jwtBuildLive()">
+      </div>
+      <div class="field-row"><div class="field-label">Expiry</div>
+        <select class="field-input" id="jb-exp" onchange="jwtBuildLive()">
+          <option value="900">15 minutes</option>
+          <option value="3600" selected>1 hour</option>
+          <option value="86400">1 day</option>
+          <option value="604800">7 days</option>
+          <option value="2592000">30 days</option>
+          <option value="0">No expiry</option>
+        </select>
+      </div>
+      <div class="field-row"><div class="field-label">Extra Claims (JSON)</div>
+        <textarea class="field-ta-sm" id="jb-extra" style="min-height:60px;font-size:11px" placeholder='{"role":"admin","plan":"pro"}' oninput="jwtBuildLive()"></textarea>
+      </div>
+      <div style="height:1px;background:var(--border);margin:8px 0"></div>
+      <div class="field-row"><div class="field-label">Secret / Key</div>
+        <input class="field-input" id="jb-secret" type="password" placeholder="your-secret-key" oninput="jwtBuildLive()">
+      </div>
+      <div class="btn-row">
+        <button class="btn-sm accent" onclick="jwtBuildSign()">🔏 Sign & Generate</button>
+        <button class="btn-sm" onclick="jwtBuildClear()">✕ Clear</button>
+      </div>
+    </div>
+  </div>
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">🪙 Generated Token</span></div>
+    <div class="util-card-body">
+      <div id="jb-preview" style="margin-bottom:8px"></div>
+      <div class="field-row"><div class="field-label">Encoded JWT — click to copy</div>
+        <textarea class="field-ta-sm readonly" id="jb-out" readonly style="min-height:100px;font-size:10px;word-break:break-all;cursor:pointer" onclick="copyEl('jb-out')" placeholder="Token will appear here..."></textarea>
+      </div>
+      <div style="height:1px;background:var(--border);margin:8px 0"></div>
+      <div class="field-row"><div class="field-label">Header (decoded)</div>
+        <pre id="jb-header-out" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:10px;font-family:var(--font-mono);color:var(--text2);overflow-x:auto;margin:0;min-height:40px"></pre>
+      </div>
+      <div class="field-row"><div class="field-label">Payload (decoded)</div>
+        <pre id="jb-payload-out" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px;font-size:10px;font-family:var(--font-mono);color:var(--text2);overflow-x:auto;margin:0;min-height:60px"></pre>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// TIMEZONE CONVERTER
+// ============================================================
+PANELS['timezone'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">Timezone Converter</div>
+    <div class="panel-sub">Convert a time across multiple timezones simultaneously</div>
+  </div>
+</div>
+<div class="util-grid">
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">🕐 Source Time</span></div>
+    <div class="util-card-body">
+      <div class="field-row"><div class="field-label">Date & Time</div>
+        <input type="datetime-local" class="field-input" id="tz-input" oninput="tzConvert()">
+      </div>
+      <div class="field-row"><div class="field-label">Source Timezone</div>
+        <select class="field-input" id="tz-from" onchange="tzConvert()"></select>
+      </div>
+      <button class="btn-sm" onclick="tzNow()" style="margin-top:4px">⏱ Use Now</button>
+      <div style="height:1px;background:var(--border);margin:12px 0"></div>
+      <div class="field-label" style="margin-bottom:8px">Add timezone to compare</div>
+      <div style="display:flex;gap:6px">
+        <select class="field-input" id="tz-add-sel" style="flex:1"></select>
+        <button class="btn-sm accent" onclick="tzAddZone()">+ Add</button>
+      </div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap" id="tz-chips"></div>
+    </div>
+  </div>
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">🌍 Converted Times</span></div>
+    <div class="util-card-body" id="tz-results">
+      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Pick a date and source timezone to compare.</div>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// HTTP HEADERS INSPECTOR
+// ============================================================
+PANELS['http-headers'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">HTTP Headers Reference</div>
+    <div class="panel-sub">Parse raw HTTP headers and look up what every header means</div>
+  </div>
+</div>
+<div class="util-grid">
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">📋 Paste Raw Headers</span></div>
+    <div class="util-card-body">
+      <textarea class="field-ta-sm" id="hh-in" style="min-height:180px;font-size:11px" placeholder="Content-Type: application/json&#10;Authorization: Bearer eyJ...&#10;X-Request-Id: abc-123&#10;Cache-Control: no-cache" oninput="hhParse()"></textarea>
+      <div class="btn-row" style="margin-top:8px">
+        <button class="btn-sm accent" onclick="hhParse()">🔍 Parse</button>
+        <button class="btn-sm" onclick="hhLoadSample()">Load Sample</button>
+        <button class="btn-sm" onclick="document.getElementById('hh-in').value='';document.getElementById('hh-out').innerHTML=''">✕ Clear</button>
+      </div>
+      <div style="height:1px;background:var(--border);margin:12px 0"></div>
+      <div class="field-label" style="margin-bottom:6px">Search headers</div>
+      <input class="field-input" id="hh-search" placeholder="Content-Type, Authorization..." oninput="hhSearch()">
+      <div id="hh-search-result" style="margin-top:8px"></div>
+    </div>
+  </div>
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">🧾 Parsed Headers</span></div>
+    <div class="util-card-body" id="hh-out">
+      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Paste headers above and click Parse.</div>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// CURL GENERATOR
+// ============================================================
+PANELS['curl-gen'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">cURL Generator</div>
+    <div class="panel-sub">Build a cURL command from URL, method, headers, and body. Also converts cURL to code snippets.</div>
+  </div>
+</div>
+<div class="util-grid">
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">⚙️ Request Builder</span></div>
+    <div class="util-card-body">
+      <div class="field-row"><div class="field-label">URL</div>
+        <input class="field-input" id="curl-url" placeholder="https://api.example.com/users" oninput="curlBuild()">
+      </div>
+      <div class="field-row"><div class="field-label">Method</div>
+        <select class="field-input" id="curl-method" onchange="curlBuild()">
+          <option>GET</option><option>POST</option><option>PUT</option>
+          <option>PATCH</option><option>DELETE</option><option>HEAD</option><option>OPTIONS</option>
+        </select>
+      </div>
+      <div class="field-row"><div class="field-label">Headers (one per line: Key: Value)</div>
+        <textarea class="field-ta-sm" id="curl-headers" style="min-height:70px;font-size:11px"
+          placeholder="Content-Type: application/json&#10;Authorization: Bearer YOUR_TOKEN" oninput="curlBuild()"></textarea>
+      </div>
+      <div class="field-row"><div class="field-label">Request Body (JSON / form data)</div>
+        <textarea class="field-ta-sm" id="curl-body" style="min-height:80px;font-size:11px"
+          placeholder='{"name":"John","email":"john@example.com"}' oninput="curlBuild()"></textarea>
+      </div>
+      <div class="field-row"><div class="field-label">Options</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
+            <input type="checkbox" id="curl-verbose" onchange="curlBuild()"> -v verbose
+          </label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
+            <input type="checkbox" id="curl-insecure" onchange="curlBuild()"> -k insecure
+          </label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
+            <input type="checkbox" id="curl-follow" checked onchange="curlBuild()"> -L follow redirects
+          </label>
+          <label style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);cursor:pointer">
+            <input type="checkbox" id="curl-silent" onchange="curlBuild()"> -s silent
+          </label>
+        </div>
+      </div>
+      <button class="btn-sm accent" onclick="curlBuild()" style="margin-top:4px">⚡ Generate cURL</button>
+    </div>
+  </div>
+  <div class="util-card">
+    <div class="util-card-hdr">
+      <span class="util-card-title">📋 Output</span>
+      <div style="display:flex;gap:4px;margin-left:auto">
+        <button class="btn-sm" id="curl-tab-curl" onclick="curlTab('curl')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">cURL</button>
+        <button class="btn-sm" id="curl-tab-fetch" onclick="curlTab('fetch')" style="font-size:9px;height:22px">fetch</button>
+        <button class="btn-sm" id="curl-tab-axios" onclick="curlTab('axios')" style="font-size:9px;height:22px">axios</button>
+        <button class="btn-sm" id="curl-tab-python" onclick="curlTab('python')" style="font-size:9px;height:22px">Python</button>
+      </div>
+    </div>
+    <div class="util-card-body">
+      <textarea class="field-ta-sm readonly editor-ta" id="curl-out" readonly style="min-height:220px;font-size:10.5px;cursor:pointer" onclick="copyEl('curl-out')" placeholder="Generated command will appear here..."></textarea>
+      <button class="btn-sm" onclick="copyEl('curl-out')" style="margin-top:6px">⎘ Copy</button>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// API TESTER
+// ============================================================
+PANELS['api-tester'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">API Tester</div>
+    <div class="panel-sub">Send HTTP requests directly from the browser and inspect responses</div>
+  </div>
+  <div style="background:color-mix(in srgb,var(--warn) 12%,transparent);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:6px;padding:6px 10px;font-size:10px;color:var(--warn);font-family:var(--font-mono)">
+    ⚠ Requests are sent from your browser — CORS policies apply. For private APIs, use cURL Generator instead.
+  </div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+  <!-- URL bar -->
+  <div style="display:flex;gap:6px;align-items:stretch">
+    <select class="field-input" id="at-method" style="width:90px;flex-shrink:0;font-weight:600" onchange="atMethodChange()">
+      <option style="color:#4ade80">GET</option>
+      <option style="color:#60a5fa">POST</option>
+      <option style="color:#fbbf24">PUT</option>
+      <option style="color:#a78bfa">PATCH</option>
+      <option style="color:#f87171">DELETE</option>
+      <option>HEAD</option>
+      <option>OPTIONS</option>
+    </select>
+    <input class="field-input" id="at-url" placeholder="https://jsonplaceholder.typicode.com/posts/1" style="flex:1;font-family:var(--font-mono);font-size:11px">
+    <button class="btn-sm accent" onclick="atSend()" id="at-send-btn" style="padding:0 16px;height:auto;flex-shrink:0">▶ Send</button>
+  </div>
+
+  <div class="util-grid" style="gap:10px">
+    <!-- Request config -->
+    <div class="util-card" style="min-width:0">
+      <div class="util-card-hdr">
+        <span class="util-card-title">Request</span>
+        <div style="display:flex;gap:3px;margin-left:auto">
+          <button class="btn-sm" id="at-tab-headers" onclick="atTab('headers')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">Headers</button>
+          <button class="btn-sm" id="at-tab-body" onclick="atTab('body')" style="font-size:9px;height:22px">Body</button>
+          <button class="btn-sm" id="at-tab-params" onclick="atTab('params')" style="font-size:9px;height:22px">Params</button>
+          <button class="btn-sm" id="at-tab-auth" onclick="atTab('auth')" style="font-size:9px;height:22px">Auth</button>
+        </div>
+      </div>
+      <div class="util-card-body">
+        <div id="at-pane-headers">
+          <div id="at-headers-rows" style="display:flex;flex-direction:column;gap:4px">
+            <div class="at-hrow" style="display:flex;gap:4px">
+              <input class="field-input" placeholder="Header name" style="flex:1;font-size:11px" oninput="atHeaderChange()">
+              <input class="field-input" placeholder="Value" style="flex:2;font-size:11px" oninput="atHeaderChange()">
+              <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>
+            </div>
+          </div>
+          <button class="btn-sm" onclick="atAddHeader()" style="margin-top:6px;font-size:10px">+ Add Header</button>
+          <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+            <button class="btn-sm" onclick="atPreset('json')" style="font-size:9px">JSON</button>
+            <button class="btn-sm" onclick="atPreset('form')" style="font-size:9px">Form</button>
+            <button class="btn-sm" onclick="atPreset('auth')" style="font-size:9px">Bearer</button>
+          </div>
+        </div>
+        <div id="at-pane-body" style="display:none">
+          <div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap">
+            <button class="btn-sm" id="at-body-json" onclick="atBodyType('json')" style="font-size:9px;border-color:var(--accent);color:var(--accent)">JSON</button>
+            <button class="btn-sm" id="at-body-text" onclick="atBodyType('text')" style="font-size:9px">Text</button>
+            <button class="btn-sm" id="at-body-form" onclick="atBodyType('form')" style="font-size:9px">Form</button>
+            <button class="btn-sm" id="at-body-none" onclick="atBodyType('none')" style="font-size:9px">None</button>
+          </div>
+          <textarea class="field-ta-sm editor-ta" id="at-body-input" style="min-height:130px;font-size:11px" placeholder='{"key":"value"}'></textarea>
+        </div>
+        <div id="at-pane-params" style="display:none">
+          <div id="at-params-rows" style="display:flex;flex-direction:column;gap:4px">
+            <div class="at-hrow" style="display:flex;gap:4px">
+              <input class="field-input" placeholder="param" style="flex:1;font-size:11px">
+              <input class="field-input" placeholder="value" style="flex:2;font-size:11px">
+              <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>
+            </div>
+          </div>
+          <button class="btn-sm" onclick="atAddParam()" style="margin-top:6px;font-size:10px">+ Add Param</button>
+        </div>
+        <div id="at-pane-auth" style="display:none">
+          <div class="field-row"><div class="field-label">Auth Type</div>
+            <select class="field-input" id="at-auth-type" onchange="atAuthChange()">
+              <option value="none">None</option>
+              <option value="bearer">Bearer Token</option>
+              <option value="basic">Basic Auth</option>
+              <option value="apikey">API Key</option>
+            </select>
+          </div>
+          <div id="at-auth-fields"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Response -->
+    <div class="util-card" style="min-width:0">
+      <div class="util-card-hdr">
+        <span class="util-card-title">Response</span>
+        <span id="at-status-badge" style="margin-left:8px;font-family:var(--font-mono);font-size:10px"></span>
+        <span id="at-time-badge" style="margin-left:6px;font-family:var(--font-mono);font-size:9px;color:var(--text3)"></span>
+        <div style="margin-left:auto;display:flex;gap:3px">
+          <button class="btn-sm" id="at-res-tab-body" onclick="atResTab('body')" style="font-size:9px;height:22px;border-color:var(--accent);color:var(--accent)">Body</button>
+          <button class="btn-sm" id="at-res-tab-headers" onclick="atResTab('headers')" style="font-size:9px;height:22px">Headers</button>
+        </div>
+      </div>
+      <div class="util-card-body" style="padding:0">
+        <div id="at-res-body" style="padding:10px">
+          <div id="at-spinner" style="display:none;text-align:center;padding:20px;color:var(--text3);font-size:11px">Sending request...</div>
+          <textarea class="field-ta-sm readonly editor-ta" id="at-res-out" readonly
+            style="min-height:200px;font-size:10.5px;display:none"></textarea>
+          <div id="at-res-empty" style="color:var(--text3);font-family:var(--font-mono);font-size:11px">
+            Enter a URL and click Send to make a request.
+          </div>
+        </div>
+        <div id="at-res-headers-pane" style="display:none;padding:10px">
+          <div id="at-res-headers-out"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+// ============================================================
+// IP / DNS LOOKUP
+// ============================================================
+PANELS['ip-dns'] = `
+<div class="panel-hdr">
+  <div class="panel-title-group">
+    <div class="panel-title">IP & DNS Lookup</div>
+    <div class="panel-sub">Look up IP geolocation, DNS records, and inspect your own IP details</div>
+  </div>
+</div>
+<div class="util-grid">
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">🔍 Lookup</span></div>
+    <div class="util-card-body">
+      <div class="field-row"><div class="field-label">IP Address or Domain</div>
+        <input class="field-input" id="ip-input" placeholder="8.8.8.8 or github.com" style="font-family:var(--font-mono)">
+      </div>
+      <div class="btn-row">
+        <button class="btn-sm accent" onclick="ipLookup()">🌐 IP Lookup</button>
+        <button class="btn-sm" onclick="dnsLookup()">📡 DNS Lookup</button>
+        <button class="btn-sm" onclick="myIpLookup()">📍 My IP</button>
+      </div>
+      <div id="ip-status" style="margin-top:8px;font-family:var(--font-mono);font-size:10px;color:var(--text3)"></div>
+      <div style="height:1px;background:var(--border);margin:12px 0"></div>
+      <div class="field-label" style="margin-bottom:6px">Common IP Utilities</div>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex;gap:6px;align-items:center">
+          <input class="field-input" id="cidr-input" placeholder="192.168.1.0/24" style="flex:1;font-family:var(--font-mono);font-size:11px">
+          <button class="btn-sm" onclick="cidrCalc()">CIDR Calc</button>
+        </div>
+        <div id="cidr-out" style="font-family:var(--font-mono);font-size:10px;color:var(--text2)"></div>
+      </div>
+    </div>
+  </div>
+  <div class="util-card">
+    <div class="util-card-hdr"><span class="util-card-title">📊 Results</span></div>
+    <div class="util-card-body" id="ip-results">
+      <div style="color:var(--text3);font-family:var(--font-mono);font-size:11px">Enter an IP or domain and click Lookup.</div>
+    </div>
+  </div>
+</div>`;
+
 // ============================================================
 // INJECT PANELS INTO DOM
 // ============================================================
@@ -2607,10 +3681,147 @@ for (const [id, html] of Object.entries(PANELS)) {
 const STORE_THEME = 'dfp_theme';
 const STORE_PANEL = 'dfp_panel';
 
+const _THEME_SWATCHES = {"obsidian": "#c084fc", "slate": "#60a5fa", "midnight": "#818cf8", "carbon": "#0f62fe", "dracula": "#bd93f9", "nord": "#88c0d0", "tokyo": "#7aa2f7", "solarized": "#268bd2", "gruvbox": "#fabd2f", "catppuccin": "#cba6f7", "cyber": "#00ffcc", "emerald": "#34d399", "mocha": "#f59e0b", "arctic": "#2563eb", "rose": "#e11d48", "sand": "#b45309", "abyss": "#6c63ff", "crimson": "#ff3d5a", "panda": "#ffffff", "aurora": "#00e5a0", "latte": "#8839ef", "sunset": "#ff7eb3", "ocean": "#38b2ff", "forest": "#6bcb77"};
+const _THEME_NAMES   = {"obsidian": "Obsidian", "slate": "Slate", "midnight": "Midnight", "carbon": "Carbon", "dracula": "Dracula", "nord": "Nord", "tokyo": "Tokyo Night", "solarized": "Solarized", "gruvbox": "Gruvbox", "catppuccin": "Catppuccin", "cyber": "Cyber", "emerald": "Emerald", "mocha": "Mocha", "arctic": "Arctic", "rose": "Rose", "sand": "Sand", "abyss": "Abyss", "crimson": "Crimson", "panda": "Panda", "aurora": "Aurora", "latte": "Latte", "sunset": "Sunset", "ocean": "Ocean", "forest": "Forest"};
+
 function setTheme(t) {
-  document.body.setAttribute('data-theme', t);
+  const body = document.body;
+
+  // 1. Enable smooth CSS variable interpolation (iPhone-style)
+  body.classList.add('theme-transitioning');
+
+  // 2. Swap theme immediately — CSS transitions handle the visual morph
+  body.setAttribute('data-theme', t);
   localStorage.setItem(STORE_THEME, t);
-  document.querySelectorAll('.theme-dot').forEach(d => d.classList.toggle('active', d.dataset.t === t));
+
+  // 3. Update UI elements
+  document.querySelectorAll('.td-card').forEach(d => d.classList.toggle('active', d.dataset.t === t));
+  const sw = document.getElementById('tpbSwatch');
+  const nm = document.getElementById('tpbName');
+  if (sw) { sw.style.background = _THEME_SWATCHES[t] || '#888'; sw.style.boxShadow = `0 0 8px ${_THEME_SWATCHES[t] || '#888'}`; }
+  if (nm) nm.textContent = _THEME_NAMES[t] || t;
+
+  // 4. Remove transition class after animation completes (prevents it interfering with hover states)
+  clearTimeout(body._themeTimer);
+  body._themeTimer = setTimeout(() => body.classList.remove('theme-transitioning'), 500);
+
+  if (!window._randomThemeOn) closeThemePicker();
+}
+
+function toggleThemePicker(e) {
+  e.stopPropagation();
+  const dd = document.getElementById('themeDropdown');
+  const btn = document.getElementById('themePickerBtn');
+  if (!dd || !btn) return;
+  const isOpen = dd.classList.contains('open');
+  if (isOpen) { closeThemePicker(); return; }
+  const r = btn.getBoundingClientRect();
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+    dd.style.top  = (r.bottom + 6) + 'px';
+    dd.style.left = '8px';
+    dd.style.right = '8px';
+    dd.style.width = 'auto';
+  } else {
+    dd.style.top   = (r.bottom + 6) + 'px';
+    dd.style.right = (window.innerWidth - r.right) + 'px';
+    dd.style.left  = 'auto';
+    dd.style.width = '268px';
+  }
+  dd.classList.add('open');
+  btn.classList.add('open');
+}
+
+function closeThemePicker() {
+  document.getElementById('themeDropdown')?.classList.remove('open');
+  document.getElementById('themePickerBtn')?.classList.remove('open');
+}
+
+function filterThemes(btn, filter) {
+  document.querySelectorAll('.td-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.td-card').forEach(card => {
+    const cat = card.dataset.cat || '';
+    const show = filter === 'all' || cat.includes(filter);
+    card.classList.toggle('td-hidden', !show);
+  });
+}
+
+// ── Random / Auto-Cycle Theme ──────────────────────────────────────────
+window._randomThemeOn  = false;
+window._randomInterval = null;
+window._randomCountdown= null;
+window._randomSecsLeft = 0;
+
+const _ALL_THEMES = Object.keys(_THEME_SWATCHES);
+
+function _pickRandomTheme() {
+  const current = document.body.getAttribute('data-theme') || 'obsidian';
+  const others  = _ALL_THEMES.filter(t => t !== current);
+  return others[Math.floor(Math.random() * others.length)];
+}
+
+function _startCountdown(secs) {
+  clearInterval(window._randomCountdown);
+  window._randomSecsLeft = secs;
+  const el = document.getElementById('td-random-countdown');
+  if (el) el.textContent = secs + 's';
+  window._randomCountdown = setInterval(() => {
+    window._randomSecsLeft--;
+    if (el) el.textContent = Math.max(0, window._randomSecsLeft) + 's';
+  }, 1000);
+}
+
+function _applyRandomTheme() {
+  const t    = _pickRandomTheme();
+  const secs = parseInt(document.getElementById('td-random-secs')?.value || '5') || 5;
+  setTheme(t);
+  _startCountdown(secs);
+}
+
+function updateRandomInterval() {
+  if (!window._randomThemeOn) return;
+  const secs = Math.max(1, parseInt(document.getElementById('td-random-secs')?.value || '5') || 5);
+  clearInterval(window._randomInterval);
+  clearInterval(window._randomCountdown);
+  window._randomInterval = setInterval(_applyRandomTheme, secs * 1000);
+  _startCountdown(secs);
+}
+
+function toggleRandomTheme() {
+  window._randomThemeOn = !window._randomThemeOn;
+  const btn  = document.getElementById('td-random-btn');
+  const lbl  = document.getElementById('td-random-label');
+  const dot  = document.getElementById('td-random-dot');
+  const cfg  = document.getElementById('td-random-cfg');
+  const icon = document.getElementById('td-random-icon');
+
+  if (window._randomThemeOn) {
+    // Activate
+    const secs = Math.max(1, parseInt(document.getElementById('td-random-secs')?.value || '5') || 5);
+    btn?.classList.add('td-random-active');
+    if (lbl)  lbl.textContent  = 'Stop Cycling';
+    if (dot)  { dot.style.background = 'var(--accent3)'; dot.style.boxShadow = '0 0 5px var(--accent3)'; }
+    if (cfg)  cfg.style.display = 'block';
+    if (icon) icon.textContent  = '⏹';
+    // Fire once immediately then on interval
+    _applyRandomTheme();
+    window._randomInterval = setInterval(_applyRandomTheme, secs * 1000);
+  } else {
+    // Deactivate
+    clearInterval(window._randomInterval);
+    clearInterval(window._randomCountdown);
+    window._randomInterval  = null;
+    window._randomCountdown = null;
+    btn?.classList.remove('td-random-active');
+    btn?.removeAttribute('style');  // reset inline hover styles
+    if (lbl)  lbl.textContent  = 'Random Cycle';
+    if (dot)  { dot.style.background = 'var(--border2)'; dot.style.boxShadow = 'none'; }
+    if (cfg)  cfg.style.display = 'none';
+    if (icon) icon.textContent  = '🎲';
+    const ctEl = document.getElementById('td-random-countdown');
+    if (ctEl) ctEl.textContent = '';
+  }
 }
 
 // Sidebar search filter
@@ -2659,12 +3870,14 @@ function nav(el) {
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebarOverlay');
+  if (!sidebar || !overlay) return;
   if (sidebar.classList.contains('open')) {
     closeSidebar();
   } else {
     sidebar.classList.add('open');
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    overlay.style.display = 'block';
+    // Small delay so display:block renders before opacity transitions
+    requestAnimationFrame(() => overlay.classList.add('open'));
   }
 }
 function closeSidebar() {
@@ -2673,14 +3886,13 @@ function closeSidebar() {
   if (!sidebar || !overlay) return;
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
-  document.body.style.overflow = '';
+  // Hide overlay after transition completes
+  setTimeout(() => {
+    if (!overlay.classList.contains('open')) overlay.style.display = 'none';
+  }, 300);
 }
 
 // Bottom tab navigation
-function navTab(tabEl, panelId) {
-  const navEl = document.querySelector(`.nav-item[data-panel="${panelId}"]`);
-  if (navEl) nav(navEl);
-}
 
 function restoreState() {
   const t = localStorage.getItem(STORE_THEME) || 'obsidian';
@@ -2827,15 +4039,26 @@ const SAMPLES = {
     simple: `public class User {\n    private Long id;\n    private String firstName;\n    private String lastName;\n    private String email;\n    private int age;\n    private boolean active;\n}`,
     nested: `public class DoubtGroupMessage {\n    private String sender;\n    private Message message;\n    private LocalDateTime time;\n    private boolean read;\n    private int retryCount;\n}\n\npublic class Message {\n    private List<String> media;\n    private String text;\n    private MessageType type;\n}`,
     complex: `public class Order {\n    private Long orderId;\n    private String status;\n    private Customer customer;\n    private List<OrderItem> items;\n    private Address shippingAddress;\n    private double totalAmount;\n    private LocalDate orderDate;\n}\n\npublic class Customer {\n    private Long customerId;\n    private String name;\n    private String email;\n}\n\npublic class OrderItem {\n    private String productId;\n    private int quantity;\n    private double unitPrice;\n}\n\npublic class Address {\n    private String street;\n    private String city;\n    private String zipCode;\n    private String country;\n}`
+  },
+  'sql-json': {
+    users:    `[\n  {"id":1,"name":"Alice","email":"alice@example.com","role":"admin","active":true,"joined":"2024-01-15"},\n  {"id":2,"name":"Bob","email":"bob@example.com","role":"user","active":true,"joined":"2024-02-20"},\n  {"id":3,"name":"Carol","email":"carol@example.com","role":"editor","active":false,"joined":"2024-03-05"}\n]`,
+    products: `[\n  {"sku":"P-001","name":"Widget Pro","price":49.99,"stock":250,"category":"Electronics"},\n  {"sku":"P-002","name":"Gadget Max","price":129.99,"stock":80,"category":"Electronics"},\n  {"sku":"P-003","name":"Tool Kit","price":24.99,"stock":500,"category":"Tools"}\n]`,
+    orders:   `[\n  {"orderId":"ORD-001","customerId":1,"amount":99.98,"status":"shipped","orderDate":"2024-04-01"},\n  {"orderId":"ORD-002","customerId":2,"amount":129.99,"status":"pending","orderDate":"2024-04-02"}\n]`
+  },
+  'json-toon': {
+    user: `{\n  "id": 42,\n  "name": "Alice",\n  "score": 98.5,\n  "active": true,\n  "joined": "2024-01-15T10:30:00Z",\n  "tags": ["admin","user"],\n  "address": {"city":"Springfield","zip":"12345"}\n}`,
+    api:  `{\n  "status": 200,\n  "ok": true,\n  "data": [{"id":1,"value":3.14},{"id":2,"value":2.71}]\n}`
+  },
+  'md-html': {
+    readme:  `# Project Title\n\nA **brief** description.\n\n## Features\n\n- Fast and lightweight\n- *Extensible* plugin system\n\n## Usage\n\n\`\`\`bash\nnpm install my-pkg\n\`\`\`\n\n> **Note:** Requires Node 18+`,
+    article: `# The Future of Dev Tools\n\n*Published Jan 2024* — **AI-assisted** coding is reshaping how we build.\n\n## Key Trends\n\n1. AI-assisted coding\n2. Cloud-native dev\n3. ~~Desktop-only~~ → browser-first\n\n[Read more](https://example.com)`
   }
 };
 
 function loadSample(panelId, key) {
   const data = SAMPLES[panelId]?.[key]; if (!data) return;
-  const prefixes = { 'json-xml':'json-xml','json-yaml':'json-yaml','json-props':'json-props','yaml-props':'yaml-props','xml-props':'xml-props','json-csv':'json-csv','toml-json':'toml-json','java-json':'java-json' };
-  const p = prefixes[panelId] || panelId;
-  setVal(p+'-in', data);
-  charCount(p+'-in', p+'-ic');
+  setVal(panelId+'-in', data);
+  charCount(panelId+'-in', panelId+'-ic');
 }
 
 // ============================================================
@@ -3259,6 +4482,12 @@ const CONVERT_MAP = {
   'json-to-toml': { i:'toml-json-out',o:'toml-json-in',is:'toml-json-os',os:'toml-json-is',oc:'toml-json-ic',msg:'toml-json' },
   'java-to-json': { i:'java-json-in',o:'java-json-out',is:'java-json-is',os:'java-json-os',oc:'java-json-oc',msg:'java-json' },
   'json-to-java': { i:'java-json-out',o:'java-json-in',is:'java-json-os',os:'java-json-is',oc:'java-json-ic',msg:'java-json' },
+  'json-to-toon': { i:'json-toon-in',o:'json-toon-out',is:'json-toon-is',os:'json-toon-os',oc:'json-toon-oc',msg:'json-toon' },
+  'toon-to-json': { i:'json-toon-out',o:'json-toon-in',is:'json-toon-os',os:'json-toon-is',oc:'json-toon-ic',msg:'json-toon' },
+  'md-to-html':   { i:'md-html-in',o:'md-html-out',is:'md-html-is',os:'md-html-os',oc:'md-html-oc',msg:'md-html' },
+  'html-to-md':   { i:'md-html-out',o:'md-html-in',is:'md-html-os',os:'md-html-is',oc:'md-html-ic',msg:'md-html' },
+  'json-to-sql':  { i:'sql-json-in',o:'sql-json-out',is:'sql-json-is',os:'sql-json-os',oc:'sql-json-oc',msg:'sql-json' },
+  'sql-to-json':  { i:'sql-json-out',o:'sql-json-in',is:'sql-json-os',os:'sql-json-is',oc:'sql-json-ic',msg:'sql-json' },
 };
 
 function convert(type) {
@@ -3291,6 +4520,12 @@ function convert(type) {
       case 'json-to-toml': result=jsonToToml(input); break;
       case 'java-to-json': result=javaToJson(input); break;
       case 'json-to-java': result=jsonToJava(input); break;
+      case 'json-to-toon': result=jsonToToon(input); break;
+      case 'toon-to-json': result=toonToJson(input); break;
+      case 'md-to-html':   result=mdToHtml(input); break;
+      case 'html-to-md':   result=htmlToMd(input); break;
+      case 'json-to-sql':  result=jsonToSql(input); break;
+      case 'sql-to-json':  result=sqlToJson(input); break;
     }
     setVal(cfg.o, result);
     setText(cfg.oc, (result.length||0).toLocaleString()+' chars');
@@ -3763,7 +4998,6 @@ document.addEventListener('keydown', e => {
 // INIT
 // ============================================================
 
-
 // ============================================================
 // JSON ↔ TOON (Typed Object Notation)
 // ============================================================
@@ -3931,32 +5165,55 @@ function htmlToMd(html) {
 // JSON ↔ SQL
 // ============================================================
 function jsonToSql(jsonText) {
-  const arr = JSON.parse(jsonText);
-  if (!Array.isArray(arr) || !arr.length) throw new Error('Input must be a non-empty JSON array of objects');
-  const table = 'generated_table';
-  const keys = [...new Set(arr.flatMap(o => Object.keys(o)))];
-  const colDefs = keys.map(k => {
-    const vals = arr.map(o => o[k]).filter(v => v !== null && v !== undefined);
-    let type = 'VARCHAR(255)';
-    if (vals.every(v => typeof v === 'number' && Number.isInteger(v))) type = 'INT';
-    else if (vals.every(v => typeof v === 'number')) type = 'DOUBLE';
-    else if (vals.every(v => typeof v === 'boolean')) type = 'BOOLEAN';
-    else if (vals.every(v => /^\d{4}-\d{2}-\d{2}T/.test(String(v)))) type = 'DATETIME';
-    else if (vals.every(v => /^\d{4}-\d{2}-\d{2}$/.test(String(v)))) type = 'DATE';
-    return '  `' + k + '` ' + type;
-  }).join(',\n');
-  const createStmt = 'CREATE TABLE `' + table + '` (\n' + colDefs + '\n);\n';
-  const inserts = arr.map(row => {
-    const vals = keys.map(k => {
-      const v = row[k];
+  let parsed;
+  try { parsed = JSON.parse(jsonText); } catch(e) { throw new Error('Invalid JSON: ' + e.message); }
+  // Accept: array, object-with-single-array-key, single object
+  let arr, tableName = 'my_table';
+  if (Array.isArray(parsed)) {
+    arr = parsed;
+  } else if (parsed && typeof parsed === 'object') {
+    const keys = Object.keys(parsed);
+    if (keys.length === 1 && Array.isArray(parsed[keys[0]])) {
+      tableName = keys[0].replace(/[^a-zA-Z0-9_]/g,'_');
+      arr = parsed[keys[0]];
+    } else {
+      arr = [parsed]; // wrap single object
+    }
+  } else {
+    throw new Error('Input must be a JSON array of objects, or a single object');
+  }
+  if (!arr.length) throw new Error('Array is empty — nothing to convert');
+  // Ensure all items are objects
+  arr = arr.map(item => (item && typeof item === 'object' && !Array.isArray(item)) ? item : { value: item });
+  const cols = [...new Set(arr.flatMap(o => Object.keys(o)))];
+  function inferSqlType(col) {
+    const vals = arr.map(o => o[col]).filter(v => v !== null && v !== undefined);
+    if (!vals.length) return 'VARCHAR(255)';
+    if (vals.every(v => typeof v === 'boolean')) return 'BOOLEAN';
+    if (vals.every(v => Number.isInteger(v)))     return 'INT';
+    if (vals.every(v => typeof v === 'number'))   return 'DOUBLE';
+    if (vals.every(v => /^\d{4}-\d{2}-\d{2}T/.test(String(v)))) return 'DATETIME';
+    if (vals.every(v => /^\d{4}-\d{2}-\d{2}$/.test(String(v)))) return 'DATE';
+    const mx = Math.max(...vals.map(v => String(v).length));
+    return mx > 255 ? 'TEXT' : 'VARCHAR(' + (Math.ceil(mx / 50) * 50 || 100) + ')';
+  }
+  const colDefs = cols.map(c => '  `' + c + '` ' + inferSqlType(c)).join(',\n');
+  let sql = '-- Auto-generated SQL\n';
+  sql += 'CREATE TABLE IF NOT EXISTS `' + tableName + '` (\n';
+  sql += '  `id` INT AUTO_INCREMENT PRIMARY KEY,\n';
+  sql += colDefs + '\n)\nENGINE=InnoDB DEFAULT CHARSET=utf8mb4;\n\n';
+  arr.forEach((row, i) => {
+    const vals = cols.map(c => {
+      const v = row[c];
       if (v === null || v === undefined) return 'NULL';
-      if (typeof v === 'boolean') return v ? '1' : '0';
+      if (typeof v === 'boolean') return v ? 'TRUE' : 'FALSE';
       if (typeof v === 'number') return String(v);
-      return "'" + String(v).replace(/'/g, "''") + "'";
-    }).join(', ');
-    return 'INSERT INTO `' + table + '` (`' + keys.join('`, `') + '`) VALUES (' + vals + ');';
-  }).join('\n');
-  return createStmt + '\n' + inserts;
+      if (typeof v === 'object') return "'" + JSON.stringify(v).replace(/\\/g,"\\\\").replace(/'/g,"''") + "'";
+      return "'" + String(v).replace(/\\/g,"\\\\").replace(/'/g,"''") + "'";
+    });
+    sql += 'INSERT INTO `' + tableName + '` (`' + cols.join('`, `') + '`) VALUES (\n  ' + vals.join(', ') + '\n);\n';
+  });
+  return sql;
 }
 function sqlToJson(sql) {
   // Parse INSERT INTO statements
@@ -4535,7 +5792,6 @@ function numToWords(n) {
   return (neg ? 'negative ' : '') + parts.join(', ') || 'zero';
 }
 
-
 // Mobile category -> bottom tab mapping
 const _tabCategoryMap = {
   'json-xml':'json-xml','json-yaml':'json-xml','json-props':'json-xml','yaml-props':'json-xml',
@@ -4547,6 +5803,7 @@ const _tabCategoryMap = {
   'base-conv':'base-conv','timestamp':'base-conv','uuid-gen':'base-conv','color':'base-conv',
   'password-gen':'password-gen','nanoid-gen':'password-gen','qr-gen':'password-gen','cron-parse':'password-gen',
   'str-utils':'str-utils','escape':'str-utils','sort-dedup':'str-utils','num-fmt':'str-utils',
+  'hls-player':'password-gen',
 };
 
 function navTab(tabEl, panelId) {
@@ -4555,6 +5812,216 @@ function navTab(tabEl, panelId) {
   const navEl = document.querySelector(`.nav-item[data-panel="${panelId}"]`);
   if (navEl) nav(navEl);
 }
+
+// ============================================================
+// HLS / M3U8 PLAYER — Production Grade
+// ============================================================
+let _hls      = null;
+let _hlsVid   = null;
+let _hlsTimer = null;
+
+function _hlsEl(id) { return document.getElementById(id); }
+
+function hlsSetPill(text, color) {
+  const p = _hlsEl('hls-status-pill'); if (!p) return;
+  p.textContent = text;
+  p.style.background  = 'color-mix(in srgb,' + color + ' 15%, var(--surface3))';
+  p.style.color       = color;
+  p.style.borderColor = 'color-mix(in srgb,' + color + ' 30%, var(--border))';
+}
+
+function hlsShow(player, idle, error) {
+  const s = (id, show, flex) => { const e=_hlsEl(id); if(e) e.style.display=show?(flex?'flex':'block'):'none'; };
+  s('hls-player-area', player, true);
+  s('hls-idle',        idle,   'flex');
+  s('hls-err',         error,  false);
+}
+
+function hlsSetError(msg) {
+  setHTML('hls-err',
+    '<strong>&#9888; Error</strong><br>' + escXml(msg) +
+    '<br><span style="opacity:.6;font-size:10px">Check URL &middot; ensure server allows CORS &middot; stream must be active</span>');
+  hlsShow(false, false, true);
+  hlsSetPill('ERROR', 'var(--error)');
+}
+
+function hlsFmt(s) {
+  if (!isFinite(s)||s<0) return '--:--';
+  const h=Math.floor(s/3600), m=Math.floor((s%3600)/60), sc=Math.floor(s%60);
+  return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(sc).padStart(2,'0');
+}
+
+function hlsStatCard(label, value, color) {
+  return '<div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:7px 9px">' +
+    '<div style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:3px">'+label+'</div>'+
+    '<div style="font-family:var(--font-mono);font-size:11px;font-weight:600;color:'+(color||'var(--text)')+'">'+value+'</div>'+
+  '</div>';
+}
+
+function hlsRenderStats() {
+  const v = _hlsVid; if (!v) return;
+  const el = _hlsEl('hls-stats'); if (!el) return;
+  const dur = v.duration, isLive = !isFinite(dur);
+  const lvl   = (_hls && _hls.currentLevel >= 0) ? _hls.levels[_hls.currentLevel] : null;
+  const res   = lvl && lvl.width ? lvl.width + 'x' + lvl.height : (isLive ? 'Live' : '—');
+  const brate = lvl && lvl.bitrate ? (lvl.bitrate>=1e6?(lvl.bitrate/1e6).toFixed(2)+' Mbps':Math.round(lvl.bitrate/1000)+' kbps') : '—';
+  const lvls  = _hls ? _hls.levels.length : 0;
+  const codec = (lvl && lvl.videoCodec) ? lvl.videoCodec.split('.')[0] : (_hls ? 'HLS' : 'Native');
+  el.innerHTML = [
+    hlsStatCard('Type',       isLive ? '&#x1F534; LIVE' : '&#9654; VOD', isLive?'var(--error)':'var(--accent3)'),
+    hlsStatCard('Duration',   isLive ? '&#8734;' : hlsFmt(dur), 'var(--accent2)'),
+    hlsStatCard('Resolution', res,   'var(--accent)'),
+    hlsStatCard('Bitrate',    brate, 'var(--warn)'),
+    hlsStatCard('Levels',     lvls||'—', 'var(--text2)'),
+    hlsStatCard('Codec',      codec, 'var(--text3)'),
+  ].join('');
+}
+
+function hlsBuildQualitySel() {
+  if (!_hls || !_hls.levels.length) return;
+  const sel = _hlsEl('hls-qual'); if (!sel) return;
+  sel.innerHTML = '<option value="-1">Auto</option>' +
+    _hls.levels.map((l,i)=>{
+      const r = l.height ? l.height+'p' : 'Level '+i;
+      const k = l.bitrate ? ' ('+Math.round(l.bitrate/1000)+'k)' : '';
+      return '<option value="'+i+'">'+r+k+'</option>';
+    }).join('');
+  sel.style.display = '';
+}
+
+function hlsOnPlay()  { const b=_hlsEl('hls-playbtn'); if(b) b.innerHTML='&#9646;&#9646;'; }
+function hlsOnPause() { const b=_hlsEl('hls-playbtn'); if(b) b.innerHTML='&#9654;'; }
+
+function hlsTimeUpdate() {
+  const v = _hlsVid; if (!v) return;
+  const cur=v.currentTime, dur=v.duration, safe=isFinite(dur)&&dur>0;
+  setText('hls-tc', hlsFmt(cur));
+  setText('hls-td', safe ? hlsFmt(dur) : 'Live');
+  if (safe) {
+    const pct = (cur/dur*100).toFixed(2)+'%';
+    const pg = _hlsEl('hls-seek-prog'); if(pg) pg.style.width=pct;
+    if (v.buffered.length) {
+      const buf=(v.buffered.end(v.buffered.length-1)/dur*100).toFixed(1)+'%';
+      const bg=_hlsEl('hls-seek-buf'); if(bg) bg.style.width=buf;
+    }
+  }
+}
+
+function hlsSeekClick(e, track) {
+  const v=_hlsVid; if(!v||!isFinite(v.duration)) return;
+  const r=track.getBoundingClientRect();
+  v.currentTime = v.duration * Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+}
+
+function hlsTogglePlay() { const v=_hlsVid; if(v) v.paused?v.play():v.pause(); }
+
+function hlsSetVol(val) {
+  const v=_hlsVid; if(!v) return;
+  v.volume=val/100; v.muted=(+val===0);
+  const b=_hlsEl('hls-mutebtn'); if(b) b.innerHTML=(+val===0)?'&#128263;':'&#128266;';
+}
+function hlsToggleMute() {
+  const v=_hlsVid; if(!v) return;
+  v.muted=!v.muted;
+  const b=_hlsEl('hls-mutebtn'); if(b) b.innerHTML=v.muted?'&#128263;':'&#128266;';
+  const sl=_hlsEl('hls-vol'); if(sl) sl.value=v.muted?0:Math.round(v.volume*100);
+}
+function hlsSetSpeed(val)   { const v=_hlsVid; if(v) v.playbackRate=parseFloat(val); }
+function hlsSetQuality(val) { if(_hls){ _hls.currentLevel=parseInt(val); hlsRenderStats(); } }
+function hlsFullscreen() {
+  const v=_hlsVid; if(!v) return;
+  document.fullscreenElement ? document.exitFullscreen() : (v.requestFullscreen?.() || v.webkitRequestFullscreen?.());
+}
+
+function hlsLoadSample(url) { setVal('hls-url', url); hlsLoad(); }
+
+function hlsClear() {
+  if (_hls) { _hls.destroy(); _hls=null; }
+  clearInterval(_hlsTimer);
+  _hlsVid = _hlsEl('hls-video');
+  if (_hlsVid) { _hlsVid.pause(); _hlsVid.src=''; }
+  setVal('hls-url',''); setVal('hls-m3u8','');
+  setHTML('hls-stats','');
+  const q=_hlsEl('hls-qual'); if(q){ q.innerHTML=''; q.style.display='none'; }
+  const pb=_hlsEl('hls-playbtn'); if(pb) pb.innerHTML='&#9654;';
+  hlsShow(false, true, false);
+  hlsSetPill('IDLE', 'var(--text3)');
+}
+
+async function _hlsFetchPlaylist(url) {
+  try { const r=await fetch(url,{cache:'no-cache'}); if(r.ok) setVal('hls-m3u8', await r.text()); }
+  catch(e) { /* CORS may block fetch but video can still play */ }
+}
+
+function hlsLoad() {
+  const url = getVal('hls-url').trim();
+  if (!url)                    { hlsSetError('Please enter an M3U8 URL.'); return; }
+  if (!url.startsWith('http')) { hlsSetError('URL must start with http:// or https://'); return; }
+
+  if (_hls) { _hls.destroy(); _hls=null; }
+  clearInterval(_hlsTimer);
+
+  _hlsVid = _hlsEl('hls-video'); if (!_hlsVid) return;
+  const volSl = _hlsEl('hls-vol'); if(volSl) _hlsVid.volume=volSl.value/100;
+
+  hlsSetPill('LOADING…', 'var(--warn)');
+  hlsShow(false, false, false);
+  setHTML('hls-err','');
+  _hlsFetchPlaylist(url);
+
+  if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+    const hls = new Hls({
+      enableWorker:true, lowLatencyMode:false, startLevel:-1,
+      maxMaxBufferLength:60, fragLoadingMaxRetry:6,
+      manifestLoadingMaxRetry:4, levelLoadingMaxRetry:4,
+    });
+    _hls = hls;
+    hls.loadSource(url);
+    hls.attachMedia(_hlsVid);
+
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      hlsShow(true, false, false);
+      hlsSetPill('PLAYING', 'var(--accent3)');
+      hlsBuildQualitySel();
+      hlsRenderStats();
+      _hlsVid.play().catch(()=>{});
+      _hlsTimer = setInterval(hlsRenderStats, 2000);
+    });
+
+    hls.on(Hls.Events.LEVEL_SWITCHED, () => {
+      hlsRenderStats();
+      const q=_hlsEl('hls-qual'); if(q) q.value=hls.currentLevel;
+    });
+
+    hls.on(Hls.Events.ERROR, (_, d) => {
+      if (!d.fatal) return;
+      clearInterval(_hlsTimer);
+      if (d.type===Hls.ErrorTypes.NETWORK_ERROR) {
+        if (d.details===Hls.ErrorDetails.MANIFEST_LOAD_ERROR||d.details===Hls.ErrorDetails.MANIFEST_LOAD_TIMEOUT)
+          hlsSetError('Could not load the playlist. Check the URL, verify the stream is live, and ensure the server allows CORS.');
+        else { hlsSetPill('RECONNECTING…','var(--warn)'); hls.startLoad(); }
+      } else if (d.type===Hls.ErrorTypes.MEDIA_ERROR) {
+        hlsSetPill('RECOVERING…','var(--warn)'); hls.recoverMediaError();
+      } else {
+        hlsSetError('Fatal error: '+d.details+(d.reason?' — '+d.reason:''));
+      }
+    });
+
+  } else if (_hlsVid.canPlayType('application/vnd.apple.mpegurl')) {
+    _hlsVid.src = url;
+    _hlsVid.addEventListener('loadedmetadata', ()=>{
+      hlsShow(true,false,false); hlsSetPill('PLAYING','var(--accent3)'); hlsRenderStats();
+    }, {once:true});
+    _hlsVid.addEventListener('error', ()=>hlsSetError('Native HLS error. Check the URL and stream availability.'), {once:true});
+    _hlsVid.play().catch(()=>{});
+  } else {
+    hlsSetError('HLS not supported in this browser and hls.js failed to load.');
+  }
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#themePickerBtn') && !e.target.closest('#themeDropdown')) closeThemePicker();
+});
 document.addEventListener('DOMContentLoaded', () => {
   restoreState();
   setTimeout(genUUIDs, 100);
@@ -4568,10 +6035,587 @@ document.addEventListener('DOMContentLoaded', () => {
   now.setSeconds(0,0);
   const local = new Date(now.getTime() - now.getTimezoneOffset()*60000).toISOString().slice(0,16);
   const tsIn = $('ts-date-in'); if(tsIn) tsIn.value = local;
+  // Init timezone converter
+  tzInit();
+  // Init API Tester
+  atInit();
   // Auto-save all inputs on change
   document.addEventListener('input', e => { if (e.target.id && e.target.id !== 'sidebarSearch') queueSaveInputs(); });
   document.addEventListener('change', e => { if (e.target.id) queueSaveInputs(); });
 });
+
+// ============================================================
+// JWT BUILDER
+// ============================================================
+function b64url(str) {
+  return btoa(str).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
+}
+function b64urlEncode(obj) {
+  return b64url(JSON.stringify(obj));
+}
+async function hmacSign(msg, secret, algo) {
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(secret),
+    { name:'HMAC', hash: algo }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, enc.encode(msg));
+  return btoa(String.fromCharCode(...new Uint8Array(sig)))
+    .replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
+}
+async function jwtBuildSign() {
+  const alg = getVal('jb-alg'), secret = getVal('jb-secret');
+  const sub = getVal('jb-sub'), iss = getVal('jb-iss'), aud = getVal('jb-aud');
+  const expSecs = parseInt(getVal('jb-exp'));
+  const header = { alg, typ: getVal('jb-typ') || 'JWT' };
+  const iat = Math.floor(Date.now()/1000);
+  const payload = { iat };
+  if (sub) payload.sub = sub;
+  if (iss) payload.iss = iss;
+  if (aud) payload.aud = aud;
+  if (expSecs > 0) payload.exp = iat + expSecs;
+  try {
+    const extra = getVal('jb-extra');
+    if (extra.trim()) Object.assign(payload, JSON.parse(extra));
+  } catch(e) { setHTML('jb-preview','<span style="color:var(--error)">Extra claims: invalid JSON</span>'); return; }
+
+  const h = b64urlEncode(header), p = b64urlEncode(payload);
+  let token;
+  if (alg === 'none') {
+    token = `${h}.${p}.`;
+  } else {
+    const algoMap = { HS256:'SHA-256', HS384:'SHA-384', HS512:'SHA-512' };
+    const sig = await hmacSign(`${h}.${p}`, secret, algoMap[alg]);
+    token = `${h}.${p}.${sig}`;
+  }
+  $('jb-out').value = token;
+  $('jb-header-out').textContent = JSON.stringify(header, null, 2);
+  $('jb-payload-out').textContent = JSON.stringify(payload, null, 2);
+  const parts = ['#fb923c','#60a5fa','#4ade80'];
+  const colored = token.split('.').map((p,i) => `<span style="color:${parts[i]||'var(--text)'}">${p}</span>`).join('<span style="color:var(--text3)">.</span>');
+  setHTML('jb-preview', `<div style="word-break:break-all;font-family:var(--font-mono);font-size:10px;line-height:1.6;padding:8px;background:var(--surface2);border-radius:6px;border:1px solid var(--border)">${colored}</div>`);
+}
+function jwtBuildLive() { /* no-op live — sign on button press only */ }
+function jwtBuildClear() {
+  ['jb-sub','jb-iss','jb-aud','jb-extra','jb-secret'].forEach(id => { const el = $(id); if(el) el.value=''; });
+  $('jb-out').value=''; $('jb-preview').innerHTML='';
+  $('jb-header-out').textContent=''; $('jb-payload-out').textContent='';
+}
+
+// ============================================================
+// TIMEZONE CONVERTER
+// ============================================================
+const TZ_ZONES = [
+  'UTC','America/New_York','America/Chicago','America/Denver','America/Los_Angeles',
+  'America/Sao_Paulo','America/Toronto','America/Vancouver','America/Mexico_City',
+  'America/Buenos_Aires','Europe/London','Europe/Paris','Europe/Berlin','Europe/Rome',
+  'Europe/Madrid','Europe/Amsterdam','Europe/Stockholm','Europe/Moscow','Europe/Istanbul',
+  'Asia/Dubai','Asia/Kolkata','Asia/Dhaka','Asia/Bangkok','Asia/Singapore',
+  'Asia/Hong_Kong','Asia/Shanghai','Asia/Tokyo','Asia/Seoul','Australia/Sydney',
+  'Australia/Melbourne','Pacific/Auckland','Pacific/Honolulu','Africa/Cairo',
+  'Africa/Lagos','Africa/Johannesburg'
+];
+let tzActive = ['UTC','America/New_York','Europe/London','Asia/Kolkata','Asia/Tokyo'];
+
+function tzInit() {
+  ['tz-from','tz-add-sel'].forEach(id => {
+    const sel = $(id); if (!sel) return;
+    sel.innerHTML = TZ_ZONES.map(z => `<option value="${z}">${z.replace(/_/g,' ')}</option>`).join('');
+  });
+  const tzFrom = $('tz-from');
+  if (tzFrom) {
+    const local = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    tzFrom.value = TZ_ZONES.includes(local) ? local : 'UTC';
+  }
+  const tzIn = $('tz-input');
+  if (tzIn) {
+    const n = new Date(); n.setSeconds(0,0);
+    tzIn.value = new Date(n.getTime() - n.getTimezoneOffset()*60000).toISOString().slice(0,16);
+  }
+  tzRenderChips();
+  tzConvert();
+}
+function tzNow() {
+  const n = new Date(); n.setSeconds(0,0);
+  const tzIn = $('tz-input');
+  if (tzIn) tzIn.value = new Date(n.getTime() - n.getTimezoneOffset()*60000).toISOString().slice(0,16);
+  tzConvert();
+}
+function tzAddZone() {
+  const sel = $('tz-add-sel'); if (!sel) return;
+  const z = sel.value;
+  if (!tzActive.includes(z)) { tzActive.push(z); tzRenderChips(); tzConvert(); }
+}
+function tzRenderChips() {
+  const c = $('tz-chips'); if (!c) return;
+  c.innerHTML = tzActive.map(z => `<span class="chip" style="font-size:9px;cursor:pointer" onclick="tzRemove('${z}')" title="Remove">${z.split('/').pop().replace(/_/g,' ')} ✕</span>`).join('');
+}
+function tzRemove(z) {
+  tzActive = tzActive.filter(t => t !== z);
+  tzRenderChips(); tzConvert();
+}
+function tzConvert() {
+  const tzIn = $('tz-input'), tzFrom = $('tz-from');
+  if (!tzIn || !tzFrom) return;
+  const dateStr = tzIn.value; const fromZone = tzFrom.value;
+  if (!dateStr) return;
+  // Build a Date from the local datetime-local input interpreted as fromZone
+  // We use the trick of formatting in fromZone to get offset
+  let date;
+  try {
+    // Parse as if it's fromZone time
+    const [datePart, timePart] = dateStr.split('T');
+    const [yr,mo,dy] = datePart.split('-').map(Number);
+    const [hr,mn] = (timePart||'00:00').split(':').map(Number);
+    // Get UTC offset for fromZone at this approximate time
+    const approx = new Date(Date.UTC(yr,mo-1,dy,hr,mn));
+    const fmtFrom = new Intl.DateTimeFormat('en-US',{timeZone:fromZone,hour:'numeric',minute:'numeric',hour12:false,year:'numeric',month:'2-digit',day:'2-digit'});
+    const parts = fmtFrom.formatToParts(approx);
+    const p = Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,parseInt(x.value)]));
+    const offsetMs = approx - new Date(Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute));
+    date = new Date(Date.UTC(yr,mo-1,dy,hr,mn) + offsetMs);
+  } catch(e) { date = new Date(dateStr); }
+
+  const out = $('tz-results'); if (!out) return;
+  const rows = tzActive.map(zone => {
+    try {
+      const fmt = new Intl.DateTimeFormat('en-GB',{
+        timeZone: zone, weekday:'short', year:'numeric', month:'short',
+        day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+      });
+      const timeStr = fmt.format(date);
+      // Get UTC offset string
+      const off = new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'short'}).formatToParts(date).find(x=>x.type==='timeZoneName')?.value || '';
+      return `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;gap:8px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent)">${zone.replace(/_/g,' ')}</div>
+          <div style="font-size:9px;color:var(--text3)">${off}</div>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text)">${timeStr}</div>
+        <button class="btn-sm" onclick="navigator.clipboard.writeText('${timeStr.replace(/'/g,"\\'")}').catch(()=>{})" style="font-size:9px;flex-shrink:0">⎘</button>
+      </div>`;
+    } catch(e) { return ''; }
+  }).join('');
+  out.innerHTML = rows || '<div style="color:var(--text3);font-size:11px">No timezones selected.</div>';
+}
+
+// ============================================================
+// HTTP HEADERS INSPECTOR
+// ============================================================
+const HTTP_HEADER_INFO = {
+  'content-type': 'Specifies the media type (MIME type) of the request/response body, e.g. application/json, text/html.',
+  'authorization': 'Credentials to authenticate — e.g. Bearer <token>, Basic <base64>, API-Key <key>.',
+  'accept': 'Media types the client can process — server should respond with one of them.',
+  'cache-control': 'Directives for caching mechanisms: max-age, no-cache, no-store, private, public.',
+  'x-request-id': 'Unique request identifier for distributed tracing and log correlation.',
+  'x-correlation-id': 'Correlation ID for tracing a request across multiple services.',
+  'x-forwarded-for': 'Original client IP when requests pass through proxies or load balancers.',
+  'x-forwarded-proto': 'Original protocol (http/https) before a load balancer terminates SSL.',
+  'set-cookie': 'Server sets cookies on the client. Attributes: Path, Expires, HttpOnly, Secure, SameSite.',
+  'cookie': 'Cookies previously set by Set-Cookie, sent back to the server.',
+  'user-agent': 'Client browser/app identifier string.',
+  'referer': 'URL of the previous page that linked to the current request.',
+  'origin': 'Origin of the cross-origin request — protocol + host + port.',
+  'host': 'Domain name (and optional port) of the server being addressed.',
+  'accept-encoding': 'Compression algorithms supported by the client: gzip, br, deflate.',
+  'content-encoding': 'Encoding applied to the body — typically gzip or br.',
+  'content-length': 'Exact byte size of the request/response body.',
+  'transfer-encoding': 'How the message body is encoded for transfer, e.g. chunked.',
+  'connection': 'Controls whether the TCP connection stays open after this request: keep-alive or close.',
+  'location': 'Used with 3xx redirects — the URL to redirect to.',
+  'etag': 'Version identifier for a resource — used with If-None-Match for conditional requests.',
+  'last-modified': 'Date the resource was last changed — used with If-Modified-Since.',
+  'if-none-match': 'Conditional request: only send if ETag has changed.',
+  'if-modified-since': 'Conditional request: only send if resource changed after this date.',
+  'access-control-allow-origin': 'CORS: which origins may access this resource.',
+  'access-control-allow-methods': 'CORS: allowed HTTP methods for cross-origin requests.',
+  'access-control-allow-headers': 'CORS: which request headers are allowed.',
+  'strict-transport-security': 'HSTS: force HTTPS. max-age, includeSubDomains, preload.',
+  'x-content-type-options': 'Prevents MIME sniffing. Always set to: nosniff.',
+  'x-frame-options': 'Clickjacking protection: DENY or SAMEORIGIN.',
+  'x-xss-protection': 'Legacy XSS filter (deprecated — use CSP instead).',
+  'content-security-policy': 'CSP: restrict sources of scripts, styles, images, etc.',
+  'retry-after': 'After a 429 or 503, tells the client when to retry (seconds or date).',
+  'rate-limit': 'Custom header indicating rate limit info.',
+  'x-ratelimit-limit': 'Maximum requests allowed in the current rate limit window.',
+  'x-ratelimit-remaining': 'Requests remaining in the current window.',
+  'x-ratelimit-reset': 'Unix timestamp when the rate limit window resets.',
+  'vary': 'Which request headers affect the cached response — used in CDN and proxy caching.',
+  'pragma': 'Legacy HTTP/1.0 cache control. Use Cache-Control instead.',
+  'expires': 'Legacy: absolute expiry date for a cached response.',
+  'www-authenticate': 'Sent with 401 — indicates which authentication scheme to use.',
+  'content-disposition': 'Whether content is inline or a download attachment, and filename.',
+};
+function hhParse() {
+  const raw = getVal('hh-in').trim();
+  const out = $('hh-out'); if (!out) return;
+  if (!raw) { out.innerHTML = '<div style="color:var(--text3);font-size:11px">Paste headers above.</div>'; return; }
+  const lines = raw.split('\n').filter(l => l.trim() && l.includes(':'));
+  if (!lines.length) { out.innerHTML = '<div style="color:var(--error);font-size:11px">No valid headers found.</div>'; return; }
+  out.innerHTML = lines.map(line => {
+    const colonIdx = line.indexOf(':');
+    const name = line.slice(0,colonIdx).trim();
+    const value = line.slice(colonIdx+1).trim();
+    const info = HTTP_HEADER_INFO[name.toLowerCase()];
+    return `<div style="border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-bottom:6px;background:var(--surface2)">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:600">${escXml(name)}</span>
+        <button class="btn-sm" onclick="navigator.clipboard.writeText('${escXml(value).replace(/'/g,"\\'")}').catch(()=>{})" style="font-size:9px;flex-shrink:0">⎘ Copy</button>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--text);margin:3px 0;word-break:break-all">${escXml(value)}</div>
+      ${info ? `<div style="font-size:10px;color:var(--text3);margin-top:4px;line-height:1.4">${escXml(info)}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+function hhSearch() {
+  const q = getVal('hh-search').toLowerCase().trim();
+  const out = $('hh-search-result'); if (!out) return;
+  if (!q) { out.innerHTML = ''; return; }
+  const matches = Object.entries(HTTP_HEADER_INFO).filter(([k]) => k.includes(q)).slice(0,5);
+  if (!matches.length) { out.innerHTML = '<div style="color:var(--text3);font-size:10px">No matching headers.</div>'; return; }
+  out.innerHTML = matches.map(([k,v]) => `<div style="padding:6px 8px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;margin-bottom:4px">
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);font-weight:600">${k}</div>
+    <div style="font-size:10px;color:var(--text3);margin-top:2px">${v}</div>
+  </div>`).join('');
+}
+function hhLoadSample() {
+  const ta = $('hh-in'); if (!ta) return;
+  ta.value = `HTTP/1.1 200 OK\nContent-Type: application/json; charset=utf-8\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\nX-Request-Id: f8a3b2c1-dead-beef-cafe-112233445566\nCache-Control: no-cache, no-store, must-revalidate\nX-RateLimit-Limit: 100\nX-RateLimit-Remaining: 97\nX-RateLimit-Reset: 1710000000\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nAccess-Control-Allow-Origin: *`;
+  hhParse();
+}
+
+// ============================================================
+// CURL GENERATOR
+// ============================================================
+let _curlTab = 'curl';
+function curlTab(t) {
+  _curlTab = t;
+  ['curl','fetch','axios','python'].forEach(x => {
+    const btn = $(`curl-tab-${x}`);
+    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
+  });
+  curlBuild();
+}
+function curlBuild() {
+  const url = getVal('curl-url').trim() || 'https://api.example.com/endpoint';
+  const method = getVal('curl-method');
+  const headersRaw = getVal('curl-headers');
+  const body = getVal('curl-body').trim();
+  const verbose = $('curl-verbose')?.checked, insecure = $('curl-insecure')?.checked;
+  const follow = $('curl-follow')?.checked, silent = $('curl-silent')?.checked;
+
+  // Parse headers
+  const headers = {};
+  headersRaw.split('\n').forEach(line => {
+    const ci = line.indexOf(':'); if (ci < 0) return;
+    headers[line.slice(0,ci).trim()] = line.slice(ci+1).trim();
+  });
+
+  let out = '';
+  if (_curlTab === 'curl') {
+    const flags = [verbose&&'-v', insecure&&'-k', follow&&'-L', silent&&'-s'].filter(Boolean);
+    out = `curl ${flags.join(' ')} \\\n  -X ${method} \\\n  '${url}'`;
+    Object.entries(headers).forEach(([k,v]) => { out += ` \\\n  -H '${k}: ${v}'`; });
+    if (body && ['POST','PUT','PATCH'].includes(method)) out += ` \\\n  -d '${body.replace(/'/g,"'\\''")}'`;
+  } else if (_curlTab === 'fetch') {
+    const opts = { method };
+    if (Object.keys(headers).length) opts.headers = headers;
+    if (body && ['POST','PUT','PATCH'].includes(method)) opts.body = body;
+    out = `const response = await fetch('${url}', ${JSON.stringify(opts,null,2)});\nconst data = await response.json();\nconsole.log(data);`;
+  } else if (_curlTab === 'axios') {
+    const cfg = { method: method.toLowerCase(), url };
+    if (Object.keys(headers).length) cfg.headers = headers;
+    if (body && ['post','put','patch'].includes(method.toLowerCase())) { try { cfg.data = JSON.parse(body); } catch { cfg.data = body; } }
+    out = `const { data } = await axios(${JSON.stringify(cfg,null,2)});`;
+  } else if (_curlTab === 'python') {
+    out = `import requests\n\nheaders = ${JSON.stringify(headers,null,4)}\n`;
+    if (body && ['POST','PUT','PATCH'].includes(method)) {
+      out += `payload = ${body}\n\nresponse = requests.${method.toLowerCase()}(\n    '${url}',\n    headers=headers,\n    json=payload\n)`;
+    } else {
+      out += `\nresponse = requests.${method.toLowerCase()}(\n    '${url}',\n    headers=headers\n)`;
+    }
+    out += `\nprint(response.status_code, response.json())`;
+  }
+  const ta = $('curl-out'); if (ta) ta.value = out;
+}
+
+// ============================================================
+// API TESTER
+// ============================================================
+function atInit() {
+  atTab('headers');
+  atResTab('body');
+  atAuthChange();
+}
+function atTab(t) {
+  ['headers','body','params','auth'].forEach(x => {
+    const p = $(`at-pane-${x}`), btn = $(`at-tab-${x}`);
+    if (p) p.style.display = x===t ? 'block' : 'none';
+    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
+  });
+}
+function atResTab(t) {
+  const body = $('at-res-body'), hdrs = $('at-res-headers-pane');
+  const bb = $('at-res-tab-body'), hb = $('at-res-tab-headers');
+  if (body) body.style.display = t==='body' ? 'block' : 'none';
+  if (hdrs) hdrs.style.display = t==='headers' ? 'block' : 'none';
+  if (bb) { bb.style.borderColor = t==='body' ? 'var(--accent)' : ''; bb.style.color = t==='body' ? 'var(--accent)' : ''; }
+  if (hb) { hb.style.borderColor = t==='headers' ? 'var(--accent)' : ''; hb.style.color = t==='headers' ? 'var(--accent)' : ''; }
+}
+function atMethodChange() {
+  const m = getVal('at-method');
+  const hasBody = ['POST','PUT','PATCH'].includes(m);
+  const btn = $('at-tab-body');
+  if (btn) btn.style.opacity = hasBody ? '1' : '.4';
+}
+function atAddHeader() {
+  const container = $('at-headers-rows'); if (!container) return;
+  const row = document.createElement('div');
+  row.className = 'at-hrow'; row.style.cssText = 'display:flex;gap:4px';
+  row.innerHTML = `<input class="field-input" placeholder="Header name" style="flex:1;font-size:11px">
+    <input class="field-input" placeholder="Value" style="flex:2;font-size:11px">
+    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
+  container.appendChild(row);
+}
+function atAddParam() {
+  const container = $('at-params-rows'); if (!container) return;
+  const row = document.createElement('div');
+  row.className = 'at-hrow'; row.style.cssText = 'display:flex;gap:4px';
+  row.innerHTML = `<input class="field-input" placeholder="param" style="flex:1;font-size:11px">
+    <input class="field-input" placeholder="value" style="flex:2;font-size:11px">
+    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
+  container.appendChild(row);
+}
+function atRemoveRow(btn) { btn.parentElement.remove(); }
+function atPreset(type) {
+  if (type === 'json') atAddHeaderRow('Content-Type','application/json');
+  if (type === 'form') atAddHeaderRow('Content-Type','application/x-www-form-urlencoded');
+  if (type === 'auth') atAddHeaderRow('Authorization','Bearer YOUR_TOKEN_HERE');
+}
+function atAddHeaderRow(k, v) {
+  const rows = $('at-headers-rows'); if (!rows) return;
+  const row = document.createElement('div');
+  row.className='at-hrow'; row.style.cssText='display:flex;gap:4px';
+  row.innerHTML=`<input class="field-input" value="${k}" style="flex:1;font-size:11px">
+    <input class="field-input" value="${v}" style="flex:2;font-size:11px">
+    <button class="btn-sm" onclick="atRemoveRow(this)" style="padding:0 7px;flex-shrink:0">✕</button>`;
+  rows.appendChild(row);
+}
+function atBodyType(t) {
+  ['json','text','form','none'].forEach(x => {
+    const btn = $(`at-body-${x}`);
+    if (btn) { btn.style.borderColor = x===t ? 'var(--accent)' : ''; btn.style.color = x===t ? 'var(--accent)' : ''; }
+  });
+  const ta = $('at-body-input');
+  if (ta) ta.style.display = t==='none' ? 'none' : 'block';
+}
+function atAuthChange() {
+  const type = getVal('at-auth-type');
+  const f = $('at-auth-fields'); if (!f) return;
+  if (type === 'bearer') {
+    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Token</div>
+      <input class="field-input" id="at-bearer-token" placeholder="eyJhbGciOiJIUzI1NiJ9..."></div>`;
+  } else if (type === 'basic') {
+    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Username</div>
+      <input class="field-input" id="at-basic-user" placeholder="username"></div>
+      <div class="field-row"><div class="field-label">Password</div>
+      <input class="field-input" id="at-basic-pass" type="password" placeholder="password"></div>`;
+  } else if (type === 'apikey') {
+    f.innerHTML = `<div class="field-row" style="margin-top:8px"><div class="field-label">Header Name</div>
+      <input class="field-input" id="at-apikey-name" value="X-API-Key"></div>
+      <div class="field-row"><div class="field-label">Key Value</div>
+      <input class="field-input" id="at-apikey-val" placeholder="your-api-key"></div>`;
+  } else { f.innerHTML = ''; }
+}
+async function atSend() {
+  const url = getVal('at-url').trim();
+  if (!url) { alert('Please enter a URL'); return; }
+
+  const method = getVal('at-method');
+  const headers = {};
+
+  // Collect headers from rows
+  document.querySelectorAll('#at-headers-rows .at-hrow').forEach(row => {
+    const [kIn, vIn] = row.querySelectorAll('input');
+    if (kIn?.value.trim() && vIn?.value.trim()) headers[kIn.value.trim()] = vIn.value.trim();
+  });
+
+  // Auth
+  const authType = getVal('at-auth-type');
+  if (authType === 'bearer') {
+    const tok = $('at-bearer-token')?.value?.trim();
+    if (tok) headers['Authorization'] = `Bearer ${tok}`;
+  } else if (authType === 'basic') {
+    const u = $('at-basic-user')?.value, p = $('at-basic-pass')?.value;
+    if (u) headers['Authorization'] = `Basic ${btoa(`${u}:${p||''}`)}`;
+  } else if (authType === 'apikey') {
+    const n = $('at-apikey-name')?.value?.trim(), v = $('at-apikey-val')?.value?.trim();
+    if (n && v) headers[n] = v;
+  }
+
+  // Params
+  let finalUrl = url;
+  const paramPairs = [];
+  document.querySelectorAll('#at-params-rows .at-hrow').forEach(row => {
+    const [kIn, vIn] = row.querySelectorAll('input');
+    if (kIn?.value.trim()) paramPairs.push([kIn.value.trim(), vIn?.value.trim()||'']);
+  });
+  if (paramPairs.length) {
+    const sep = finalUrl.includes('?') ? '&' : '?';
+    finalUrl += sep + paramPairs.map(([k,v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+  }
+
+  // Body
+  let body = null;
+  const bodyVal = getVal('at-body-input').trim();
+  if (['POST','PUT','PATCH'].includes(method) && bodyVal) body = bodyVal;
+
+  // UI: show spinner
+  const spinner = $('at-spinner'), resOut = $('at-res-out'), resEmpty = $('at-res-empty');
+  if (spinner) spinner.style.display = 'block';
+  if (resOut) resOut.style.display = 'none';
+  if (resEmpty) resEmpty.style.display = 'none';
+  const statusBadge = $('at-status-badge'), timeBadge = $('at-time-badge');
+  if (statusBadge) statusBadge.innerHTML = '';
+  if (timeBadge) timeBadge.textContent = '';
+
+  const start = Date.now();
+  try {
+    const res = await fetch(finalUrl, { method, headers, body: body || undefined });
+    const elapsed = Date.now() - start;
+    const text = await res.text();
+    let display = text;
+    try { display = JSON.stringify(JSON.parse(text), null, 2); } catch {}
+
+    if (spinner) spinner.style.display = 'none';
+    if (resOut) { resOut.style.display = 'block'; resOut.value = display; }
+
+    // Status badge color
+    const sc = res.status;
+    const color = sc < 300 ? 'var(--accent3)' : sc < 400 ? 'var(--accent2)' : sc < 500 ? 'var(--warn)' : 'var(--error)';
+    if (statusBadge) statusBadge.innerHTML = `<span style="background:color-mix(in srgb,${color} 15%,transparent);color:${color};border:1px solid color-mix(in srgb,${color} 30%,transparent);border-radius:4px;padding:2px 7px;font-weight:700">${sc} ${res.statusText}</span>`;
+    if (timeBadge) timeBadge.textContent = `${elapsed}ms`;
+
+    // Response headers
+    const resHdrOut = $('at-res-headers-out');
+    if (resHdrOut) {
+      let hdrHtml = '';
+      res.headers.forEach((v, k) => {
+        hdrHtml += `<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:10px">
+          <span style="color:var(--accent);min-width:160px;flex-shrink:0">${escXml(k)}</span>
+          <span style="color:var(--text2);word-break:break-all">${escXml(v)}</span>
+        </div>`;
+      });
+      resHdrOut.innerHTML = hdrHtml || '<div style="color:var(--text3);font-size:11px">No headers exposed (CORS).</div>';
+    }
+  } catch(e) {
+    if (spinner) spinner.style.display = 'none';
+    if (resOut) { resOut.style.display = 'block'; resOut.value = `Error: ${e.message}\n\nNote: This may be a CORS error. The target API must allow cross-origin requests from browsers.\nTry using cURL Generator to run the request in your terminal instead.`; }
+    if (statusBadge) statusBadge.innerHTML = `<span style="color:var(--error)">Network Error</span>`;
+  }
+}
+
+// ============================================================
+// IP / DNS LOOKUP
+// ============================================================
+async function ipLookup() {
+  const input = getVal('ip-input').trim();
+  if (!input) return;
+  const out = $('ip-results'), status = $('ip-status');
+  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Looking up…</div>';
+  if (status) status.textContent = 'Fetching IP info…';
+  try {
+    const res = await fetch(`https://ipapi.co/${encodeURIComponent(input)}/json/`);
+    const d = await res.json();
+    if (d.error) throw new Error(d.reason || d.error);
+    if (status) status.textContent = '';
+    renderIpResult(d, out);
+  } catch(e) {
+    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
+    if (status) status.textContent = '';
+  }
+}
+function renderIpResult(d, out) {
+  if (!out) return;
+  const fields = [
+    ['IP Address', d.ip], ['Type', d.version],
+    ['Country', `${d.country_name} (${d.country_code})`],
+    ['Region', d.region], ['City', d.city],
+    ['Timezone', d.timezone], ['UTC Offset', d.utc_offset],
+    ['ISP / Org', d.org], ['ASN', d.asn],
+    ['Latitude', d.latitude], ['Longitude', d.longitude],
+    ['Postal', d.postal],
+  ].filter(([,v]) => v);
+  out.innerHTML = fields.map(([k,v]) => `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-bottom:1px solid var(--border);font-size:11px;gap:8px">
+      <span style="color:var(--text3);font-family:var(--font-mono);flex-shrink:0">${escXml(k)}</span>
+      <span style="color:var(--text);font-family:var(--font-mono);text-align:right;word-break:break-all">${escXml(String(v))}</span>
+    </div>`).join('');
+}
+async function dnsLookup() {
+  const input = getVal('ip-input').trim();
+  if (!input) return;
+  const out = $('ip-results'), status = $('ip-status');
+  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Looking up DNS…</div>';
+  if (status) status.textContent = 'Querying DNS…';
+  try {
+    const types = ['A','AAAA','MX','NS','TXT','CNAME','SOA'];
+    const results = await Promise.all(types.map(t =>
+      fetch(`https://dns.google/resolve?name=${encodeURIComponent(input)}&type=${t}`)
+        .then(r => r.json()).catch(() => null)
+    ));
+    if (status) status.textContent = '';
+    let html = '';
+    types.forEach((t, i) => {
+      const r = results[i];
+      if (!r?.Answer?.length) return;
+      html += `<div style="margin-bottom:8px">
+        <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--accent);margin-bottom:4px">${t} Records</div>
+        ${r.Answer.map(a => `<div style="padding:4px 8px;background:var(--surface2);border-radius:5px;font-family:var(--font-mono);font-size:10px;color:var(--text2);margin-bottom:2px;word-break:break-all">${escXml(a.data)}<span style="color:var(--text3);font-size:9px;margin-left:8px">TTL ${a.TTL}s</span></div>`).join('')}
+      </div>`;
+    });
+    if (!html) html = '<div style="color:var(--text3);font-size:11px">No DNS records found.</div>';
+    out.innerHTML = html;
+  } catch(e) {
+    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
+    if (status) status.textContent = '';
+  }
+}
+async function myIpLookup() {
+  const out = $('ip-results'), status = $('ip-status'), inp = $('ip-input');
+  if (out) out.innerHTML = '<div style="color:var(--text3);font-size:11px;font-family:var(--font-mono)">Detecting your IP…</div>';
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const d = await res.json();
+    if (inp) inp.value = d.ip;
+    if (status) status.textContent = '';
+    renderIpResult(d, out);
+  } catch(e) {
+    if (out) out.innerHTML = `<div style="color:var(--error);font-size:11px">${escXml(e.message)}</div>`;
+  }
+}
+function cidrCalc() {
+  const val = getVal('cidr-input').trim();
+  const out = $('cidr-out'); if (!out) return;
+  const match = val.match(/^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(\d{1,2})$/);
+  if (!match) { out.innerHTML = '<span style="color:var(--error)">Invalid CIDR format. Example: 192.168.1.0/24</span>'; return; }
+  const [,ip, prefix] = match;
+  const pfx = parseInt(prefix);
+  if (pfx > 32) { out.innerHTML = '<span style="color:var(--error)">Prefix must be 0–32</span>'; return; }
+  const parts = ip.split('.').map(Number);
+  const ipInt = (parts[0]<<24)|(parts[1]<<16)|(parts[2]<<8)|parts[3];
+  const mask = pfx === 0 ? 0 : (~0 << (32-pfx)) >>> 0;
+  const network = (ipInt & mask) >>> 0;
+  const broadcast = (network | (~mask >>> 0)) >>> 0;
+  const hosts = pfx >= 31 ? Math.pow(2,32-pfx) : Math.pow(2,32-pfx) - 2;
+  const toIp = n => [n>>>24,(n>>>16)&255,(n>>>8)&255,n&255].join('.');
+  out.innerHTML = [
+    ['Network', toIp(network)], ['Broadcast', toIp(broadcast)],
+    ['Subnet Mask', toIp(mask)],
+    ['First Host', pfx < 31 ? toIp(network+1) : toIp(network)],
+    ['Last Host', pfx < 31 ? toIp(broadcast-1) : toIp(broadcast)],
+    ['Usable Hosts', hosts.toLocaleString()]
+  ].map(([k,v]) => `<div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10px;padding:2px 0"><span style="color:var(--text3)">${k}</span><span style="color:var(--accent)">${v}</span></div>`).join('');
+}
+
 </script>
 
 </body>
